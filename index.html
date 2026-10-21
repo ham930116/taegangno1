@@ -737,43 +737,316 @@ label.sa{box-sizing:border-box;text-align:center}
 .ch-write svg{width:18px;height:18px}
 
 /* 타래 */
-.tw{background:#fff!important}
-.tw .tab.on{color:#0f1419}
-.tw-head{flex:none;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:44px;padding:var(--sb) 14px 0;background:#fff}
-.tw-head.s{display:block;height:auto;padding-bottom:8px}
-.tw-head>b{grid-column:1 / 4;font-size:19px;font-weight:800}
-.tw-logo{width:28px;height:28px;border-radius:8px;overflow:hidden;display:block}
-.tw-logo svg{width:100%;height:100%;display:block}
-.tw-tabs{flex:none;display:flex;border-bottom:1px solid #eff3f4}
-.tw-tabs>*{flex:1;text-align:center;padding:12px 0;font-size:15px;color:#536471}
-.tw-tabs b{color:#0f1419;font-weight:700;box-shadow:inset 0 -3px 0 #2c3b5e}
-.tw-post{display:flex;gap:10px;padding:12px 14px;border-bottom:1px solid #eff3f4;cursor:pointer}
-.tw-main{flex:1;min-width:0}
-.tw-h{display:flex;gap:5px;align-items:baseline;font-size:15px;white-space:nowrap;overflow:hidden}
-.tw-h b{font-weight:700;overflow:hidden;text-overflow:ellipsis;flex:none;max-width:55%}
-.tw-h span{color:#536471;overflow:hidden;text-overflow:ellipsis}
-.tw-rt{font-size:13px;color:#536471;margin-top:1px}
-.tw-text{font-size:15.5px;line-height:1.45;margin-top:2px;white-space:pre-wrap;word-break:break-word;color:#0f1419;-webkit-user-select:text;user-select:text}
-.tw-post.big .tw-text{font-size:18px}
-.tw-img{margin-top:10px;width:100%;aspect-ratio:16/10;border-radius:16px;border:1px solid #eff3f4}
-.tw-act{display:flex;justify-content:space-between;margin-top:10px;max-width:330px;color:#536471;font-size:13px}
-.tw-act>*{display:flex;align-items:center;gap:4px;border:0;background:none;color:inherit;font-size:13px;padding:0}
-.tw-act svg{width:18px;height:18px}
-.tw-act .on-like{color:#e5484d}.tw-act .on-rt{color:#2f9e6e}
-.tw-fab{position:absolute;right:16px;bottom:16px;width:56px;height:56px;border-radius:50%;border:0;background:#2c3b5e;color:#fff;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25)}
-.tw-fab svg{width:26px;height:26px}
-.tw-trh{font-size:20px;font-weight:800;padding:12px 16px}
-.tw-tr{display:block;width:100%;border:0;background:none;text-align:left;padding:10px 16px}
-.tw-tr small{font-size:13px;color:#536471}.tw-tr b{display:block;font-size:16px;margin-top:2px}
-.tw-n{display:flex;gap:12px;width:100%;border:0;background:none;text-align:left;padding:12px 16px;border-bottom:1px solid #eff3f4;font-size:15px;line-height:1.4}
-.tw-n p{margin:4px 0 0;color:#536471}.tw-n small{display:block;color:#536471;font-size:13px;margin-top:2px}
-.tw-ni{width:36px;height:36px;display:grid;place-items:center;color:#e5484d;flex:none}
-.tw-cover{height:110px;background:linear-gradient(120deg,#2c3b5e,#5b63d6)}
-.tw-prof{position:relative;padding:0 16px 12px;margin-top:-36px;display:flex;flex-direction:column;gap:2px}
-.tw-prof>.av{border:4px solid #fff}
-.tw-edit{position:absolute;right:16px;top:44px;border:1px solid #cfd9de;border-radius:18px;background:#fff;padding:6px 14px;font-weight:700;font-size:14px}
-.tw-prof b{font-size:20px;margin-top:6px}.tw-prof small{color:#536471;font-size:15px}.tw-prof p{margin:8px 0;font-size:15px}
-.tw-ff{display:flex;gap:16px;font-size:14px;color:#536471}.tw-ff b{font-size:14px;color:#0f1419;margin:0}
+/* X:CSS:BEGIN */
+/* ---------- 타래 (X 스타일) ---------- */
+.xq{background:#fff!important;color:#0f1419;--xg:#536471;--xb:#eff3f4;--xblue:#1d9bf0;font-family:var(--sys)}
+.xq button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:pointer}
+.xq .grow{flex:1}
+.xq .scroll{background:#fff}
+.xq-view{position:absolute;inset:0 0 calc(54px + var(--hb)) 0;display:flex;flex-direction:column}
+.xq-av{width:var(--s);height:var(--s);border-radius:50%;flex:none;display:grid;place-items:center;overflow:hidden;color:#fff}
+.xq-av i{font-style:normal;font-size:calc(var(--s) * .52);line-height:1}
+.xq-av b{font-size:calc(var(--s) * .42);font-weight:700}
+.xq-ib{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;color:#0f1419;flex:none}
+.xq-ib svg{width:23px;height:23px}
+.xq-edb{color:#b07800}.xq-edb.on{background:#ffe066;color:#5c4400}
+.xq-sub{color:var(--xg);font-size:15px}
+.xq-lk{color:var(--xblue)}
+.xq-vf{display:inline-grid;width:17px;height:17px;margin-left:2px;flex:none;color:var(--xblue)}
+.xq-vf.gold{color:#e2b719}
+.xq-vf svg{width:100%;height:100%}
+.xq-bd{font-style:normal;font-size:14px;margin-left:3px;flex:none}
+.xq-lock{display:inline-grid;width:16px;height:16px;margin-left:2px;flex:none;color:#0f1419}
+.xq-lock svg{width:100%;height:100%}
+.xq-nmw{display:inline-flex;align-items:center;min-width:0;max-width:100%}
+.xq-nmw b{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+
+/* 위 머리 */
+.xq-top{flex:none;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:52px;padding:var(--sb) 14px 0;background:rgba(255,255,255,.96)}
+.xq-top.s{display:flex;gap:10px}
+.xq-me{position:relative;justify-self:start;display:grid}
+.xq-dot{position:absolute;top:-2px;right:-3px;width:11px;height:11px;border-radius:50%;background:var(--xblue);border:2px solid #fff}
+.xq-logo{width:30px;height:30px;color:#0f1419;display:block}
+.xq-logo svg{width:100%;height:100%;display:block}
+.xq-tr{justify-self:end;display:flex;align-items:center;gap:4px}
+.xq-up{display:flex;align-items:center;gap:5px;height:32px;padding:0 13px 0 9px;border-radius:17px;background:#eff3f4;font-size:15px;color:#0f1419}
+.xq-up svg{width:20px;height:20px;color:var(--xblue)}
+.xq-up b{font-weight:600}
+.xq-tt{font-size:19px;font-weight:800}
+.xq-sp{flex:1;min-width:0;height:38px;border-radius:19px!important;background:#eff3f4!important;display:flex;align-items:center;justify-content:center;gap:6px;color:var(--xg)!important;font-size:15px!important}
+.xq-sp svg{width:19px;height:19px}
+
+/* 추천 / 팔로우 중 */
+.xq-htabs{flex:none;position:relative;display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--xb);background:rgba(255,255,255,.96)}
+.xq-htabs button{height:50px;font-size:16px!important;color:var(--xg)!important;font-weight:500;display:flex;align-items:center;justify-content:center;gap:4px}
+.xq-htabs button.on{color:#0f1419!important;font-weight:800}
+.xq-chev{display:none;width:17px;height:17px}
+.xq-chev svg{width:100%;height:100%}
+.xq-htabs button.on .xq-chev{display:inline-grid}
+.xq-hind{position:absolute;left:0;bottom:-1px;width:50%;height:4px;transition:transform .32s cubic-bezier(.2,.85,.25,1)}
+.xq-hind::after{content:"";position:absolute;left:50%;width:108px;margin-left:-54px;height:4px;border-radius:2px;background:#0f1419}
+.xq-pager{flex:1;min-height:0;overflow:hidden;position:relative;touch-action:pan-y}
+.xq-track{display:flex;width:200%;height:100%;transition:transform .32s cubic-bezier(.2,.85,.25,1)}
+.xq-pane{width:50%;height:100%;overflow-y:auto;overscroll-behavior:contain}
+.xq-end{height:120px}
+.xq-newp{position:absolute;top:12px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:6px;height:42px;padding:0 8px 0 14px;border-radius:21px!important;background:var(--xblue)!important;color:#fff!important;box-shadow:0 3px 12px rgba(29,155,240,.4);z-index:3}
+.xq-newp>svg{width:20px;height:20px}
+.xq-npa{display:flex}
+.xq-npa .xq-av{border:2px solid var(--xblue);margin-left:-8px}
+.xq-npa .xq-av:first-child{margin-left:0}
+
+/* 글 */
+.xq-tw{padding:12px 16px 4px;border-bottom:1px solid var(--xb);cursor:pointer}
+.xq-tw.line{border-bottom:0}
+.xq-ctx{display:flex;align-items:center;gap:12px;font-size:13.5px;font-weight:700;color:var(--xg);margin:0 0 4px 22px}
+.xq-ctx svg{width:17px;height:17px}
+.xq-row{display:flex;gap:10px}
+.xq-l{flex:none;display:flex;flex-direction:column;align-items:center}
+.xq-ab{display:block}
+.xq-ln{display:none;flex:1;width:2px;margin-top:4px;margin-bottom:-12px;background:#cfd9de}
+.xq-tw.line .xq-ln{display:block}
+.xq-m{flex:1;min-width:0}
+.xq-h{display:flex;align-items:center;gap:4px;min-width:0;font-size:15px;line-height:20px}
+.xq-hn{display:flex;align-items:center;gap:4px;min-width:0;overflow:hidden;text-align:left}
+.xq-hd{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex-shrink:30}
+.xq-hn .xq-nmw{flex-shrink:1}
+.xq-tm{white-space:nowrap;flex:none}
+.xq-ai,.xq-more{width:20px;height:20px;color:var(--xg);flex:none;display:grid}
+.xq-ai svg,.xq-more svg{width:100%;height:100%}
+.xq-ai{margin-right:8px}
+.xq-fan{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--xg);margin:2px 0 1px}
+.xq-fan svg{width:17px;height:17px}
+.xq-to{font-size:15px;color:var(--xg);margin:1px 0}
+.xq-tx{font-size:15.5px;line-height:1.42;white-space:pre-wrap;word-break:break-word;margin-top:1px;-webkit-user-select:text;user-select:text}
+.xq-md{position:relative;margin-top:10px;border-radius:16px;border:1px solid var(--xb);overflow:hidden;aspect-ratio:16/9;display:grid;place-items:center}
+.xq-md.r-sq{aspect-ratio:1}.xq-md.r-tall{aspect-ratio:4/5}
+.xq-md.sm{margin-top:8px;border-radius:0;border:0;border-top:1px solid var(--xb)}
+.xq-mem{font-size:54px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.25))}
+.xq-mt{position:absolute;left:10px;bottom:10px;max-width:70%;padding:4px 9px;border-radius:7px;background:rgba(0,0,0,.62);color:#fff;font-size:13.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.xq-mute{position:absolute;right:10px;bottom:10px;width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,.62);color:#fff;display:grid;place-items:center}
+.xq-mute svg{width:17px;height:17px}
+.xq-src{font-size:13.5px;color:var(--xg);margin-top:4px}
+.xq-qt{margin-top:10px;border:1px solid #cfd9de;border-radius:16px;overflow:hidden}
+.xq-qt.plain{padding:12px 14px;font-size:15.5px}
+.xq-qh{display:flex;align-items:center;gap:5px;padding:11px 12px 2px;font-size:15px;min-width:0;white-space:nowrap;overflow:hidden}
+.xq-qh .xq-sub{overflow:hidden;text-overflow:ellipsis}
+.xq-qx{padding:4px 12px 11px;font-size:15px;line-height:1.42;white-space:pre-wrap;word-break:break-word}
+.xq-qt.plain .xq-qx{padding:0}
+.xq-acts{display:flex;align-items:center;margin:9px 0 6px;color:var(--xg)}
+.xq-acts>button,.xq-acts>span{display:flex;align-items:center;gap:4px;font-size:13.5px;color:var(--xg)!important;min-width:0}
+.xq-acts>*:nth-child(-n+4){flex:1}
+.xq-acts svg{width:19px;height:19px;flex:none}
+.xq-acts .on-lk{color:#f91880!important}.xq-acts .on-rt{color:#00ba7c!important}
+.xq-ae{flex:none!important;gap:16px!important}
+.xq-ae .on-bm{color:var(--xblue)!important}
+.xq-empty{padding:46px 28px;display:flex;flex-direction:column;gap:8px}
+.xq-empty b{font-size:22px;font-weight:800;line-height:1.25}
+.xq-empty span{font-size:15px;color:var(--xg);line-height:1.45}
+
+/* 아래 탭 · 쓰기 버튼 */
+.xq-nav{position:absolute;left:0;right:0;bottom:0;height:54px;padding-bottom:var(--hb);display:grid;grid-template-columns:repeat(5,1fr);align-items:center;background:rgba(255,255,255,.97);border-top:1px solid var(--xb);z-index:4}
+.xq-nav>*{position:relative;height:54px;display:grid;place-items:center;color:#0f1419}
+.xq-nav svg{width:27px;height:27px}
+.xq-nav .xq-off{cursor:default}
+.xq-nd{position:absolute;top:10px;left:calc(50% + 7px);width:9px;height:9px;border-radius:50%;background:var(--xblue);border:1.5px solid #fff}
+.xq-nb{position:absolute;top:4px;left:calc(50% + 4px);min-width:19px;height:19px;padding:0 5px;box-sizing:border-box;border-radius:10px;background:var(--xblue);color:#fff;font-style:normal;font-size:11.5px;font-weight:700;display:grid;place-items:center;border:1.5px solid #fff}
+.xq-fab{position:absolute;right:16px;bottom:calc(54px + var(--hb) + 16px);width:58px;height:58px;border-radius:50%!important;background:var(--xblue)!important;color:#fff!important;display:grid!important;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.22);z-index:5}
+.xq-fab svg{width:27px;height:27px}
+.xq-prof .xq-fab{bottom:calc(var(--hb) + 22px)}
+
+/* 탐색 */
+.xq-ttabs,.xq-ftabs{flex:none;display:flex;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--xb)}
+.xq-ttabs::-webkit-scrollbar,.xq-ftabs::-webkit-scrollbar{display:none}
+.xq-ttabs button,.xq-ftabs span{flex:none;position:relative;height:50px;padding:0 22px;font-size:15.5px!important;color:var(--xg)!important;font-weight:500;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.xq-ttabs button.on,.xq-ftabs span.on{color:#0f1419!important;font-weight:800}
+.xq-ttabs button.on::after,.xq-ftabs span.on::after{content:"";position:absolute;left:12px;right:12px;bottom:0;height:4px;border-radius:2px;background:#0f1419}
+.xq-ftabs svg{width:20px;height:20px}
+.xq-hero{position:relative;height:222px;display:flex;align-items:flex-end;overflow:hidden;color:#fff}
+.xq-hem{position:absolute;right:34px;top:40px;font-size:110px;filter:drop-shadow(0 8px 20px rgba(0,0,0,.35))}
+.xq-hbs{position:absolute;top:10px;right:10px;display:flex;gap:6px}
+.xq-hbs i{width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.45);display:grid;place-items:center}
+.xq-hbs svg{width:19px;height:19px}
+.xq-hc{position:relative;padding:14px 16px;display:flex;flex-direction:column;gap:5px;width:100%;background:linear-gradient(transparent,rgba(0,0,0,.55))}
+.xq-hc b{font-size:23px;font-weight:800;line-height:1.2;text-shadow:0 1px 6px rgba(0,0,0,.3)}
+.xq-hc span{font-size:14.5px}
+.xq-hc small{font-size:13.5px;display:flex;align-items:center;gap:6px;opacity:.95}
+.xq-hc small i{font-style:normal;display:inline-grid;place-items:center;width:17px;height:17px;border-radius:3px;background:rgba(255,255,255,.85);color:#222;font-size:11px;font-weight:800}
+.xq-trd{position:relative;display:flex!important;flex-direction:column;gap:3px;width:100%;padding:13px 50px 13px 16px!important;text-align:left}
+.xq-trd small{font-size:13.5px;color:var(--xg)}
+.xq-trd b{font-size:16px;font-weight:700}
+.xq-trd .xq-more{position:absolute;right:14px;top:14px}
+
+/* 검색 입력 · 결과 */
+.xq-sbar{flex:none;display:flex;align-items:center;gap:8px;padding:var(--sb) 10px 6px 6px;border-bottom:1px solid var(--xb)}
+.xq-sbar input{flex:1;min-width:0;height:40px;border:0;outline:0;background:none;font:inherit;font-size:17px;color:#0f1419;caret-color:var(--xblue)}
+.xq-spill{flex:1;min-width:0;height:38px;border-radius:19px!important;background:#eff3f4!important;text-align:left;padding:0 16px!important;font-size:15.5px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.xq-rh{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 6px}
+.xq-rh b{font-size:21px;font-weight:800}
+.xq-rx{width:30px;height:30px;border-radius:50%!important;background:#0f1419!important;color:#fff!important;display:grid!important;place-items:center}
+.xq-rx svg{width:15px;height:15px}
+.xq-racc{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:8px 6px 6px}
+.xq-racc::-webkit-scrollbar{display:none}
+.xq-racc button{flex:0 0 92px;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0}
+.xq-racc b{display:flex;align-items:center;max-width:90px;font-size:13.5px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:4px}
+.xq-racc small{max-width:90px;font-size:12.5px;color:var(--xg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.xq-rt{display:block;width:100%;text-align:left;padding:13px 16px!important;font-size:16px!important;font-weight:700}
+.xq-rnone{padding:40px 16px;color:var(--xg);font-size:15px}
+.xq-stabs{flex:none;display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--xb)}
+.xq-stabs button{position:relative;height:48px;font-size:15px!important;color:var(--xg)!important;font-weight:500}
+.xq-stabs button.on{color:#0f1419!important;font-weight:800}
+.xq-stabs button.on::after{content:"";position:absolute;left:24%;right:24%;bottom:0;height:4px;border-radius:2px;background:var(--xblue)}
+
+/* 알림 */
+.xq-ntabs{flex:none;display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--xb)}
+.xq-ntabs button{position:relative;height:50px;font-size:16px!important;color:var(--xg)!important;font-weight:500;display:flex;align-items:center;justify-content:center;gap:6px}
+.xq-ntabs button svg{width:23px;height:23px}
+.xq-ntabs button.on{color:#0f1419!important;font-weight:800}
+.xq-ntabs button.on::after{content:"";position:absolute;left:8%;right:8%;bottom:0;height:4px;border-radius:2px;background:#0f1419}
+.xq-ntr .xq-tw{cursor:pointer}
+.xq-nt{display:flex;gap:12px;padding:12px 16px;border-bottom:1px solid var(--xb);cursor:pointer}
+.xq-nic{flex:none;width:40px;display:flex;justify-content:flex-end;padding-top:2px}
+.xq-nic svg{width:30px;height:30px}
+.xq-nic.like{color:#f91880}.xq-nic.fol{color:var(--xblue)}
+.xq-nm{flex:1;min-width:0}
+.xq-navs{display:flex;flex-wrap:wrap;gap:2px;margin-bottom:8px}
+.xq-navs .xq-av{--s:29px!important}
+.xq-ntx{font-size:15px;line-height:1.4}
+.xq-ntx b{font-weight:700}
+.xq-npv{font-size:15px;color:var(--xg);line-height:1.4;margin-top:6px;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.xq-nth{flex:none;align-self:center;position:relative;width:66px;height:66px;border-radius:12px;display:grid;place-items:center;overflow:hidden}
+.xq-nth i{font-style:normal;font-size:28px}
+.xq-nth b{position:absolute;left:0;right:0;bottom:4px;text-align:center;font-size:9px;font-weight:800;color:#16244a}
+
+/* 글 보기 */
+.xq-bar{flex:none;display:flex;align-items:center;gap:14px;height:52px;padding:var(--sb) 10px 0 6px;border-bottom:1px solid var(--xb)}
+.xq-bar>b{font-size:19px;font-weight:800}
+.xq-bt1{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.xq-big{padding:12px 16px 2px;border-bottom:1px solid var(--xb)}
+.xq-bh{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.xq-bn{display:flex;flex-direction:column;align-items:flex-start;min-width:0;font-size:15px}
+.xq-big .xq-tx{font-size:17.5px;line-height:1.45}
+.xq-when{font-size:15px;color:var(--xg);padding:14px 0 12px;border-bottom:1px solid var(--xb)}
+.xq-when b{color:#0f1419}
+.xq-big .xq-acts{margin:4px 0;height:46px}
+.xq-tw.rp{cursor:default}
+.xq-rbox{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:10px;padding:8px 12px calc(var(--hb) - 4px);background:#fff;border-top:1px solid var(--xb);margin:0}
+.xq-rbox input{flex:1;min-width:0;height:38px;border:0;outline:0;background:none;font:inherit;font-size:16px;color:#0f1419}
+.xq-rbox button{height:34px;padding:0 16px!important;border-radius:17px!important;background:var(--xblue)!important;color:#fff!important;font-weight:700;font-size:14.5px!important}
+
+/* 글쓰기 */
+.xq-comp{display:flex;flex-direction:column}
+.xq-cbar{flex:none;display:flex;align-items:center;gap:14px;padding:calc(var(--sb) + 4px) 14px 6px 6px}
+.xq-draft{color:var(--xblue);font-weight:700;font-size:15.5px}
+.xq-post{height:38px;padding:0 18px!important;border-radius:19px!important;background:var(--xblue)!important;color:#fff!important;font-weight:700;font-size:15.5px!important}
+.xq-post:disabled{opacity:.5}
+.xq-cmain{flex:1;min-height:0;display:flex;gap:10px;padding:8px 14px}
+.xq-cmain textarea{flex:1;min-width:0;border:0;outline:0;resize:none;font:inherit;font-size:19px;line-height:1.4;padding-top:6px;color:#0f1419;caret-color:var(--xblue);background:none}
+.xq-cmain textarea::placeholder{color:#828f99}
+.xq-cfoot{flex:none;padding-bottom:var(--hb)}
+.xq-aud{display:flex;align-items:center;gap:10px;padding:12px 18px;border-top:1px solid var(--xb);border-bottom:1px solid var(--xb);color:var(--xblue);font-size:14.5px;font-weight:600}
+.xq-aud svg{width:21px;height:21px}
+.xq-tools{display:flex;align-items:center;gap:20px;padding:12px 16px;color:var(--xblue)}
+.xq-tools>span{display:grid}
+.xq-tools svg{width:23px;height:23px}
+.xq-sep{width:1px;height:28px;background:#cfd9de;margin-left:auto}
+.xq-ring{color:#cfd9de}
+.xq-addc{opacity:.5}
+
+/* 프로필 */
+.xq-prof .scroll{position:absolute;inset:0}
+.xq-ban{height:150px;position:relative;overflow:hidden;color:#fff}
+.xq-bt{position:absolute;right:20px;bottom:14px;text-align:right;max-width:58%;white-space:pre-wrap;font-size:17px;font-weight:700;line-height:1.35;opacity:.9;text-shadow:0 2px 10px rgba(0,0,0,.35)}
+.xq-bem{position:absolute;left:50%;bottom:6px;font-size:58px;opacity:.85}
+.xq-pbar{position:absolute;left:0;right:0;top:0;display:flex;align-items:center;gap:10px;padding:calc(var(--sb) - 6px) 12px 0;pointer-events:none}
+.xq-pbar>*{pointer-events:auto}
+.xq-cb{width:40px;height:40px;border-radius:50%!important;background:rgba(15,20,25,.6)!important;color:#fff!important;display:grid!important;place-items:center}
+.xq-cb svg{width:21px;height:21px}
+.xq-cb.xq-edb.on{background:#ffe066!important;color:#5c4400!important}
+.xq-pi{position:relative;padding:0 16px 12px}
+.xq-pav{margin-top:-46px;width:max-content;border:4px solid #fff;border-radius:50%;background:#fff}
+.xq-cir{position:absolute;right:16px;top:12px;width:40px;height:40px;border-radius:50%;border:1px solid #cfd9de;display:grid;place-items:center}
+.xq-cir svg{width:20px;height:20px}
+.xq-pn{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-top:10px}
+.xq-pn>b{font-size:22px;font-weight:800}
+.xq-pn .xq-lock{width:20px;height:20px}
+.xq-pn .xq-vf{width:21px;height:21px}
+.xq-getv{display:inline-flex;align-items:center;gap:5px;margin-left:8px;height:30px;padding:0 13px 0 9px;border:1px solid #cfd9de;border-radius:16px;font-size:14.5px;font-weight:700}
+.xq-getv svg{width:19px;height:19px;color:var(--xblue)}
+.xq-ph{display:flex;align-items:center;gap:8px;font-size:15.5px;color:var(--xg);margin-top:2px}
+.xq-fm{font-style:normal;font-size:12px;padding:3px 7px;border-radius:5px;background:#eff3f4;color:var(--xg)}
+.xq-bio{font-size:15.5px;line-height:1.42;margin-top:12px;white-space:pre-wrap}
+.xq-meta{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:12px;font-size:15px;color:var(--xg)}
+.xq-meta span{display:flex;align-items:center;gap:4px}
+.xq-meta svg{width:18px;height:18px}
+.xq-meta em{font-style:normal;margin-left:2px}
+.xq-ff{display:flex;gap:18px;margin-top:12px;font-size:15px;color:var(--xg)}
+.xq-ff b{color:#0f1419;font-weight:700}
+.xq-ff button{color:var(--xg)!important}
+.xq-fb{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:14px;color:var(--xg)}
+.xq-pact{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.xq-pact button{height:40px;border:1px solid #cfd9de!important;border-radius:20px!important;font-weight:700;font-size:15.5px!important}
+.xq-pact button.pri{background:#0f1419!important;color:#fff!important;border-color:#0f1419!important}
+.xq-ptabs{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;border-bottom:1px solid var(--xb);position:sticky;top:0;background:#fff;z-index:2}
+.xq-ptabs button{position:relative;height:50px;display:flex;align-items:center;justify-content:center;gap:6px;color:var(--xg)!important;font-size:15.5px!important;font-weight:600}
+.xq-ptabs button svg{width:22px;height:22px}
+.xq-ptabs button.on{color:#0f1419!important;font-weight:800}
+.xq-ptabs button.on::after{content:"";position:absolute;left:12%;right:12%;bottom:0;height:4px;border-radius:2px;background:#0f1419}
+.xq-ptabs button:first-child svg+span+svg{width:17px;height:17px}
+
+/* 팔로잉 목록 */
+.xq-fr{padding:10px 16px 12px;border-bottom:1px solid var(--xb);cursor:pointer}
+.xq-fms{display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:700;color:var(--xg);margin:0 0 6px 18px}
+.xq-fms svg{width:18px;height:18px}
+.xq-frr{display:flex;gap:12px;align-items:flex-start}
+.xq-frm{flex:1;min-width:0;font-size:15.5px}
+.xq-frm small{display:block;font-size:15px;color:var(--xg)}
+.xq-frm p{margin:6px 0 0;font-size:15px;line-height:1.4;white-space:pre-wrap}
+.xq-fbtn{flex:none;height:36px;padding:0 18px!important;border:1px solid #cfd9de!important;border-radius:18px!important;font-weight:700;font-size:15px!important;margin-top:4px}
+.xq-fbtn.pri{background:#0f1419!important;color:#fff!important}
+
+/* 서랍 */
+.xq-dw{position:absolute;inset:0;z-index:20;background:rgba(91,112,131,0);transition:background .26s}
+.xq-dw.on{background:rgba(91,112,131,.4)}
+.xq-dp{position:absolute;left:0;top:0;bottom:0;width:86%;background:#fff;border-radius:0 18px 18px 0;transform:translateX(-102%);transition:transform .26s cubic-bezier(.2,.85,.25,1);box-shadow:4px 0 24px rgba(0,0,0,.12)}
+.xq-dw.on .xq-dp{transform:none}
+.xq-dp .scroll{position:absolute;inset:0;padding:calc(var(--sb) + 12px) 22px 0;box-sizing:border-box}
+.xq-dtop{display:flex;align-items:center;gap:14px}
+.xq-dacc{position:relative;display:grid}
+.xq-dn{position:absolute;top:-6px;right:-6px;min-width:19px;height:19px;padding:0 4px;box-sizing:border-box;border-radius:10px;background:var(--xblue);color:#fff;font-style:normal;font-size:11.5px;font-weight:700;display:grid;place-items:center;border:1.5px solid #fff}
+.xq-dmore{position:relative;width:34px;height:34px;border:2px solid #0f1419;border-radius:50%;display:grid;place-items:center;box-sizing:border-box}
+.xq-dmore svg{width:20px;height:20px}
+.xq-dmore i{position:absolute;top:-3px;right:-3px;width:9px;height:9px;border-radius:50%;background:var(--xblue);border:1.5px solid #fff}
+.xq-dname{display:flex;align-items:center;gap:4px;margin-top:14px;font-size:22px;font-weight:800;text-align:left}
+.xq-dname .xq-lock{width:21px;height:21px}
+.xq-dh{font-size:15.5px;color:var(--xg);margin-top:2px}
+.xq-dff{display:block;margin-top:12px;font-size:15px;color:var(--xg)!important}
+.xq-dff b{color:#0f1419;font-weight:700}
+.xq-dff b+b{margin-left:10px}
+.xq-dhr{height:1px;background:var(--xb);margin:16px 0}
+.xq-di{display:flex!important;align-items:center;gap:20px;width:100%;height:56px;text-align:left}
+.xq-di svg{width:26px;height:26px}
+.xq-di b{font-size:20px;font-weight:800}
+.xq-ds{display:flex!important;align-items:center;gap:14px;width:100%;height:48px;font-size:16px!important;text-align:left}
+.xq-ds svg{width:22px;height:22px}
+.xq-ds.dim{opacity:.3;padding-left:36px!important}
+.xq-dsun{position:absolute;left:22px;bottom:calc(var(--hb) + 6px);width:26px;height:26px;color:#0f1419}
+.xq-dsun svg{width:100%;height:100%}
+
+/* 편집 (주인만) */
+.xq-ebar{flex:none;display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:8px 12px;background:#fff4c2;border-bottom:1px solid #f0d77a;font-size:12.5px;color:#6b5200}
+.xq-ebar span{flex:1 0 100%}
+.xq-ebar button{height:28px;padding:0 10px!important;border-radius:14px!important;background:#fff!important;border:1px solid #e6c65a!important;color:#5c4400!important;font-size:12.5px!important;font-weight:700}
+.xq-prof .xq-ebar{margin-top:4px}
+.xq-ep{display:block;padding:0;background:none}
+.xq-ep .xq-md{margin:0}
+.xq-urow{display:flex!important;align-items:center;gap:12px;width:100%;padding:10px 4px!important;border-bottom:1px solid #eee!important;text-align:left;background:none!important}
+.xq-urow>span{flex:1;min-width:0;display:flex;flex-direction:column;font-size:15px}
+.xq-urow small{color:#536471;font-size:13px}
+.xq-urow>i{font-style:normal;color:#aaa;font-size:20px}
+.xq-uadd{width:100%;margin:6px 0 10px}
+
+.app :is(.xq-ttabs,.xq-ftabs,.xq-racc),.app :is(.xq-ttabs,.xq-ftabs,.xq-racc) *{touch-action:pan-y!important}
+/* X:CSS:END */
 .tcompose{background:#fff!important}
 .tc-bar{flex:none;display:flex;justify-content:space-between;align-items:center;padding:calc(var(--sb) + 4px) 14px 8px}
 .tc-bar .back{color:#0f1419}
@@ -3628,16 +3901,101 @@ const STORY = {
 
   /* ---------- 타래 (짧은 글 SNS) ----------
      rules: 내가 올린 글·답글에 키워드가 있으면 replies(답글)와 likes(마음에 들어요 수)가 와요 */
+/* X:DATA:BEGIN */
+  /* ---------- 타래 (짧은 글 SNS · X 스타일) ----------
+     영현이 몰래 쓰는 비공개 계정. 화면에 보이는 숫자는 글자 그대로 나와요 ('1.4천' 처럼).
+     계정: av = 프로필 사진 {em 이모지, colors 배경색, src 사진}, verified 'blue'·'gold', lock 자물쇠, fan 팬 계정 표시,
+           followsMe 나를 팔로우함, followedBy '○○ 님이 팔로우함', pinned 메인에 올린 글 id
+     글: by 글쓴이, time 시간, text 내용, rt 재게시한 사람, to 답글 대상 아이디들, cont 바로 위 글과 줄로 이어짐, ai AI 아이콘,
+         media 사진·영상 {type 'img'|'video', em, colors, t 사진 위 글씨, src, ratio 'wide'|'sq'|'tall'}, link 출처 줄,
+         quote 인용 {by, time, text, media}, n 숫자 {rp 답글, rt 재게시, lk 좋아요, vw 조회수}, cms 답글들 */
   tw: {
-    me: { name: '강영현', handle: 'yh_kang', bio: '', following: 0, followers: 0 },
-    users: {},
-    trends: [],
-    timeline: [],
-    rules: [],
-    fallbackLikes: 2,
-    search: [],
-    notifications: [],
+    me: { name: '현..(아직안접음)', handle: 'only_1ne', lock: true, bio: '미트만 보고 던지는 중', birth: '20XX XX월 XX일', joined: 'X월 20XX', following: 64, followers: 38,
+      av: { em: '🧤', colors: ['#dfe7f5', '#9fb3d9'] }, banner: { colors: ['#1b2440', '#4a5a8a'], text: '미트만 보고\n던진다.' }, pinned: 't_m1' },
+    users: {
+      x_tg: { name: '태강 울프스', handle: 'TG_WOLFS', verified: 'gold', av: { img: 'tg' }, banner: { colors: ['#16244a', '#c0392b'], text: 'HOWL TOGETHER' }, bio: '태강 울프스 공식 계정입니다 🐺 HOWL TOGETHER', joined: 'X월 20XX', following: 41, followers: '38.2만', iFollow: true },
+      x_clip: { name: '야구짤저장소', handle: 'baseball_clipzip', av: { em: '🎞️', colors: ['#e76f51', '#9b3b22'] }, banner: { colors: ['#2b2d42', '#e76f51'] }, bio: '경기 끝나면 짤 올라옵니다 · 제보 DM', joined: 'X월 20XX', following: 12, followers: '12.4만', iFollow: true },
+      x_jinap: { name: '진압일지', handle: '27_jinap_log', badge: '🧤', fan: true, av: { em: '🧤', colors: ['#1d2b53', '#5a7bd6'] }, banner: { colors: ['#1d2b53', '#5a7bd6'], text: '27' }, bio: '박성진 27 기록용 · 무릎 아끼자', joined: 'X월 20XX', following: 88, followers: '3,104', iFollow: true },
+      x_mitt: { name: '미트 안쪽', handle: 'inside_the_mitt', fan: true, lock: true, av: { em: '⚾', colors: ['#f1e3c8', '#c9a46a'] }, banner: { colors: ['#c9a46a', '#7a5c2e'] }, bio: '포수 덕질 계정 · 직캠 퍼가지 마세요', joined: 'X월 20XX', following: 140, followers: 902, iFollow: true },
+      x_ghost: { name: '3루 지박령', handle: '3rd_base_ghost', av: { em: '👻', colors: ['#d7dbe0', '#8e9aa6'] }, banner: { colors: ['#3a3f47', '#8e9aa6'] }, bio: '울프스 3루 응원석 n년차 · 할 말은 함', joined: 'X월 20XX', following: 311, followers: 1250, iFollow: true },
+      x_sheep: { name: '양털 (네!!!)', handle: 'yangteol_', lock: true, followsMe: true, followedBy: 'x_potato', av: { em: '🐑', colors: ['#f4f1ea', '#cfc6b3'] }, banner: { colors: ['#4f7a3a', '#a7c58a'], em: '🐑' }, bio: '울프스 3루 응원석 단골 · 맛있는 거 먹고 자자', joined: 'X월 20XX', following: 83, followers: 49, pinned: 't_s1', iFollow: true },
+      x_potato: { name: '감자도리 (탱해주세요)', handle: 'potato_dori', lock: true, followsMe: true, badge: '🥔', av: { em: '🥔', colors: ['#f6e7c1', '#d6b86a'] }, banner: { colors: ['#d6b86a', '#8a6a2a'] }, bio: '탱 해주세요 ( ´ ▽ ` )', joined: 'X월 20XX', following: 120, followers: 77, iFollow: true },
+      x_gureum: { name: '구름빵', handle: 'gureum_bbang', lock: true, followsMe: true, av: { em: '☁️', colors: ['#e3f0fb', '#9cc3e6'] }, banner: { colors: ['#9cc3e6', '#5b8fc7'] }, bio: '오늘도 퇴근 실패', joined: 'X월 20XX', following: 66, followers: 58, iFollow: true },
+      x_dotori: { name: '도토리묵', handle: 'dotorimuk_', lock: true, followsMe: true, av: { em: '🌰', colors: ['#efd9c3', '#a5714a'] }, banner: { colors: ['#a5714a', '#5e3b22'] }, bio: '듀오 구함 · 야구는 잘 모름', joined: 'X월 20XX', following: 95, followers: 61, iFollow: true },
+      x_kkami: { name: 'Kkami', handle: 'kkami_fox', followsMe: true, av: { em: '🦊', colors: ['#2b2b2b', '#5a5a5a'] }, banner: { colors: ['#2b2b2b', '#f08a24'] }, bio: '게임이 이렇게 무섭습니다 :) b', joined: 'X월 20XX', following: 210, followers: 340, iFollow: true },
+      x_ofkr: { name: '오버 프론트', handle: 'OverFrontKR', verified: 'blue', badge: '🎮', av: { em: '🛡️', colors: ['#2d3440', '#d9822b'] }, banner: { colors: ['#2d3440', '#d9822b'] }, bio: '전장이 당신을 부른다 · 오버 프론트 한국 공식 계정', joined: 'X월 20XX', following: 18, followers: '41.7만', iFollow: true },
+      x_of: { name: 'Over Front', handle: 'PlayOverFront', verified: 'gold', av: { em: '🛡️', colors: ['#ffffff', '#d9822b'] }, banner: { colors: ['#d9822b', '#2d3440'] }, bio: 'Answer the call.', joined: 'X월 20XX', following: 22, followers: '520만', iFollow: true },
+      x_noeul: { name: '노을밴드', handle: 'noeul_band', verified: 'gold', av: { em: '🌇', colors: ['#f7a072', '#7a3e65'] }, banner: { colors: ['#f7a072', '#7a3e65'] }, bio: '노을밴드 공식 · 「다시, 마운드」 OUT NOW', joined: 'X월 20XX', following: 9, followers: '87.3만', iFollow: true },
+      x_cat: { name: '산책냥(상태: 퇴근각)', handle: 'catwalk_ing', av: { em: '🐈', colors: ['#f3e9dc', '#b08968'] }, banner: { colors: ['#b08968', '#7f5539'] }, bio: '퇴근하고 싶다는 생각만 함', joined: 'X월 20XX', following: 402, followers: '2.1만' },
+      x_mint: { name: '민초단 탈퇴함', handle: 'mintchoco_x', av: { em: '🍫', colors: ['#c8f1e3', '#5bb39a'] }, banner: { colors: ['#5bb39a', '#2f6f5e'] }, bio: '이제 그냥 초코만 먹음', joined: 'X월 20XX', following: 233, followers: 4480 },
+      x_ham: { name: '', handle: 'hamjji_0', badge: '🐹', av: { em: '🐹', colors: ['#fde2c8', '#e7a46b'] }, banner: { colors: ['#e7a46b', '#b5651d'] }, bio: '햄찌는 귀엽다', joined: 'X월 20XX', following: 150, followers: 3020 },
+      x_ticket: { name: '티켓팅요정', handle: 'ticket_fairy', av: { em: '🎫', colors: ['#e7e3ff', '#8b7cf6'] }, banner: { colors: ['#8b7cf6', '#4c3fbf'] }, bio: '피켓팅 n년차 · 성공률 0%', joined: 'X월 20XX', following: 512, followers: 1890 },
+    },
+    /* 글 창고 — 홈 두 칸(following·forYou)과 프로필에서 꺼내 써요 */
+    tweets: [
+      { id: 't_f1', by: 'x_cat', rt: 'x_potato', ai: true, time: '20시간', text: '에스컬레이터에서 다들 한 줄로 서 있는데 굳이 그 옆으로 뛰어 올라가다가 맨 위에서 멈춰 서는 사람\n왜 뛰었는지 아직도 궁금함', n: { rp: '', rt: '1.4천', lk: '3.7천', vw: '115천' } },
+      { id: 't_f2', by: 'x_ghost', time: '1시간', text: '6일천하 끝났다\n물현이 내일 2군 내려가는 거에 내 이번 달 월급 건다', n: { rp: '12', rt: '3', lk: '41', vw: '2,880' },
+        cms: [ { by: 'x_mitt', time: '1시간', text: '포수가 그렇게 다 막아줬는데도 저러면 할 말 없음', lk: '9' }, { h: 'wolfs_jikgwan', time: '58분', text: '2군 ㄹㅇ ㅋㅋㅋ', lk: '2' } ] },
+      { id: 't_f3', by: 'x_jinap', time: '1시간', text: '이거 보고도 투수 탓만 하는 사람들 진짜.. 포수가 몸으로 다 막아주는데', n: { rp: '1', rt: '', lk: '', vw: '19' },
+        quote: { by: 'x_clip', time: '2시간', text: '[2회말] 박성진 원바운드 블로킹 🧤 몸으로 다 막아냄', media: { type: 'video', em: '🧤', colors: ['#0f1a33', '#3d5a99'] } } },
+      { id: 't_f4', by: 'x_jinap', cont: true, time: '1시간', text: '근데 오늘은 마운드 방문 한 번도 안 감 왜지', n: { rp: '', rt: '', lk: '', vw: '8' } },
+      { id: 't_f5', by: 'x_tg', time: '2시간', text: '[경기 결과] XX. XX 백산 원정 3:8 패\n4회 켄드릭 투런, 6회 명재준 적시타로 추격했지만 아쉽게 경기를 내줬습니다.\n내일 다시 하울링 🐺 #태강울프스', media: { type: 'img', em: '🐺', colors: ['#16244a', '#c0392b'], t: '백산 8 : 3 태강' }, n: { rp: '312', rt: '88', lk: '1,024', vw: '9.8만' } },
+      { id: 't_f6', by: 'x_sheep', time: '3시간', text: '퇴근하고 야구 틀었는데 2회에 이미 5:0이었던 건에 대하여', n: { rp: '2', rt: '', lk: '4', vw: '33' } },
+      { id: 't_f7', by: 'x_mitt', time: '4시간', text: '오늘 경기 전에 몸 푸는 거 찍어왔음\n화질 구린 건 내 폰 탓', media: { type: 'img', em: '🧢', colors: ['#2d6a4f', '#95d5b2'], t: '경기 전 캐치볼' }, n: { rp: '3', rt: '15', lk: '87', vw: '1,203' } },
+      { id: 't_f8', by: 'x_ofkr', time: '5시간', text: '새로운 영웅 「하울」이 전장에 합류합니다 🐺\n다음 주 시즌 업데이트에서 만나보세요!', media: { type: 'video', em: '🛡️', colors: ['#2d3440', '#d9822b'], t: 'NEW HERO · 하울' }, n: { rp: '204', rt: '1.1천', lk: '4.3천', vw: '31만' } },
+      { id: 't_f9', by: 'x_gureum', time: '7시간', text: '오늘도 퇴근 실패\n다들 저녁 뭐 먹음?', n: { rp: '4', rt: '', lk: '3', vw: '27' } },
+      /* 추천 */
+      { id: 't_r1', by: 'x_noeul', ai: true, time: '6시간', text: '끝난 줄 알았던 그 공을 다시 쥐는 이야기.\n노을밴드 「다시, 마운드」 뮤직비디오 공개 🌇', media: { type: 'video', em: '🌇', colors: ['#f7a072', '#7a3e65'], t: "노을밴드 '다시, 마운드' MV" }, link: 'tv.nuri.com', n: { rp: '', rt: '22', lk: '34', vw: '485천' } },
+      { id: 't_r2', by: 'x_mint', ai: true, time: '9시간', text: '민초 좋아하는 사람 있어? 있으면 나랑 얘기 좀 해\n나 어제부로 민초단 탈퇴함', n: { rp: '14', rt: '218', lk: '533', vw: '125천' } },
+      { id: 't_r3', by: 'x_ham', ai: true, time: '9시간', text: '오늘 백산전 평점 진짜 낮네 ㅋㅋ 누가 9회까지 본 사람한테 상 줘야 된다고 써놨음', quote: { text: '백산 팬들 오늘 왜 이렇게 신났냐 2회에 응원가 데시벨 미쳤던데 ㅋㅋㅋ 원정석까지 다 들림' }, n: { rp: '2', rt: '553', lk: '937', vw: '96.5천' } },
+      { id: 't_r4', by: 'x_ticket', ai: true, time: '9시간', text: '홈 6연전 티켓팅 대기 번호 4만 번대 뜨는 거 보고 조용히 폰 덮음\n다들 어떻게 성공하는 거예요....', n: { rp: '2', rt: '142', lk: '342', vw: '270천' } },
+      { id: 't_r5', by: 'x_dotori', time: '14시간', text: '트친들 갑자기 다 야구 얘기만 해서 나만 외딴섬 됨\n경기 끝나면 불러줘', n: { rp: '5', rt: '1', lk: '5', vw: '138' } },
+      { id: 't_r6', by: 'x_cat', ai: true, time: '18시간', text: '고양이가 키보드 위에서 자고 있어서 메일 못 보냄\n사유: 고양이', media: { type: 'img', em: '🐈', colors: ['#f3e9dc', '#b08968'] }, n: { rp: '88', rt: '2.3천', lk: '1.5만', vw: '61만' } },
+      /* 내 글 (프로필) */
+      { id: 't_m5', by: 'me', time: '1시간', text: '오늘은 그냥 아무 말도 안 하고 싶다', n: { rp: '1', rt: '', lk: '3', vw: '21' },
+        cms: [ { by: 'x_sheep', time: '1시간', text: 'ㅠㅠ 뭔 일인데 맛있는 거 먹고 푹 자', lk: '1' } ] },
+      { id: 't_m1', by: 'me', time: 'XX월 XX일', text: '이거 보고 또 보는 중\n...아 그냥 그렇다고', n: { rp: '', rt: '', lk: '2', vw: '66' },
+        quote: { by: 'x_clip', time: 'XX월 XX일', text: '[4회말] 마운드 방문 후 한가운데 159 → 6-4-3 병살 🔥', media: { type: 'video', em: '⚾', colors: ['#0f1a33', '#c0392b'], t: '159km/h' } } },
+      { id: 't_m2', by: 'me', to: ['potato_dori'], time: 'XX월 XX일', text: '오늘은 못 들어가요 ㅋㅋ 내일 일찍 나가야 돼서', n: { rp: '2', rt: '', lk: '1', vw: '15' } },
+      { id: 't_m3', by: 'me', time: '4주', text: '택배 왔다\n(이걸로 유니폼 몇 번째인지 세지 말 것)', media: { type: 'img', em: '👕', colors: ['#f5f5f5', '#d9dde5'], t: 'WOLFS 27' }, n: { rp: '3', rt: '', lk: '7', vw: '112' } },
+      { id: 't_m4', by: 'me', time: 'XX월 XX일', text: '2군 버스 에어컨 너무 세다', n: { rp: '', rt: '', lk: '2', vw: '30' } },
+      { id: 't_rt1', by: 'x_jinap', rt: 'me', time: 'XX월 XX일', text: '박성진 블로킹 모음 (계속 추가 예정)', media: { type: 'video', em: '🧤', colors: ['#1d2b53', '#5a7bd6'], t: 'BLOCKING #27' }, n: { rp: '6', rt: '74', lk: '231', vw: '8,410' } },
+      /* 다른 계정 글 */
+      { id: 't_s1', by: 'x_sheep', time: 'XX월 XX일', text: '3루 응원석 오늘도 출석 완료 🐑', media: { type: 'img', em: '🏟️', colors: ['#4f7a3a', '#a7c58a'] }, n: { rp: '1', rt: '', lk: '1', vw: '1.3천' } },
+      { id: 't_s2', by: 'x_sheep', time: '4시간', text: '오늘 치킨 먹으면서 볼 사람', n: { rp: '', rt: '', lk: '2', vw: '19' } },
+      { id: 't_p1', by: 'x_potato', time: 'XX월 XX일', text: '오늘 한판 하실 분~~ 탱 구해요', n: { rp: '3', rt: '', lk: '2', vw: '40' } },
+    ],
+    following: ['t_f1', 't_f2', 't_f3', 't_f4', 't_f5', 't_f6', 't_f7', 't_f8', 't_f9'],
+    forYou: ['t_r1', 't_r2', 't_r3', 't_r4', 't_r5', 't_r6'],
+    newPill: ['x_noeul', 'x_jinap', 'x_cat'],     // 추천 칸 위 '새 게시물' 동그라미
+    /* 내 팔로잉 목록 순서 */
+    followingList: ['x_tg', 'x_sheep', 'x_potato', 'x_ofkr', 'x_of', 'x_kkami', 'x_jinap', 'x_dotori', 'x_mitt', 'x_clip', 'x_gureum', 'x_ghost', 'x_noeul'],
+    /* 탐색 — 위 큰 배너(promo)와 칸별 트렌드 [분류, 제목, 게시물 수] */
+    promo: { title: '노을밴드 「다시, 마운드」', sub: '끝난 줄 알았던 공을 다시 쥐고', by: '노을밴드', em: '🌇', colors: ['#f7a072', '#3b1f4a'] },
+    trends: {
+      explore: [ ['야구 · 실시간 트렌드', '#6일천하', ''], ['대한민국에서 트렌드 중', '박성진 블로킹', '게시물 2,841개'], ['뮤직 · 실시간 트렌드', '#다시마운드', ''], ['대한민국에서 트렌드 중', '백산 가디언스', ''], ['대한민국에서 트렌드 중', '물현', '게시물 1,102개'], ['게임 · 실시간 트렌드', '신규 영웅 하울', ''], ['대한민국에서 트렌드 중', '퇴근길', ''] ],
+      live: [ ['대한민국에서 트렌드 중', '물현', '게시물 1,102개'], ['야구 · 실시간 트렌드', '#6일천하', ''], ['대한민국에서 트렌드 중', '민초단', ''], ['대한민국에서 트렌드 중', '티켓팅', ''] ],
+      news: [ ['뉴스 · 실시간 트렌드', '태강 백산전 패배', ''], ['뉴스 · 실시간 트렌드', '김두영 복귀 시점', ''] ],
+      sports: [ ['야구 · 실시간 트렌드', '박성진 블로킹', ''], ['야구 · 실시간 트렌드', '켄드릭 투런', ''], ['야구 · 실시간 트렌드', '백산 가디언스', ''] ],
+      ent: [ ['뮤직 · 실시간 트렌드', '#다시마운드', ''], ['뮤직 · 실시간 트렌드', '노을밴드', ''] ],
+    },
+    /* 검색창 '최근' — accounts 동그라미, terms 글자 */
+    recent: { accounts: ['x_tg', 'x_jinap', 'x_clip', 'x_ofkr'], terms: ['박성진', '미트만 보라고', '물현', '박성진 블로킹', '제구 잡는 법'] },
+    /* 알림 — kind: reply(답글) · like(마음에 들어요) · follow(팔로우) */
+    notifs: [
+      { id: 'n1', kind: 'reply', by: 'x_sheep', time: '1시간', to: ['only_1ne'], text: 'ㅠㅠ 뭔 일인데 맛있는 거 먹고 푹 자', post: 't_m5', n: { rp: '', lk: '', vw: '28' } },
+      { id: 'n2', kind: 'like', likers: ['x_dotori', 'x_sheep', 'x_potato', 'x_gureum', 'x_kkami', 'x_mitt', 'x_jinap'], others: 6, time: '4주', post: 't_m3' },
+      { id: 'n3', kind: 'reply', by: 'x_potato', time: 'XX월 XX일', to: ['only_1ne'], text: '아쉬워요ㅠㅠ 내일 꼭이요!!', post: 't_m2', n: { rp: '', lk: '', vw: '15' } },
+      { id: 'n4', kind: 'reply', by: 'x_gureum', time: 'XX월 XX일', to: ['only_1ne', 'potato_dori'], text: '^__^ 저도 끼워주세요...', post: 't_m2', n: { rp: '1', lk: '', vw: '11' } },
+      { id: 'n5', kind: 'reply', by: 'x_kkami', time: 'XX월 XX일', to: ['only_1ne'], text: '27번이면.. 혹시 그 포수..? ㅋㅋ', post: 't_m3', n: { rp: '1', lk: '', vw: '21' } },
+      { id: 'n6', kind: 'follow', by: 'x_mitt', time: 'XX월 XX일' },
+    ],
+    /* 왼쪽 서랍 위 다른 계정 동그라미 [이모지, 색, 숫자] */
+    drawer: [ ['🐺', '#16244a', 8], ['⚾', '#c0392b', 1] ],
+    dmBadge: 14,      // 아래 쪽지 아이콘 숫자
+    homeDot: true,    // 왼쪽 위 내 사진 파란 점
   },
+/* X:DATA:END */
 
   /* ---------- 피드 (사진 SNS) ----------
      rules: 내 게시물 글이나 내가 단 댓글에 키워드가 있으면 comments 가 달려요
@@ -4369,7 +4727,7 @@ function appIcon(id, mini) {
 
 /* ---------- 꾸미기 데이터 (아이콘 사진, 앱 이름, 배경화면) — 페이지 안에 저장돼요 ---------- */
 let CUSTOM = { icons: {}, names: {}, wall: {} };
-try { const j = JSON.parse(document.getElementById('custom').textContent || '{}'); CUSTOM = { icons: j.icons || {}, names: j.names || {}, wall: j.wall || {}, layout: j.layout || null, cal: j.cal || null, gall: j.gall || null, bn: j.bn || null, ai: j.ai || null, yt: j.yt || null, ig: j.ig || null, cafe: j.cafe || null }; } catch (e) { }
+try { const j = JSON.parse(document.getElementById('custom').textContent || '{}'); CUSTOM = { icons: j.icons || {}, names: j.names || {}, wall: j.wall || {}, layout: j.layout || null, cal: j.cal || null, gall: j.gall || null, bn: j.bn || null, ai: j.ai || null, yt: j.yt || null, ig: j.ig || null, cafe: j.cafe || null, tw: j.tw || null }; } catch (e) { }
 let EDITOR = false, ART = null, EDITING = false, DIRTY = false, ignoreClickUntil = 0;
 const appName = id => CUSTOM.names[id] || APPDEF[id].name;
 function wallHTML(which) {
@@ -7488,95 +7846,642 @@ function kfEditClick(e, where) {
 }
 kfApply();
 
-/* ----- 타래 (짧은 글 SNS) ----- */
-const TWX = {};
-function twS() { return XS('tw', () => ({ mine: [], liked: {}, rted: {}, rep: {}, notif: [], bump: {} })); }
-const twUser = id => id === 'me' ? { name: STORY.tw.me.name, handle: STORY.tw.me.handle } : (STORY.tw.users[id] || { name: id, handle: id });
-const twAll = () => [...twS().mine, ...STORY.tw.timeline];
-const twLikes = x => (x.likes || 0) + (twS().bump[x.id] || 0) + (twS().liked[x.id] ? 1 : 0);
-const twRts = x => (x.rts || 0) + (twS().rted[x.id] ? 1 : 0);
-const twReplies = x => [...(x.thread || []), ...(twS().rep[x.id] || [])];
-function twFind(id) {
-  if (TWX[id]) return TWX[id];
-  for (const x of twAll()) { if (x.id === id) return x; for (const r of twReplies(x)) if (r.id === id) return r; }
-  return null;
+/* X:JS:BEGIN */
+/* ----- 타래 (짧은 글 SNS · X 스타일) — 홈(추천·팔로우 중) · 탐색 · 검색 · 알림 · 서랍 · 프로필 · 팔로잉 · 글쓰기 · 글 보기 ----- */
+function xS() { const s = XS('tx', () => ({})); ['liked', 'rted', 'marked', 'reps', 'unf'].forEach(k => { s[k] = s[k] || {}; }); s.mine = s.mine || []; s.rq = s.rq || []; return s; }
+const xU = id => id === 'me' ? { ...STORY.tw.me, id: 'me' } : STORY.tw.users[id] ? { ...STORY.tw.users[id], id } : null;
+const xByHandle = h => { h = String(h || '').replace(/^@/, '').trim(); if (!h) return null; if (h === STORY.tw.me.handle) return 'me'; const e = Object.entries(STORY.tw.users).find(([, u]) => u.handle === h); return e ? e[0] : null; };
+const xAll = () => [...xS().mine, ...(STORY.tw.tweets || [])];
+const xT = id => xAll().find(t => t.id === id);
+let xEditOn = false, xIgnore = 0;
+const XS_ = (d, w = 1.8) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const XI = {
+  logo: `<svg viewBox="0 0 32 32"><circle cx="14" cy="14" r="9.5" fill="none" stroke="currentColor" stroke-width="3.2"/><path d="M8.5 9.5 19 20M7 15l6.5 6.5M12.5 7.5l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21 21c3.6 2.2 4.4 5.6 1.4 7.4-2.2 1.3-4.6.2-6.4 1.6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>`,
+  reply: XS_('<path d="M4.6 11.3c0-4 3.3-6.8 7.5-6.8h.6c4.2 0 7.4 3 7.4 6.9 0 4-3.3 7.1-7.7 7.1h-.3l-4.9 2.9v-3.6c-1.6-1.3-2.6-3.6-2.6-6.5z"/>'),
+  rt: XS_('<path d="m4.5 8.5 3-3 3 3M7.5 6v9.5a2 2 0 0 0 2 2H14M19.5 15.5l-3 3-3-3M16.5 18V8.5a2 2 0 0 0-2-2H10"/>'),
+  heart: XS_('<path d="M12 19.6 4.9 12.8a4.4 4.4 0 0 1 6.3-6.3l.8.8.8-.8a4.4 4.4 0 0 1 6.3 6.3z"/>'),
+  heartF: `<svg viewBox="0 0 24 24"><path d="M12 19.6 4.9 12.8a4.4 4.4 0 0 1 6.3-6.3l.8.8.8-.8a4.4 4.4 0 0 1 6.3 6.3z" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>`,
+  views: XS_('<path d="M5.5 19.5v-7M10 19.5V5.5M14.5 19.5v-9M19 19.5v-5"/>', 2),
+  bm: XS_('<path d="M6.5 4h11v16l-5.5-4-5.5 4z"/>'),
+  bmF: `<svg viewBox="0 0 24 24"><path d="M6.5 4h11v16l-5.5-4-5.5 4z" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>`,
+  share: XS_('<circle cx="17.5" cy="5.8" r="2.4"/><circle cx="6.5" cy="12" r="2.4"/><circle cx="17.5" cy="18.2" r="2.4"/><path d="m8.6 10.8 6.8-3.8M8.6 13.2l6.8 3.8"/>'),
+  more: `<svg viewBox="0 0 24 24"><circle cx="12" cy="5.5" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="18.5" r="1.7" fill="currentColor"/></svg>`,
+  dots: `<svg viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="1.8" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><circle cx="18.5" cy="12" r="1.8" fill="currentColor"/></svg>`,
+  lock: `<svg viewBox="0 0 24 24"><path d="M7.2 10.2V8.3a4.8 4.8 0 0 1 9.6 0v1.9h.6c1 0 1.8.8 1.8 1.8v7.2c0 1-.8 1.8-1.8 1.8H6.6c-1 0-1.8-.8-1.8-1.8V12c0-1 .8-1.8 1.8-1.8zm2.6 0h4.4V8.3a2.2 2.2 0 0 0-4.4 0z" fill="currentColor"/></svg>`,
+  vf: `<svg viewBox="0 0 24 24"><path d="m12 1.8 2.3 1.7 2.9-.1.9 2.7 2.4 1.6-.8 2.8.8 2.8-2.4 1.6-.9 2.7-2.9-.1L12 22.2l-2.3-1.7-2.9.1-.9-2.7-2.4-1.6.8-2.8-.8-2.8 2.4-1.6.9-2.7 2.9.1z" fill="currentColor"/><path d="m8.2 12.2 2.6 2.5 5-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  mask: `<svg viewBox="0 0 24 24"><path d="M3.8 5.2c2.8 1.1 5.5 1.6 8.2 1.6s5.4-.5 8.2-1.6v6.3c0 4.7-3.6 8.3-8.2 8.3s-8.2-3.6-8.2-8.3z" fill="currentColor"/><path d="M7.3 10.4c.8-.8 2.2-.8 3 0M13.7 10.4c.8-.8 2.2-.8 3 0M9 14.6c1.9 1.3 4.1 1.3 6 0" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg>`,
+  ai: XS_('<path d="M10.5 4c.6 3.9 2.4 5.7 6.3 6.3-3.9.6-5.7 2.4-6.3 6.3-.6-3.9-2.4-5.7-6.3-6.3 3.9-.6 5.7-2.4 6.3-6.3z"/><path d="M18 14.5c.3 1.9 1.2 2.8 3 3-1.8.3-2.7 1.2-3 3-.3-1.8-1.2-2.7-3-3 1.8-.2 2.7-1.1 3-3z"/>'),
+  pin: `<svg viewBox="0 0 24 24"><path d="M8.5 3.5h7l-1 6 3.5 3.5v1.5h-5V21l-1 1-1-1v-6.5H6v-1.5l3.5-3.5z" fill="currentColor"/></svg>`,
+  mute: XS_('<path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="m15.5 9.5 5 5m0-5-5 5"/>', 2),
+  home: XS_('<path d="M3.8 10.4 12 3.6l8.2 6.8V20a1 1 0 0 1-1 1h-4.6v-6.3H9.4V21H4.8a1 1 0 0 1-1-1z"/>', 2),
+  homeF: `<svg viewBox="0 0 24 24"><path d="M3.8 10.4 12 3.6l8.2 6.8V20a1 1 0 0 1-1 1h-4.6v-6.3H9.4V21H4.8a1 1 0 0 1-1-1z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>`,
+  search: XS_('<circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.6 4.6"/>', 2.1),
+  searchB: XS_('<circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.6 4.6"/>', 3),
+  bell: XS_('<path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.6 1.8H4.4zM9.8 20.5a2.4 2.4 0 0 0 4.4 0"/>', 2),
+  bellF: `<svg viewBox="0 0 24 24"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.6 1.8H4.4z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9.8 20.5a2.4 2.4 0 0 0 4.4 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
+  mail: XS_('<path d="M4.4 18.2C3.5 17 3 15.5 3 13.8 3 9 7 5.2 12 5.2s9 3.8 9 8.6-4 8.6-9 8.6c-1.4 0-2.7-.3-3.9-.8L3.7 22z"/>', 2),
+  plus: XS_('<path d="M12 4.5v15M4.5 12h15"/>', 2.4),
+  back: XS_('<path d="M20 12H4.5M10.5 5.5 4 12l6.5 6.5"/>', 2.2),
+  close: XS_('<path d="m5.5 5.5 13 13m0-13-13 13"/>', 2.2),
+  gear: XS_('<circle cx="12" cy="12" r="3.2"/><path d="M12 2.8l1.6 2.3 2.8-.4.8 2.7 2.6 1.1-.8 2.7 1.6 2.3-2.2 1.7.1 2.8-2.8.5-1.3 2.5-2.6-1.1-2.6 1.1-1.3-2.5-2.8-.5.1-2.8-2.2-1.7 1.6-2.3-.8-2.7 2.6-1.1.8-2.7 2.8.4z"/>', 1.9),
+  down: XS_('<path d="m6.5 9.5 5.5 5.5 5.5-5.5"/>', 2),
+  up: XS_('<path d="M12 19V5.5M6 11l6-6 6 6"/>', 2.4),
+  person: XS_('<circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c.7-4 3.7-6.2 7.5-6.2s6.8 2.2 7.5 6.2"/>'),
+  personF: `<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4.2" fill="currentColor"/><path d="M4 21c.6-4.3 3.8-6.8 8-6.8s7.4 2.5 8 6.8z" fill="currentColor"/></svg>`,
+  addp: XS_('<circle cx="10" cy="8" r="4"/><path d="M3 20.5c.7-4 3.5-6.2 7-6.2 1.7 0 3.2.5 4.4 1.4M18.5 14v7M15 17.5h7"/>'),
+  fwing: XS_('<circle cx="10" cy="8" r="4"/><path d="M3 20.5c.7-4 3.5-6.2 7-6.2 1.6 0 3 .4 4.2 1.2M15 18l2 2 4-4.5"/>'),
+  cal: XS_('<rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/>'),
+  balloon: XS_('<path d="M12 3.5c3.3 0 5.6 2.6 5.6 5.9 0 3.7-2.8 6.7-5.6 6.7S6.4 13.1 6.4 9.4c0-3.3 2.3-5.9 5.6-5.9z"/><path d="m11 16.1-.8 1.6h3.6l-.8-1.6M12 17.7c0 1.5-1.5 1.8-1.5 3"/>'),
+  doc: XS_('<rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M7.5 9.5h9M7.5 13.5h6"/>', 2),
+  media: XS_('<rect x="4" y="7.5" width="16" height="13" rx="2.5"/><path d="M6.5 4.5h11M10.5 11.2v6l4.8-3z"/>'),
+  image: XS_('<rect x="3.5" y="3.5" width="17" height="17" rx="3"/><circle cx="9" cy="9" r="1.8"/><path d="m4 17.5 5-5 4 4 2.5-2.5 4.5 4.5"/>'),
+  camera: XS_('<path d="M8.5 6 10 4h4l1.5 2H19a1.5 1.5 0 0 1 1.5 1.5V18a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 18V7.5A1.5 1.5 0 0 1 5 6z"/><circle cx="12" cy="12.5" r="3.6"/>'),
+  spaces: XS_('<circle cx="12" cy="13" r="7"/><path d="M9.5 11v4M12 9.5v7M14.5 11v4M17 3.5v4M15 5.5h4"/>'),
+  gif: `<svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><text x="12" y="15.6" text-anchor="middle" font-size="7.6" font-weight="800" fill="currentColor" font-family="Inter,sans-serif">GIF</text></svg>`,
+  poll: XS_('<circle cx="6" cy="7" r="2.2"/><circle cx="6" cy="16.5" r="2.2"/><path d="M11 7h9M11 16.5h9"/>'),
+  loc: XS_('<path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/>'),
+  plusC: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M12 7.5v9M7.5 12h9" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>`,
+  aud: `<svg viewBox="0 0 24 24"><circle cx="10" cy="7.5" r="3.6" fill="currentColor"/><path d="M3.5 19c.6-3.8 3.3-5.7 6.5-5.7 1.4 0 2.6.3 3.7 1" fill="currentColor"/><path d="m14.5 17.5 2.2 2.2 4.3-4.7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  community: XS_('<circle cx="8.5" cy="8" r="3.4"/><circle cx="16.5" cy="8" r="3.4"/><path d="M2.5 19.5c.5-3.6 2.8-5.5 6-5.5 2 0 3.6.8 4.6 2.2M12.4 16.2c.8-1.4 2.3-2.2 4.1-2.2 3.2 0 5.5 1.9 6 5.5"/>'),
+  list: XS_('<rect x="4" y="3.5" width="16" height="17" rx="3"/><path d="M8 9h8M8 13h8"/>', 2),
+  freq: XS_('<circle cx="10" cy="8" r="4"/><path d="M3 20.5c.7-4 3.5-6.2 7-6.2M21 17.5h-6.5M17 15l-2.5 2.5L17 20"/>'),
+  rocket: XS_('<path d="M14 4.5c3-1.5 5.5-1 5.5-1s.5 2.5-1 5.5l-6 6-4.5-4.5zM9.5 9.5l-4 .5-2 2.5 4 1M14.5 14.5l-.5 4-2.5 2-1-4M5.5 15.5c-1.5 1.5-1.5 3.5-1.5 4.5 1 0 3 0 4.5-1.5"/>'),
+  premium: XS_('<path d="m12 2.8 2.2 1.6 2.8-.1.9 2.6 2.3 1.6-.8 2.7.8 2.7-2.3 1.6-.9 2.6-2.8-.1L12 21.2l-2.2-1.6-2.8.1-.9-2.6-2.3-1.6.8-2.7-.8-2.7 2.3-1.6.9-2.6 2.8.1z"/><path d="m8.7 12 2.3 2.3 4.3-4.6"/>'),
+  sun: XS_('<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/>'),
+  pen: XS_('<path d="m15.5 4.5 4 4L9 19H5v-4z"/>', 2),
+  ring: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/></svg>`,
+  sNew: XS_('<path d="M12 5v14M5 12h14"/>', 2.4),
+};
+/* 그림 도구 */
+function xAvHTML(a, size, name) {
+  a = a || {}; const im = a.src || (a.img === 'tg' && STORY.ball && STORY.ball.teams && STORY.ball.teams.tg.logo);
+  if (im) return `<span class="xq-av" style="--s:${size}px;background:#fff url('${im}') center/${a.src ? 'cover' : '74%'} no-repeat"></span>`;
+  return `<span class="xq-av" style="--s:${size}px;background:${grad(a.colors || ['#cfd9de', '#8b98a5'])}">${a.em ? `<i>${esc(a.em)}</i>` : `<b>${esc(ini(name))}</b>`}</span>`;
 }
-function twPostHTML(x, big) {
-  const u = twUser(x.by), s = twS(), nrep = (x.replies || 0) + (s.rep[x.id] || []).length;
-  return `<div class="tw-post${big ? ' big' : ''}" data-id="${esc(x.id)}">${avatar(x.by, { size: 40, color: true })}<div class="tw-main"><div class="tw-h"><b>${esc(u.name)}</b><span>@${esc(u.handle)}${x.time ? ' · ' + esc(x.time) : ''}</span></div>${x.replyTo ? `<div class="tw-rt">@${esc(twUser(x.replyTo).handle)} 님에게 보내는 답글</div>` : ''}<div class="tw-text">${esc(x.text)}</div>${x.colors || x.src ? `<div class="tw-img" style="background:${grad(x.colors, x.src)}"></div>` : ''}
-    <div class="tw-act"><span>${I.reply}${nrep || ''}</span><button data-rt class="${s.rted[x.id] ? 'on-rt' : ''}" aria-label="재게시">${I.repeat}${twRts(x) || ''}</button><button data-like class="${s.liked[x.id] ? 'on-like' : ''}" aria-label="마음에 들어요">${s.liked[x.id] ? I.heartF : I.heart}${twLikes(x) || ''}</button><span>${I.views}${fmtK(x.views || twLikes(x) * 37 + 12)}</span></div></div></div>`;
+const xAv = (id, size) => { const u = xU(id); return xAvHTML(u && u.av, size, u ? u.name || u.handle : '?'); };
+const xVf = v => v ? `<i class="xq-vf ${v === 'gold' ? 'gold' : 'blue'}">${XI.vf}</i>` : '';
+const xNm = u => `<span class="xq-nmw">${u.name ? `<b>${esc(u.name)}</b>` : ''}${xVf(u.verified)}${u.badge ? `<i class="xq-bd">${esc(u.badge)}</i>` : ''}${u.lock ? `<i class="xq-lock">${XI.lock}</i>` : ''}</span>`;
+const xTxt = s => esc(s).replace(/(^|[\s(])([@#][^\s@#.,!?)]+)/g, '$1<span class="xq-lk">$2</span>');
+function xMedia(m, small) {
+  if (!m || !m.type) return '';
+  return `<div class="xq-md r-${m.ratio || 'wide'}${small ? ' sm' : ''}" style="background:${grad(m.colors || ['#cfd9de', '#8b98a5'], m.src)}">${m.src ? '' : `<span class="xq-mem">${esc(m.em || '')}</span>`}${m.t ? `<b class="xq-mt">${esc(m.t)}</b>` : ''}${m.type === 'video' ? `<span class="xq-mute">${XI.mute}</span>` : ''}</div>`;
 }
-function twUpdate(id) { const x = twFind(id); if (!x) return; $$('.tw-post').filter(n => n.dataset.id === id).forEach(n => { n.outerHTML = twPostHTML(x, n.classList.contains('big')); }); }
-function twReact(post, text) {
-  const T = STORY.tw, s = twS(), found = findRule(T.rules, text, 'tw');
-  const reps = found ? [].concat(found.r.replies || []) : [];
-  const likes = found && found.r.likes != null ? found.r.likes : (T.fallbackLikes || 0);
-  for (let i = 0; i < likes; i++) setTimeout(() => { s.bump[post.id] = (s.bump[post.id] || 0) + 1; save(); twUpdate(post.id); }, 1500 + i * (800 + Math.random() * 1400));
-  let t = 2000;
-  reps.forEach(r => {
-    t += 2000 + Math.random() * 3000;
-    setTimeout(() => {
-      const rep = { id: 'r' + Date.now() + Math.random().toString(36).slice(2, 6), by: r.by, text: r.text, time: '방금', replyTo: post.by };
-      (s.rep[post.id] = s.rep[post.id] || []).push(rep);
-      s.notif.unshift({ by: r.by, kind: 'reply', text: r.text, time: '방금', post: post.id }); save();
-      const top = topPage();
-      if (top && top.token === 'tw:' + post.id) top.redraw(); else { twUpdate(post.id); notify('tw', twUser(r.by).name, '답글: ' + r.text, () => openTwPost(post.id)); }
-    }, t);
-  });
-  runEffects(found, t);
+function xQuote(q) {
+  if (!q) return '';
+  const u = q.by ? xU(q.by) : null;
+  return `<div class="xq-qt${u ? '' : ' plain'}"${u ? ` data-xu="${esc(q.by)}"` : ''}>${u ? `<div class="xq-qh">${xAvHTML(u.av, 22, u.name || u.handle)}${xNm(u)}<span class="xq-sub">@${esc(u.handle)} · ${esc(q.time || '')}</span></div>` : ''}${q.text ? `<div class="xq-qx">${xTxt(q.text)}</div>` : ''}${xMedia(q.media, true)}</div>`;
 }
-function openTwPost(id) { const x = twFind(id); if (!x) return openApp('tw'); if (APP && APP.id === 'tw') push(twThread(x)); else openApp('tw', null, () => push(twThread(x), true)); }
-function twThread(x) {
-  const p = page('tw tthread'); p.token = 'tw:' + x.id;
-  p.redraw = () => {
-    p.innerHTML = navHTML({ back: '', title: '게시물' }) + `<div class="scroll tt-scroll">${twPostHTML(x, true)}${twReplies(x).map(r => twPostHTML(r)).join('')}</div>
-      <div class="composer tw-comp"><form class="field"><input id="twr-${esc(x.id)}" placeholder="답글 게시하기" autocomplete="off" enterkeyhint="send"><button class="send" hidden aria-label="답글">${I.up}</button></form></div>`;
-    wireComposer(p, t => { const s = twS(); (s.rep[x.id] = s.rep[x.id] || []).push({ id: 'r' + Date.now(), by: 'me', text: t, time: '방금', replyTo: x.by }); save(); p.redraw(); const sc = $('.tt-scroll', p); sc.scrollTop = sc.scrollHeight; twReact(x, t); });
+const xBump = (v, on) => { if (!on) return v || ''; const s = String(v || '').trim(); if (!s) return '1'; if (/^[\d,]+$/.test(s)) return (+s.replace(/,/g, '') + 1).toLocaleString('ko-KR'); return s; };
+const xAddN = (v, k) => { if (!k) return v || ''; const s = String(v || '').trim(); if (!s) return String(k); if (/^[\d,]+$/.test(s)) return (+s.replace(/,/g, '') + k).toLocaleString('ko-KR'); return s; };
+function xActs(t) {
+  const s = xS(), n = t.n || {}, L = s.liked[t.id], R = s.rted[t.id], M = s.marked[t.id];
+  return `<div class="xq-acts"><button data-xrp aria-label="답글">${XI.reply}<span>${esc(xAddN(n.rp, (s.reps[t.id] || []).length))}</span></button><button data-xrt class="${R ? 'on-rt' : ''}" aria-label="재게시">${XI.rt}<span>${esc(xBump(n.rt, R))}</span></button><button data-xlk class="${L ? 'on-lk' : ''}" aria-label="마음에 들어요">${L ? XI.heartF : XI.heart}<span>${esc(xBump(n.lk, L))}</span></button><span class="xq-vw">${XI.views}<span>${esc(n.vw || '')}</span></span><span class="xq-ae"><button data-xbm class="${M ? 'on-bm' : ''}" aria-label="북마크">${M ? XI.bmF : XI.bm}</button><button data-xsh aria-label="공유">${XI.share}</button></span></div>`;
+}
+const xToLine = to => to && to.length ? `<div class="xq-to">${to.map(h => `<span class="xq-lk">@${esc(h)}</span>`).join(' 님, ')} 님에게 보내는 답글</div>` : '';
+/* 글 한 개 — o: { line 아래 글과 줄 잇기, pinned 메인에 올림, reply 답글 줄(글 보기 화면) } */
+function xTweet(t, o = {}) {
+  const u = t.u || xU(t.by) || { name: '알 수 없음', handle: '' }, rtU = t.rt ? xU(t.rt) : null, uid = t.u ? '' : t.by;
+  const ctx = o.pinned ? `<div class="xq-ctx">${XI.pin}<span>메인에 올림</span></div>` : rtU && !o.noRt ? `<div class="xq-ctx">${XI.rt}<span>${t.rt === 'me' ? '재게시했습니다' : esc(rtU.name || rtU.handle) + ' 님이 재게시함'}</span></div>` : '';
+  return `<article class="xq-tw${o.line ? ' line' : ''}${o.reply ? ' rp' : ''}"${o.reply ? '' : ` data-tid="${esc(t.id)}"`}>${ctx}
+    <div class="xq-row"><div class="xq-l"><button class="xq-ab"${uid ? ` data-xu="${esc(uid)}"` : ''}>${xAvHTML(u.av, 40, u.name || u.handle)}</button><i class="xq-ln"></i></div>
+    <div class="xq-m"><div class="xq-h"><button class="xq-hn"${uid ? ` data-xu="${esc(uid)}"` : ''}>${xNm(u)}<span class="xq-sub xq-hd">@${esc(u.handle)}</span></button><span class="xq-sub xq-tm">· ${esc(t.time || '')}</span><span class="grow"></span>${t.ai ? `<span class="xq-ai">${XI.ai}</span>` : ''}<span class="xq-more">${XI.more}</span></div>
+    ${u.fan ? `<div class="xq-fan">${XI.mask}<span>팬 계정</span></div>` : ''}${xToLine(t.to)}${t.text ? `<div class="xq-tx">${xTxt(t.text)}</div>` : ''}${xMedia(t.media)}${t.link ? `<div class="xq-src">출처: ${esc(t.link)}</div>` : ''}${xQuote(t.quote)}${xActs(t)}</div></div></article>`;
+}
+function xFeedHTML(ts, opt = {}) {
+  ts = ts.filter(Boolean);
+  if (!ts.length) return `<div class="xq-empty"><b>${esc(opt.emptyT || '아직 게시물이 없습니다')}</b>${opt.emptyS ? `<span>${esc(opt.emptyS)}</span>` : ''}</div>`;
+  return ts.map((t, i) => xTweet(t, { line: !!(ts[i + 1] && ts[i + 1].cont && ts[i + 1].by === t.by), pinned: opt.pinned && i === 0 && t.id === opt.pinned })).join('');
+}
+const xIds = ids => (ids || []).map(xT).filter(Boolean);
+/* 좋아요·재게시·북마크 누른 뒤 그 글만 다시 그리기 */
+function xUpdate(id) { const t = xT(id); if (!t) return; $$(`.xq [data-tid="${CSS.escape(id)}"] > .xq-row .xq-acts, .xq .xq-big[data-tid="${CSS.escape(id)}"] .xq-acts`).forEach(a => { a.outerHTML = xActs(t); }); }
+/* 편집 버튼 (주인만) */
+const xEdBtn = (cls = 'xq-ib') => EDITOR ? `<button class="${cls} xq-edb${xEditOn ? ' on' : ''}" data-xed aria-label="편집">${XI.pen}</button>` : '';
+/* 공통 클릭: 좋아요·재게시·북마크·공유·프로필·글 열기 */
+function xClick(e, here = {}) {
+  if (Date.now() < xIgnore) return true;
+  const t = e.target;
+  const act = t.closest('[data-xlk],[data-xrt],[data-xbm]');
+  if (act) { const art = act.closest('[data-tid]'); if (!art) return true; const id = art.dataset.tid, s = xS(); const k = act.hasAttribute('data-xlk') ? 'liked' : act.hasAttribute('data-xrt') ? 'rted' : 'marked'; s[k][id] = !s[k][id]; save(); xUpdate(id); return true; }
+  if (t.closest('[data-xsh]')) { toast('링크를 복사했어요.'); return true; }
+  if (t.closest('.xq-more,.xq-ai')) return true;
+  const rp = t.closest('[data-xrp]'); if (rp) { const art = rp.closest('[data-tid]'); if (art && here.post !== art.dataset.tid) push(xPostPage(art.dataset.tid, true)); else if (art) { const i = $('.xq-rbox input', topPage()); if (i) i.focus(); } return true; }
+  const u = t.closest('[data-xu]'); if (u) { if (here.prof !== u.dataset.xu) push(xProfile(u.dataset.xu)); return true; }
+  const art = t.closest('[data-tid]'); if (art && here.post !== art.dataset.tid) { push(xPostPage(art.dataset.tid)); return true; }
+  if (t.closest('[data-xnew]')) { push(xCompose()); return true; }
+  return false;
+}
+/* ---------- 글 보기 ---------- */
+function xPostPage(id, focus) {
+  const p = page('xq xq-pg');
+  const draw = () => {
+    const t = xT(id), y = $('.scroll', p) ? $('.scroll', p).scrollTop : 0;
+    const top = `<div class="xq-bar"><button class="xq-ib" data-back aria-label="뒤로">${XI.back}</button><b>게시물</b><span class="grow"></span>${xEdBtn()}</div>${xEdBar('post')}`;
+    if (!t) { p.innerHTML = top + '<div class="xq-empty"><b>이 게시물은 볼 수 없어요.</b></div>'; return; }
+    const u = xU(t.by) || { name: '?', handle: '' }, rtU = t.rt ? xU(t.rt) : null, n = t.n || {};
+    const reps = [...(t.cms || []), ...(xS().reps[id] || [])].map(r => ({ ...r, u: r.by ? xU(r.by) : r.me ? xU('me') : { name: r.h || '', handle: r.h || '' }, to: [u.handle] }));
+    p.innerHTML = top + `<div class="scroll"><article class="xq-big" data-tid="${esc(id)}">${rtU ? `<div class="xq-ctx">${XI.rt}<span>${t.rt === 'me' ? '재게시했습니다' : esc(rtU.name || rtU.handle) + ' 님이 재게시함'}</span></div>` : ''}
+      <div class="xq-bh"><button class="xq-ab" data-xu="${esc(t.by)}">${xAvHTML(u.av, 44, u.name)}</button><button class="xq-bn" data-xu="${esc(t.by)}">${xNm(u)}<span class="xq-sub">@${esc(u.handle)}</span></button><span class="grow"></span>${t.ai ? `<span class="xq-ai">${XI.ai}</span>` : ''}<span class="xq-more">${XI.more}</span></div>
+      ${u.fan ? `<div class="xq-fan">${XI.mask}<span>팬 계정</span></div>` : ''}${xToLine(t.to)}${t.text ? `<div class="xq-tx">${xTxt(t.text)}</div>` : ''}${xMedia(t.media)}${t.link ? `<div class="xq-src">출처: ${esc(t.link)}</div>` : ''}${xQuote(t.quote)}
+      <div class="xq-when">xx:xx · 20XX. XX. XX. · <b>${esc(n.vw || '0')}</b> 조회수</div>${xActs(t)}</article>
+      ${reps.map(r => xTweet(r, { reply: true })).join('')}<div style="height:110px"></div></div>
+      <form class="xq-rbox">${xAv('me', 32)}<input placeholder="답글 게시하기" autocomplete="off" enterkeyhint="send"><button type="submit">답글</button></form>`;
+    const sc = $('.scroll', p); if (sc) sc.scrollTop = y;
+    const f = $('.xq-rbox', p); f.onsubmit = e => { e.preventDefault(); const i = $('input', f), v = i.value.trim(); if (!v) return; const s = xS(); (s.reps[id] = s.reps[id] || []).push({ me: true, time: '방금', text: v }); save(); i.value = ''; draw(); xUpdate(id); const sc2 = $('.scroll', p); sc2.scrollTop = sc2.scrollHeight; };
   };
-  p.addEventListener('click', twClick);
-  p.redraw(); return p;
-}
-function twCompose() {
-  const p = page('tw tcompose');
-  p.innerHTML = `<div class="tc-bar"><button class="back" data-back>취소</button><button class="tc-post" data-post disabled>게시하기</button></div><div class="tc-body">${avatar('me', { size: 40, color: true })}<textarea id="tc-text" placeholder="무슨 일이 일어나고 있나요?" maxlength="280"></textarea></div>`;
-  const ta = $('#tc-text', p), btn = $('[data-post]', p);
-  ta.addEventListener('input', () => { btn.disabled = !ta.value.trim(); });
-  setTimeout(() => ta.focus(), 400);
-  btn.onclick = () => { const text = ta.value.trim(); if (!text) return; const x = { id: 'm' + Date.now(), by: 'me', text, time: '방금', replies: 0, rts: 0, likes: 0 }; twS().mine.unshift(x); save(); pop(); twReact(x, text); };
+  p.refresh = draw; draw();
+  p.addEventListener('click', e => { if (xEditClick(e, 'post', { id })) return; xClick(e, { post: id }); });
+  if (focus) setTimeout(() => { const i = $('.xq-rbox input', p); if (i) i.focus(); }, 420);
   return p;
 }
-function twClick(e) {
-  const b = e.target.closest('[data-like],[data-rt]');
-  if (b) { const id = b.closest('.tw-post').dataset.id, s = twS(); if (b.hasAttribute('data-like')) s.liked[id] = !s.liked[id]; else s.rted[id] = !s.rted[id]; save(); return twUpdate(id); }
-  if (e.target.closest('[data-compose]')) return push(twCompose());
-  const n = e.target.closest('.tw-n[data-post]'); if (n) return openTwPost(n.dataset.post);
-  const row = e.target.closest('.tw-post'); if (row && !row.classList.contains('big')) { const x = twFind(row.dataset.id); if (x) push(twThread(x)); }
+/* ---------- 글쓰기 ---------- */
+function xCompose() {
+  const p = page('xq xq-comp');
+  p.innerHTML = `<div class="xq-cbar"><button class="xq-ib" data-back aria-label="닫기">${XI.close}</button><span class="grow"></span><span class="xq-draft">임시 보관함</span><button class="xq-post" data-xpost disabled>게시하기</button></div>
+    <div class="xq-cmain">${xAv('me', 40)}<textarea id="xq-ta" placeholder="무슨 일이 일어나고 있나요?" maxlength="280"></textarea></div>
+    <div class="xq-cfoot"><div class="xq-aud">${XI.aud}<span>내가 팔로우하는 계정은 답글을 쓸 수 있음</span></div><div class="xq-tools"><span>${XI.image}</span><span>${XI.camera}</span><span>${XI.spaces}</span><span>${XI.gif}</span><span>${XI.poll}</span><span>${XI.loc}</span><i class="xq-sep"></i><span class="xq-ring">${XI.ring}</span><span class="xq-addc">${XI.plusC}</span></div></div>`;
+  const ta = $('#xq-ta', p), btn = $('[data-xpost]', p);
+  ta.addEventListener('input', () => { btn.disabled = !ta.value.trim(); });
+  setTimeout(() => ta.focus(), 400);
+  btn.onclick = () => { const text = ta.value.trim(); if (!text) return; xS().mine.unshift({ id: 'xm' + Date.now(), by: 'me', time: '방금', text, n: {}, local: true }); save(); pop(); toast('게시물을 보냈어요.'); };
+  return p;
 }
-APPS.tw = () => tabsApp('tw troot', [['home', '홈', I.home], ['search', '검색', I.search], ['notif', '알림', I.bell], ['me', '프로필', I.person]], (t, v) => {
-  const T = STORY.tw, s = twS();
-  if (t === 'home') v.innerHTML = `<div class="tw-head"><span>${avatar('me', { size: 30, color: true })}</span><span class="tw-logo">${ICO.tw}</span><span></span></div><div class="tw-tabs"><b>추천</b><span>팔로우 중</span></div><div class="scroll">${twAll().map(x => twPostHTML(x)).join('')}</div><button class="tw-fab" data-compose aria-label="게시하기">${I.plus2}</button>`;
-  else if (t === 'search') {
-    v.innerHTML = `<div class="tw-head s"><form class="tw-sf"><input id="tw-q" placeholder="검색" autocomplete="off" enterkeyhint="search"></form></div><div class="scroll tw-sr"><div class="tw-trh">나를 위한 트렌드</div>${(T.trends || []).map((x, i) => `<button class="tw-tr" data-q="${esc(x)}"><small>${i + 1} · 대한민국에서 트렌드 중</small><b>${esc(x)}</b></button>`).join('')}</div>`;
-    const run = q => {
-      const f = findRule(T.search, q, 'tw:search'), n = norm(q);
-      const extra = (f ? f.r.results || [] : []).map(r => (TWX[r.id] = r));
-      const rs = [...extra, ...twAll().filter(x => norm(x.text).includes(n))];
-      $('#tw-q', v).value = q;
-      $('.tw-sr', v).innerHTML = rs.length ? rs.map(x => twPostHTML(x)).join('') : `<div class="b-empty">‘${esc(q)}’에 대한 결과가 없습니다.</div>`;
-      if (f) runEffects(f);
-    };
-    $('.tw-sf', v).onsubmit = e => { e.preventDefault(); const q = $('#tw-q', v).value.trim(); if (q) { $('#tw-q', v).blur(); run(q); } };
-    v.onclick = e => { const tr = e.target.closest('[data-q]'); if (tr) return run(tr.dataset.q); twClick(e); };
-    return;
-  } else if (t === 'notif') {
-    const ns = [...s.notif, ...(T.notifications || [])];
-    v.innerHTML = `<div class="tw-head"><b>알림</b></div><div class="scroll">${ns.map(n => `<button class="tw-n" ${n.post ? `data-post="${esc(n.post)}"` : ''}>${n.kind === 'like' ? `<span class="tw-ni">${I.heartF}</span>` : avatar(n.by, { size: 36, color: true })}<div><b>${esc(twUser(n.by).name)}</b>${n.kind === 'reply' ? '님이 답글을 남겼습니다' : esc(n.text)}${n.kind === 'reply' ? `<p>${esc(n.text)}</p>` : ''}<small>${esc(n.time || '')}</small></div></button>`).join('') || '<div class="b-empty">알림이 없습니다.</div>'}</div>`;
-  } else {
-    const me = T.me, mine = twAll().filter(x => x.by === 'me');
-    v.innerHTML = `<div class="scroll"><div class="tw-cover"></div><div class="tw-prof">${avatar('me', { size: 72, color: true })}<button class="tw-edit">프로필 수정</button><b>${esc(me.name)}</b><small>@${esc(me.handle)}</small><p>${esc(me.bio || '')}</p><div class="tw-ff"><span><b>${me.following || 0}</b> 팔로우 중</span><span><b>${me.followers || 0}</b> 팔로워</span></div></div><div class="tw-tabs"><b>게시물</b><span>답글</span><span>미디어</span></div>${mine.map(x => twPostHTML(x)).join('') || '<div class="b-empty">아직 게시물이 없어요.</div>'}</div>`;
+/* ---------- 프로필 (나 · 다른 계정) ---------- */
+function xProfile(id) {
+  const p = page('xq xq-prof'); p.dataset.bar = 'light'; let tab = 'posts';
+  const draw = () => {
+    const u = xU(id), isMe = id === 'me', s = xS(), y = $('.scroll', p) ? $('.scroll', p).scrollTop : 0;
+    if (!u) { p.innerHTML = `<div class="xq-bar"><button class="xq-ib" data-back>${XI.back}</button></div><div class="xq-empty"><b>이 계정은 존재하지 않습니다</b></div>`; return; }
+    const fol = !isMe && u.iFollow && !s.unf[id], bn = u.banner || {}, all = xAll();
+    const mine = all.filter(t => t.by === id || t.rt === id);
+    const pin = u.pinned && mine.find(t => t.id === u.pinned && t.by === id);
+    const lists = { posts: [...(pin ? [pin] : []), ...mine.filter(t => t !== pin)], replies: all.filter(t => t.by === id && t.to && t.to.length), rts: all.filter(t => t.rt === id), media: all.filter(t => t.by === id && t.media && t.media.type) };
+    const fb = !isMe && u.followedBy && xU(u.followedBy);
+    p.innerHTML = `<div class="scroll"><div class="xq-ban" style="background:${grad(bn.colors || ['#cfd9de', '#8b98a5'], bn.src)}">${!bn.src && bn.em ? `<span class="xq-bem">${esc(bn.em)}</span>` : ''}${!bn.src && bn.text ? `<div class="xq-bt">${esc(bn.text)}</div>` : ''}</div>
+      <div class="xq-pi"><div class="xq-pav">${xAvHTML(u.av, 92, u.name || u.handle)}</div>${isMe ? '' : `<span class="xq-cir">${XI.share}</span>`}
+        <div class="xq-pn"><b>${esc(u.name || '')}</b>${xVf(u.verified)}${u.badge ? `<i class="xq-bd">${esc(u.badge)}</i>` : ''}${u.lock ? `<i class="xq-lock">${XI.lock}</i>` : ''}${isMe ? `<span class="xq-getv">${XI.vf}인증받기</span>` : ''}</div>
+        <div class="xq-ph"><span>@${esc(u.handle)}</span>${!isMe && u.followsMe ? '<i class="xq-fm">나를 팔로우합니다</i>' : ''}</div>
+        ${u.bio ? `<div class="xq-bio">${xTxt(u.bio)}</div>` : ''}
+        <div class="xq-meta">${u.birth ? `<span>${XI.balloon}생일: ${esc(u.birth)}</span>` : ''}${u.joined ? `<span>${XI.cal}${esc(u.joined)}에 가입함 <em>›</em></span>` : ''}</div>
+        <div class="xq-ff"><button${isMe ? ' data-xfl' : ''}><b>${esc(u.following ?? 0)}</b> 팔로우 중</button><span><b>${esc(u.followers ?? 0)}</b> 팔로워</span></div>
+        ${fb ? `<div class="xq-fb">${xAvHTML(fb.av, 28, fb.name)}<span>${esc(fb.name || fb.handle)} 님이 팔로우함</span></div>` : ''}
+        <div class="xq-pact">${isMe ? `<button>공유하기</button><button data-xpe>프로필 수정</button>` : `<button>쪽지</button><button data-xfol class="${fol ? '' : 'pri'}">${fol ? '팔로잉' : '팔로우'}</button>`}</div></div>
+      ${xEdBar(isMe ? 'me' : 'user', { id })}
+      <div class="xq-ptabs">${[['posts', `${XI.doc}<span>게시물</span>${isMe ? XI.down : ''}`], ['replies', XI.reply], ['rts', XI.rt], ['media', XI.media]].map(([k, h]) => `<button data-pt="${k}" class="${tab === k ? 'on' : ''}">${h}</button>`).join('')}</div>
+      <div class="xq-plist">${xFeedHTML(lists[tab], { pinned: tab === 'posts' && pin ? pin.id : null, emptyT: tab === 'replies' ? '아직 답글이 없습니다' : tab === 'rts' ? '아직 재게시한 게시물이 없습니다' : tab === 'media' ? '아직 사진이나 동영상이 없습니다' : '아직 게시물이 없습니다' })}</div><div style="height:120px"></div></div>
+      <div class="xq-pbar"><button class="xq-cb" data-back aria-label="뒤로">${XI.back}</button><span class="grow"></span>${xEdBtn('xq-cb')}<span class="xq-cb">${XI.ai}</span><span class="xq-cb">${XI.search}</span><span class="xq-cb">${XI.dots}</span></div>
+      <button class="xq-fab" data-xnew aria-label="게시하기">${XI.plus}</button>`;
+    const sc = $('.scroll', p); sc.scrollTop = y;
+  };
+  p.refresh = draw; draw();
+  p.addEventListener('click', e => {
+    if (xEditClick(e, id === 'me' ? 'me' : 'user', { id })) return;
+    const pt = e.target.closest('[data-pt]'); if (pt) { tab = pt.dataset.pt; return draw(); }
+    if (e.target.closest('[data-xfl]')) return push(xFollowing());
+    if (e.target.closest('[data-xfol]')) { const s = xS(); s.unf[id] = !s.unf[id]; save(); return draw(); }
+    if (e.target.closest('[data-xpe]')) { if (EDITOR) return xUserEdit('me'); return toast('프로필 수정은 준비 중이에요.'); }
+    xClick(e, { prof: id });
+  });
+  return p;
+}
+/* ---------- 팔로잉 목록 ---------- */
+function xFollowing() {
+  const p = page('xq xq-flw');
+  const draw = () => {
+    const s = xS(), me = STORY.tw.me, y = $('.scroll', p) ? $('.scroll', p).scrollTop : 0;
+    const rows = (STORY.tw.followingList || []).map(id => [id, xU(id)]).filter(([, u]) => u);
+    p.innerHTML = `<div class="xq-bar"><button class="xq-ib" data-back aria-label="뒤로">${XI.back}</button><b class="xq-bt1">${esc(me.name)}</b><span class="grow"></span>${xEdBtn()}<span class="xq-ib">${XI.addp}</span></div>
+      <div class="xq-ftabs"><span>서로 아는 팔로워</span><span>팔로워</span><span class="on">${XI.fwing}팔로잉</span><span>구독자</span><span>구독</span></div>${xEdBar('follow')}
+      <div class="scroll">${rows.map(([id, u]) => `<div class="xq-fr" data-xu="${esc(id)}">${u.followsMe ? `<div class="xq-fms">${XI.personF}<span>나를 팔로우합니다</span></div>` : ''}<div class="xq-frr">${xAvHTML(u.av, 46, u.name || u.handle)}<div class="xq-frm">${xNm(u)}<small>@${esc(u.handle)}</small>${u.bio ? `<p>${xTxt(u.bio)}</p>` : ''}</div><button class="xq-fbtn${s.unf[id] ? ' pri' : ''}" data-xf2="${esc(id)}">${s.unf[id] ? '팔로우' : '팔로잉'}</button></div></div>`).join('') || '<div class="xq-empty"><b>아직 팔로우하는 계정이 없습니다</b></div>'}<div style="height:60px"></div></div>`;
+    $('.scroll', p).scrollTop = y;
+    const ft = $('.xq-ftabs', p); requestAnimationFrame(() => { const on = $('.on', ft); if (on) ft.scrollLeft = on.offsetLeft - (ft.clientWidth - on.offsetWidth) / 2; });
+  };
+  p.refresh = draw; draw();
+  p.addEventListener('click', e => {
+    if (xEditClick(e, 'follow')) return;
+    const f = e.target.closest('[data-xf2]'); if (f) { const s = xS(), id = f.dataset.xf2; s.unf[id] = !s.unf[id]; save(); return draw(); }
+    xClick(e, {});
+  });
+  return p;
+}
+/* ---------- 검색 (입력 화면 · 결과) ---------- */
+function xRecent() {
+  const R = STORY.tw.recent || {}, s = xS();
+  return { accounts: s.rClear ? [] : (R.accounts || []).filter(id => xU(id)), terms: [...s.rq, ...(s.rClear ? [] : (R.terms || []).filter(t => !s.rq.includes(t)))] };
+}
+function xSearchInput() {
+  const p = page('xq xq-sin');
+  const draw = () => {
+    const R = xRecent();
+    p.innerHTML = `<form class="xq-sbar"><button type="button" class="xq-ib" data-back aria-label="뒤로">${XI.back}</button><input id="xq-q" placeholder="검색" autocomplete="off" enterkeyhint="search">${xEdBtn()}</form>${xEdBar('input')}
+      <div class="scroll xq-rec">${R.accounts.length || R.terms.length ? `<div class="xq-rh"><b>최근</b><button class="xq-rx" data-xrx aria-label="모두 지우기">${XI.close}</button></div>
+      ${R.accounts.length ? `<div class="xq-racc">${R.accounts.map(id => { const u = xU(id); return `<button data-xu="${esc(id)}">${xAvHTML(u.av, 56, u.name || u.handle)}<b>${esc(u.name || '')}${xVf(u.verified)}</b><small>@${esc(u.handle)}</small></button>`; }).join('')}</div>` : ''}
+      ${R.terms.map(t => `<button class="xq-rt" data-xq="${esc(t)}">${esc(t)}</button>`).join('')}` : '<div class="xq-rnone">최근 검색어가 없어요.</div>'}</div>`;
+    const f = $('.xq-sbar', p), i = $('#xq-q', p);
+    f.onsubmit = e => { e.preventDefault(); const q = i.value.trim(); if (!q) return; const s = xS(); s.rq = [q, ...s.rq.filter(x => x !== q)].slice(0, 12); save(); i.blur(); push(xResults(q)); };
+  };
+  p.refresh = () => { const v = ($('#xq-q', p) || {}).value || ''; draw(); $('#xq-q', p).value = v; };
+  draw(); setTimeout(() => { const i = $('#xq-q', p); if (i) i.focus(); }, 420);
+  p.addEventListener('click', e => {
+    if (xEditClick(e, 'input')) return;
+    if (e.target.closest('[data-xrx]')) { const s = xS(); s.rClear = true; s.rq = []; save(); return draw(); }
+    const q = e.target.closest('[data-xq]'); if (q) return push(xResults(q.dataset.xq));
+    xClick(e, {});
+  });
+  return p;
+}
+function xResults(q) {
+  const p = page('xq xq-res'); let tab = 'top';
+  const n = norm(q), ws = String(q).split(/\s+/).map(norm).filter(Boolean);
+  const hit = t => { const all = norm([t.text, t.quote && t.quote.text, t.media && t.media.t, t.quote && t.quote.media && t.quote.media.t, (xU(t.by) || {}).name].filter(Boolean).join(' ')); return all.includes(n) || ws.every(w => all.includes(w)); };
+  const draw = () => {
+    const ts = xAll().filter(hit), us = Object.keys(STORY.tw.users).map(xU).filter(u => [u.name, u.handle, u.bio].some(x => x && norm(x).includes(n)));
+    const list = tab === 'users' ? (us.map(u => `<div class="xq-fr" data-xu="${esc(u.id)}"><div class="xq-frr">${xAvHTML(u.av, 46, u.name || u.handle)}<div class="xq-frm">${xNm(u)}<small>@${esc(u.handle)}</small>${u.bio ? `<p>${xTxt(u.bio)}</p>` : ''}</div></div></div>`).join('') || `<div class="xq-empty"><b>‘${esc(q)}’에 대한 결과 없음</b><span>다른 검색어를 입력해 보세요.</span></div>`)
+      : xFeedHTML(tab === 'media' ? ts.filter(t => t.media && t.media.type) : tab === 'new' ? ts : [...ts].sort((a, b) => (parseFloat(String((b.n || {}).lk).replace(/,/g, '')) || 0) - (parseFloat(String((a.n || {}).lk).replace(/,/g, '')) || 0)), { emptyT: `‘${q}’에 대한 결과 없음`, emptyS: '다른 검색어를 입력해 보세요.' });
+    p.innerHTML = `<div class="xq-sbar"><button class="xq-ib" data-back aria-label="뒤로">${XI.back}</button><button class="xq-spill" data-back>${esc(q)}</button><span class="xq-ib">${XI.dots}</span></div>
+      <div class="xq-stabs">${[['top', '인기'], ['new', '최신'], ['users', '계정'], ['media', '미디어']].map(([k, l]) => `<button data-st="${k}" class="${tab === k ? 'on' : ''}">${l}</button>`).join('')}</div><div class="scroll">${list}<div style="height:110px"></div></div>`;
+  };
+  p.refresh = draw; draw();
+  p.addEventListener('click', e => { if (xEditClick(e, 'results')) return; const st = e.target.closest('[data-st]'); if (st) { tab = st.dataset.st; return draw(); } xClick(e, {}); });
+  return p;
+}
+/* ---------- 왼쪽 서랍 ---------- */
+function xDrawer(host) {
+  const me = STORY.tw.me, d = el(`<div class="xq-dw"><div class="xq-dp"><div class="scroll">
+    <div class="xq-dtop"><button data-xdp>${xAvHTML(me.av, 52, me.name)}</button><span class="grow"></span>${(STORY.tw.drawer || []).map(([em, c, n]) => `<span class="xq-dacc"><span class="xq-av" style="--s:34px;background:${esc(c || '#8b98a5')}"><i>${esc(em || '')}</i></span>${n ? `<i class="xq-dn">${esc(n)}</i>` : ''}</span>`).join('')}<span class="xq-dmore">${XI.more}<i></i></span></div>
+    <button class="xq-dname" data-xdp><b>${esc(me.name)}</b>${me.lock ? `<i class="xq-lock">${XI.lock}</i>` : ''}</button><div class="xq-dh">@${esc(me.handle)}</div>
+    <button class="xq-dff" data-xdf><b>${esc(me.following)}</b> 팔로우 중 <b>${esc(me.followers)}</b> 팔로워</button><div class="xq-dhr"></div>
+    ${[['person', '프로필', 'xdp'], ['premium', '프리미엄'], ['community', '커뮤니티'], ['bm', '북마크'], ['list', '리스트'], ['spaces', '스페이스'], ['freq', '팔로워 요청'], ['rocket', '크리에이터 스튜디오']].map(([ic, l, k]) => `<button class="xq-di"${k ? ` data-${k}` : ''}>${XI[ic]}<b>${l}</b></button>`).join('')}
+    <div class="xq-dhr"></div>${[['ai', 'AI 받기'], ['gear', '설정 및 개인정보'], ['', '고객센터']].map(([ic, l]) => `<button class="xq-ds${ic ? '' : ' dim'}">${ic ? XI[ic] : ''}<span>${l}</span></button>`).join('')}<div style="height:30px"></div></div>
+    <span class="xq-dsun">${XI.sun}</span></div></div>`);
+  const close = () => { d.classList.remove('on'); setTimeout(() => d.remove(), 260); };
+  d.addEventListener('click', e => {
+    e.stopPropagation();
+    if (e.target === d) return close();
+    if (EDITOR && xEditOn && e.target.closest('.xq-dtop,.xq-dname,.xq-dff')) { close(); return xMiscEdit(); }
+    if (e.target.closest('[data-xdp]')) { close(); return push(xProfile('me')); }
+    if (e.target.closest('[data-xdf]')) { close(); return push(xFollowing()); }
+  });
+  let sx = null, dx = 0; const panel = $('.xq-dp', d);
+  d.addEventListener('pointerdown', e => { sx = e.clientX; dx = 0; });
+  d.addEventListener('pointermove', e => { if (sx === null) return; dx = Math.min(0, e.clientX - sx); if (dx < -8) { panel.style.transition = 'none'; panel.style.transform = `translateX(${dx}px)`; } });
+  d.addEventListener('pointerup', () => { if (sx === null) return; panel.style.transition = ''; panel.style.transform = ''; if (dx < -70) { xIgnore = Date.now() + 250; close(); } sx = null; });
+  host.appendChild(d); d.offsetWidth; d.classList.add('on');
+}
+/* ---------- 앱 첫 화면 (아래 탭: 홈 · 검색 · AI(꺼짐) · 알림 · 쪽지(꺼짐)) ---------- */
+const X_TTABS = [['explore', '탐색'], ['live', '실시간 트렌드'], ['news', '뉴스'], ['sports', '스포츠'], ['ent', '엔터테인먼트']];
+APPS.tw = () => {
+  const p = page('xq xq-root'); let cur = 'home', pane = 1, ttab = 'explore', ntab = 'all', pillGone = false;
+  p.innerHTML = `<div class="xq-view"></div><nav class="xq-nav"></nav><button class="xq-fab" data-xnew aria-label="게시하기">${XI.plus}</button>`;
+  const v = $('.xq-view', p), nav = $('.xq-nav', p);
+  const drawNav = () => {
+    const T = STORY.tw, dot = T.homeDot && !(cur === 'home' && pane === 1);
+    nav.innerHTML = `<button data-xn="home">${cur === 'home' ? XI.homeF : XI.home}${dot ? '<i class="xq-nd"></i>' : ''}</button><button data-xn="search">${cur === 'search' ? XI.searchB : XI.search}</button><span class="xq-off">${XI.ai}</span><button data-xn="notif">${cur === 'notif' ? XI.bellF : XI.bell}</button><span class="xq-off">${XI.mail}${T.dmBadge ? `<i class="xq-nb">${esc(T.dmBadge)}</i>` : ''}</span>`;
+  };
+  const meBtn = () => `<button class="xq-me" data-xdrawer aria-label="내 메뉴">${xAv('me', 34)}${STORY.tw.homeDot ? '<i class="xq-dot"></i>' : ''}</button>`;
+  const R = {
+    home() {
+      const T = STORY.tw, s = xS(), ys = $$('.xq-pane', v).map(x => x.scrollTop);
+      const pill = (T.newPill || []).map(xU).filter(Boolean);
+      v.innerHTML = `<div class="xq-top">${meBtn()}<span class="xq-logo">${XI.logo}</span><span class="xq-tr">${xEdBtn()}<span class="xq-up">${XI.vf}<b>업그레이드</b></span></span></div>
+        <div class="xq-htabs"><button data-xp="0">추천<i class="xq-chev">${XI.down}</i></button><button data-xp="1">팔로우 중</button><i class="xq-hind"></i></div>${xEdBar('home', { pane })}
+        <div class="xq-pager"><div class="xq-track"><div class="xq-pane scroll" data-ctx="forYou">${xFeedHTML(xIds(T.forYou))}<div class="xq-end"></div></div><div class="xq-pane scroll" data-ctx="following">${xFeedHTML([...s.mine, ...xIds(T.following)])}<div class="xq-end"></div></div></div>
+        ${pill.length ? `<button class="xq-newp" data-xpill>${XI.up}<span class="xq-npa">${pill.slice(0, 3).map(u => xAvHTML(u.av, 30, u.name || u.handle)).join('')}</span></button>` : ''}</div>`;
+      $$('.xq-pane', v).forEach((x, i) => { x.scrollTop = ys[i] || 0; });
+      wirePager(); go(pane, false);
+    },
+    search() {
+      const T = STORY.tw, tr = (T.trends || {})[ttab] || [], pr = T.promo || {};
+      v.innerHTML = `<div class="xq-top s">${meBtn()}<button class="xq-sp" data-xsin>${XI.search}<span>검색</span></button>${xEdBtn()}<span class="xq-ib">${XI.gear}</span></div>
+        <div class="xq-ttabs">${X_TTABS.map(([k, l]) => `<button data-tt="${k}" class="${ttab === k ? 'on' : ''}">${l}</button>`).join('')}</div>${xEdBar('search', { ttab })}
+        <div class="scroll">${ttab === 'explore' && pr.title ? `<div class="xq-hero" style="background:${grad(pr.colors || ['#444', '#111'], pr.src)}">${pr.src ? '' : `<span class="xq-hem">${esc(pr.em || '')}</span>`}<span class="xq-hbs"><i>${XI.mute}</i><i>${XI.more}</i></span><div class="xq-hc"><b>${esc(pr.title)}</b>${pr.sub ? `<span>${esc(pr.sub)}</span>` : ''}${pr.by ? `<small><i>↗</i>${esc(pr.by)} 님이 프로모션 중</small>` : ''}</div></div>` : ''}
+        ${tr.map(([c, t, n]) => `<button class="xq-trd" data-xq="${esc(t)}"><small>${esc(c)}</small><b>${esc(t)}</b>${n ? `<small>${esc(n)}</small>` : ''}<span class="xq-more">${XI.more}</span></button>`).join('') || '<div class="xq-empty"><b>지금은 트렌드가 없어요</b></div>'}<div style="height:110px"></div></div>`;
+      const tt = $('.xq-ttabs', v), on = $('.on', tt); if (on && on.offsetLeft > tt.clientWidth * .6) tt.scrollLeft = on.offsetLeft - 40;
+    },
+    notif() {
+      const T = STORY.tw, ns = (T.notifs || []).filter(n => ntab === 'all' || (ntab === 'men' && n.kind === 'reply'));
+      v.innerHTML = `<div class="xq-top">${meBtn()}<b class="xq-tt">알림</b><span class="xq-tr">${xEdBtn()}<span class="xq-ib">${XI.gear}</span></span></div>
+        <div class="xq-ntabs">${[['all', `${XI.bell}모두`], ['men', '멘션'], ['vf', '인증됨']].map(([k, l]) => `<button data-nt="${k}" class="${ntab === k ? 'on' : ''}">${l}</button>`).join('')}</div>${xEdBar('notif')}
+        <div class="scroll">${ntab === 'vf' ? '<div class="xq-empty big"><b>아직 아무것도 없습니다</b><span>인증된 계정에서 온 마음에 들어요, 멘션, 재게시 등이 여기에 표시됩니다.</span></div>' : ns.map(xNotifHTML).join('') || '<div class="xq-empty big"><b>아직 알림이 없습니다</b></div>'}<div style="height:110px"></div></div>`;
+    },
+  };
+  /* 추천 ↔ 팔로우 중: 탭 누르거나 옆으로 밀기 */
+  let track, ind, pager;
+  const go = (i, anim = true) => {
+    pane = Math.max(0, Math.min(1, i)); if (!track) return;
+    track.style.transition = anim ? '' : 'none'; track.style.transform = `translateX(${-pane * 50}%)`;
+    ind.style.transition = anim ? '' : 'none'; ind.style.transform = `translateX(${pane * 100}%)`;
+    $$('.xq-htabs [data-xp]', v).forEach((b, k) => b.classList.toggle('on', k === pane));
+    const np = $('.xq-newp', v); if (np) np.hidden = pane !== 0 || pillGone;
+    const eb = $('.xq-ebar', v); if (eb) { const b = $('[data-xe="tw+"]', eb); if (b) b.dataset.feed = pane ? 'following' : 'forYou'; }
+    drawNav();
+  };
+  function wirePager() {
+    track = $('.xq-track', v); ind = $('.xq-hind', v); pager = $('.xq-pager', v);
+    let sx = 0, sy = 0, dx = 0, drag = null, k = 1;
+    pager.addEventListener('pointerdown', e => { sx = e.clientX; sy = e.clientY; dx = 0; drag = 0; k = scr.getBoundingClientRect().width / scr.offsetWidth || 1; });
+    pager.addEventListener('pointermove', e => {
+      if (drag === null) return;
+      const mx = (e.clientX - sx) / k, my = (e.clientY - sy) / k;
+      if (drag === 0) { if (Math.abs(mx) > 10 && Math.abs(mx) > Math.abs(my) * 1.2) { drag = 1; try { pager.setPointerCapture(e.pointerId); } catch (x) { } } else if (Math.abs(my) > 10) { drag = null; return; } else return; }
+      dx = mx; const edge = (pane === 0 && dx > 0) || (pane === 1 && dx < 0) ? .3 : 1;
+      track.style.transition = 'none'; track.style.transform = `translateX(calc(${-pane * 50}% + ${dx * edge}px))`;
+      ind.style.transition = 'none'; ind.style.transform = `translateX(calc(${pane * 100}% + ${-dx * edge / 2}px))`;
+    });
+    const end = () => { if (drag === 1) { const w = pager.clientWidth; go(dx < -w * .18 ? pane + 1 : dx > w * .18 ? pane - 1 : pane); xIgnore = Date.now() + 250; } drag = null; };
+    pager.addEventListener('pointerup', end); pager.addEventListener('pointercancel', end);
   }
-  v.onclick = twClick;
-}, 'home', { noLabel: true });
+  const show = k => { cur = k; v.onclick = null; R[k](); drawNav(); };
+  p.addEventListener('click', e => {
+    if (Date.now() < xIgnore) return;
+    const t = e.target;
+    const nb = t.closest('[data-xn]'); if (nb) { if (nb.dataset.xn === cur && cur === 'home') { const pn = $$('.xq-pane', v)[pane]; if (pn) pn.scrollTo({ top: 0, behavior: 'smooth' }); return; } return show(nb.dataset.xn); }
+    if (xEditClick(e, cur, { pane, ttab })) return;
+    if (t.closest('[data-xdrawer]')) return xDrawer(p);
+    const xp = t.closest('[data-xp]'); if (xp) { if (+xp.dataset.xp === pane) { const pn = $$('.xq-pane', v)[pane]; if (pn) pn.scrollTo({ top: 0, behavior: 'smooth' }); return; } return go(+xp.dataset.xp); }
+    if (t.closest('[data-xpill]')) { pillGone = true; const pn = $$('.xq-pane', v)[0]; if (pn) pn.scrollTo({ top: 0, behavior: 'smooth' }); return go(pane); }
+    if (t.closest('[data-xsin]')) return push(xSearchInput());
+    const tt = t.closest('[data-tt]'); if (tt) { ttab = tt.dataset.tt; return R.search(); }
+    const q = t.closest('[data-xq]'); if (q) return push(xResults(q.dataset.xq));
+    const nt = t.closest('[data-nt]'); if (nt) { ntab = nt.dataset.nt; return R.notif(); }
+    const ni = t.closest('[data-nid]');
+    if (ni && !t.closest('[data-xu],[data-xlk],[data-xrt],[data-xbm],[data-xsh]')) { const n = (STORY.tw.notifs || []).find(x => x.id === ni.dataset.nid); if (n && n.kind === 'follow') return push(xProfile(n.by)); if (n && n.post && xT(n.post)) return push(xPostPage(n.post)); return; }
+    xClick(e, {});
+  });
+  p.refresh = () => { const y = $('.scroll', v) && cur !== 'home' ? $('.scroll', v).scrollTop : 0; R[cur](); drawNav(); if (cur !== 'home') { const sc = $('.scroll', v); if (sc) sc.scrollTop = y; } };
+  show('home');
+  return p;
+};
+/* 알림 한 줄 */
+function xNotifHTML(n) {
+  if (n.kind === 'like') {
+    const us = (n.likers || []).map(xU).filter(Boolean), t = n.post && xT(n.post), m = t && t.media && t.media.type ? t.media : null, first = us[0];
+    return `<div class="xq-nt" data-nid="${esc(n.id)}"><i class="xq-nic like">${XI.heartF}</i><div class="xq-nm"><div class="xq-navs">${us.slice(0, 8).map(u => `<span data-xu="${esc(u.id)}">${xAvHTML(u.av, 32, u.name || u.handle)}</span>`).join('')}</div>
+      <div class="xq-ntx"><b>${esc(first ? first.name || first.handle : '')}</b> 님${n.others ? ` 외 ${esc(n.others)}명이` : '이'} 내 게시물을 마음에 들어 합니다 · ${esc(n.time || '')}</div>${t ? `<div class="xq-npv">${esc(t.text || '')}</div>` : ''}</div>${m ? `<span class="xq-nth" style="background:${grad(m.colors || ['#ddd', '#aaa'], m.src)}">${m.src ? '' : `<i>${esc(m.em || '')}</i>`}${!m.src && m.t ? `<b>${esc(m.t)}</b>` : ''}</span>` : ''}</div>`;
+  }
+  if (n.kind === 'follow') {
+    const u = xU(n.by) || { name: '?', handle: '' };
+    return `<div class="xq-nt" data-nid="${esc(n.id)}"><i class="xq-nic fol">${XI.personF}</i><div class="xq-nm"><div class="xq-navs"><span data-xu="${esc(n.by)}">${xAvHTML(u.av, 32, u.name || u.handle)}</span></div><div class="xq-ntx"><b>${esc(u.name || u.handle)}</b> 님이 나를 팔로우했습니다 · ${esc(n.time || '')}</div></div></div>`;
+  }
+  const t = { id: 'n_' + n.id, by: n.by, time: n.time, to: n.to, text: n.text, n: n.n || {} };
+  return `<div class="xq-ntr" data-nid="${esc(n.id)}">${xTweet(t).replace(' data-tid="n_' + esc(n.id) + '"', '')}</div>`;
+}
+/* ----- 주인 전용: 타래 편집 -----
+   타래 데이터(글·계정·내 프로필·트렌드·최근 검색·알림·팔로잉·서랍)를 통째로 CUSTOM.tw 에 저장해서 원본 위에 덮어써요. [저장]을 눌러야 모두에게 보여요. */
+let TW_BASE = null, XDIRTY = 0;
+const X_KEYS = ['me', 'users', 'tweets', 'following', 'forYou', 'newPill', 'followingList', 'promo', 'trends', 'recent', 'notifs', 'drawer', 'dmBadge', 'homeDot'];
+function xApply() { if (!TW_BASE) TW_BASE = clone(STORY.tw); const c = CUSTOM.tw || {}; X_KEYS.forEach(k => { STORY.tw[k] = clone(c[k] !== undefined ? c[k] : TW_BASE[k]); }); }
+const xLists = () => { const L = {}; X_KEYS.forEach(k => L[k] = clone(STORY.tw[k])); return L; };
+const xRefresh = () => { if (!APP || APP.id !== 'tw') return; APP.stack.forEach(pg => pg.refresh && pg.refresh()); };
+function xCommit(L, msg) { CUSTOM.tw = L; XDIRTY++; xApply(); if (msg) toast(msg); xDirtyBar(); xRefresh(); }
+function xDirtyBar() {
+  let b = $('#xsave');
+  const tp = APP && topPage();
+  if (!EDITOR || !XDIRTY || !(APP && APP.id === 'tw') || (tp && tp.classList.contains('igedit'))) { if (b) b.remove(); return; }
+  if (!b) {
+    b = el('<div id="xsave" class="gsave"><span></span><button data-xs="undo">되돌리기</button><button data-xs="save" class="pri">저장</button></div>'); scr.appendChild(b);
+    b.addEventListener('click', e => {
+      const a = e.target.closest('[data-xs]'); if (!a) return;
+      if (a.dataset.xs === 'save') return saveCustom({ app: 'tw' });
+      try { const j = JSON.parse(document.getElementById('custom').textContent || '{}'); CUSTOM.tw = j.tw || null; } catch (x) { CUSTOM.tw = null; }
+      XDIRTY = 0; xApply(); xRefresh(); xDirtyBar(); toast('저장 전 상태로 되돌렸어요.');
+    });
+  }
+  $('span', b).textContent = `타래 편집 중 · 저장 안 한 변경 ${XDIRTY}개`;
+}
+const xEd = (title, st) => push(igEdPage(title, { ...st, bar: xDirtyBar }));
+const X_OK = '적용했어요. 다 고친 뒤 [저장]을 눌러 주세요.';
+const xAccOpts = (none) => [...(none ? [['', none]] : []), ['me', `나 · ${STORY.tw.me.name} @${STORY.tw.me.handle}`], ...Object.entries(STORY.tw.users).map(([k, u]) => [k, `${u.name || u.badge || ''} @${u.handle}`])];
+const xHandles = ids => (ids || []).map(id => (xU(id) || {}).handle).filter(Boolean).join(', ');
+const xIdsOf = txt => String(txt || '').split(/[,\n]/).map(s => xByHandle(s)).filter(Boolean);
+const xMediaPrev = m => m && m.type ? `<div class="ye-prev xq-ep">${xMedia(m)}</div>` : '';
+const xMediaFields = (p, m, lab) => `<div class="ye-sec">${lab}</div>${ySel('종류', p + 'type', [['', '없음'], ['img', '사진'], ['video', '영상 (음소거 아이콘)']], m.type || '')}${xMediaPrev(m)}
+  <div class="ye-2">${yF('그림 (이모지)', p + 'em', m.em || '')}${yF('사진 위 글씨', p + 't', m.t || '')}</div><div class="ye-2">${yCol('색 1', p + 'c0', (m.colors || [])[0] || '#cfd9de')}${yCol('색 2', p + 'c1', (m.colors || [])[1] || '#8b98a5')}</div>
+  ${ySel('모양', p + 'ratio', [['wide', '가로로 긴'], ['sq', '정사각형'], ['tall', '세로로 긴']], m.ratio || 'wide')}${yPick(p, m.src, '진짜 사진 넣기')}`;
+const xMediaRead = (v, p, m) => { const type = v(p + 'type'); if (!type) return null; const o = { ...m, type, em: v(p + 'em'), t: v(p + 't'), colors: [v(p + 'c0'), v(p + 'c1')], ratio: v(p + 'ratio') }; if (!o.t) delete o.t; return o; };
+/* 답글 목록 ↔ 글 상자 */
+const xCmSer = cs => (cs || []).map(c => [c.by ? (xU(c.by) || {}).handle || c.by : c.h || '', c.time || '', c.text || '', c.lk || ''].join(' | ')).join('\n');
+const xCmParse = txt => igLines(txt).map(([h, time, text, lk]) => { const id = xByHandle(h), o = { time: time || '', text: text || '', lk: lk || '' }; if (id) o.by = id; else o.h = String(h || '').replace(/^@/, ''); return o; });
+/* 글 편집 — opt: { feed: 'following'|'forYou', by: 새 글 쓴 사람 } */
+function xTweetEdit(id, opt = {}) {
+  const T = STORY.tw, isNew = !id, src = id && (T.tweets || []).find(t => t.id === id);
+  if (id && !src) return toast('이 글은 보는 사람이 직접 쓴 글이라 고칠 수 없어요.');
+  const x = isNew ? { id: 't' + Date.now().toString(36), by: opt.by || 'me', time: '방금', text: '', n: {} } : clone(src);
+  x.n = x.n || {};
+  let m = clone(x.media || { em: '🖼️', colors: ['#cfd9de', '#8b98a5'] }), q = clone(x.quote || { time: '1시간', text: '' }), qm = clone(q.media || { em: '🖼️', colors: ['#cfd9de', '#8b98a5'] });
+  let qOn = !!x.quote, inF = isNew ? opt.feed === 'following' : (T.following || []).includes(x.id), inR = isNew ? opt.feed === 'forYou' : (T.forYou || []).includes(x.id);
+  const owner = () => x.by === 'me' ? T.me : T.users[x.by] || {};
+  let pin = !isNew && owner().pinned === x.id;
+  return xEd(isNew ? '새 글' : '글 수정', {
+    body: () => `${ySel('글쓴이', 'by', xAccOpts(), x.by)}<div class="ye-2">${yF('시간 (예: 1시간, 20시간, XX월 XX일)', 'time', x.time)}${ySel('재게시한 사람 (위에 작게)', 'rt', xAccOpts('없음'), x.rt || '')}</div>
+      ${yA('내용 (@아이디, #태그는 파랗게 보여요)', 'text', x.text, '', 6)}${yF('답글 대상 아이디 (여러 명은 쉼표, 비우면 안 보임)', 'to', (x.to || []).join(', '))}
+      ${yC('바로 위 글과 세로 줄로 이어 보이기 (같은 사람이 이어 쓴 글)', 'cont', x.cont)}${yC('오른쪽 위 AI 아이콘 보이기', 'ai', x.ai)}${yC('글쓴이 프로필 맨 위에 "메인에 올림"으로 고정', 'pin', pin)}
+      <div class="ye-sec">홈에 보일 곳 (프로필에는 늘 보여요)</div>${yC('홈 · 팔로우 중 칸', 'inF', inF)}${yC('홈 · 추천 칸', 'inR', inR)}
+      ${xMediaFields('m', m, '사진 · 영상')}${yF('사진 아래 출처 줄 (예: tv.nuri.com · 비우면 안 보임)', 'link', x.link || '')}
+      <div class="ye-sec">인용 상자</div>${yC('인용 상자 보이기', 'qon', qOn)}${ySel('인용한 글의 계정 (없음 = 글씨만 있는 상자)', 'qby', xAccOpts('없음'), q.by || '')}${yF('인용 글 시간', 'qtime', q.time || '')}${yA('인용 글 내용', 'qtext', q.text || '', '', 3)}${xMediaFields('q', qm, '인용 글 사진 · 영상')}
+      <div class="ye-sec">숫자 (글자 그대로 보여요, 비우면 숫자 없음)</div><div class="ye-2">${yF('답글', 'rp', x.n.rp || '')}${yF('재게시', 'nrt', x.n.rt || '')}</div><div class="ye-2">${yF('마음에 들어요', 'lk', x.n.lk || '')}${yF('조회수', 'vw', x.n.vw || '')}</div>
+      ${yA('글을 눌렀을 때 보이는 답글', 'cms', xCmSer(x.cms), '', 7)}<div class="ye-help">답글 한 줄에 하나: <b>아이디 | 시간 | 내용 | 좋아요</b><br>아이디는 @ 빼고 써요 (예: yangteol_ | 1시간 | 푹 자 | 2). 없는 아이디면 그 글자만 이름으로 보여요.</div>`,
+    read: v => {
+      x.by = v('by'); x.time = v('time'); x.text = v('text');
+      const rt = v('rt'); if (rt) x.rt = rt; else delete x.rt;
+      const to = v('to').split(',').map(s => s.trim().replace(/^@/, '')).filter(Boolean); if (to.length) x.to = to; else delete x.to;
+      ['cont', 'ai'].forEach(k => { if (v(k)) x[k] = true; else delete x[k]; });
+      pin = v('pin'); inF = v('inF'); inR = v('inR');
+      const md = xMediaRead(v, 'm', m); if (md) { m = md; x.media = md; } else { m.type = ''; delete x.media; }
+      const ln = v('link').trim(); if (ln) x.link = ln; else delete x.link;
+      qOn = v('qon'); q.by = v('qby'); q.time = v('qtime'); q.text = v('qtext'); if (!q.by) delete q.by;
+      const qmd = xMediaRead(v, 'q', qm); if (qmd) { qm = qmd; q.media = qmd; } else { qm.type = ''; delete q.media; }
+      if (qOn) x.quote = clone(q); else delete x.quote;
+      x.n = { rp: v('rp'), rt: v('nrt'), lk: v('lk'), vw: v('vw') };
+      const cms = xCmParse(v('cms')); if (cms.length) x.cms = cms; else delete x.cms;
+    },
+    setImg: (k, url) => { const o = k === 'm' ? m : qm; if (url) { o.src = url; if (!o.type) o.type = 'img'; } else delete o.src; if (k === 'm') x.media = m; else { q.media = qm; } },
+    ok: () => {
+      const L = xLists(), a = L.tweets = L.tweets || [], y = clone(x), i = a.findIndex(o => o.id === y.id);
+      if (i >= 0) a[i] = y; else a.unshift(y);
+      [['following', inF], ['forYou', inR]].forEach(([k, want]) => { const f = L[k] = L[k] || [], has = f.includes(y.id); if (want && !has) f.unshift(y.id); if (!want && has) L[k] = f.filter(z => z !== y.id); });
+      const own = y.by === 'me' ? L.me : L.users[y.by];
+      [L.me, ...Object.values(L.users)].forEach(u => { if (u.pinned === y.id && u !== own) delete u.pinned; });
+      if (own) { if (pin) own.pinned = y.id; else if (own.pinned === y.id) delete own.pinned; }
+      xCommit(L, X_OK);
+    },
+    move: isNew ? null : d => {
+      const L = xLists(), key = opt.feed && (L[opt.feed] || []).includes(x.id) ? opt.feed : null;
+      if (key) { const f = L[key], i = f.indexOf(x.id), j = i + d; if (j < 0 || j >= f.length) return toast('더 옮길 수 없어요.'); [f[i], f[j]] = [f[j], f[i]]; }
+      else { const a = L.tweets, i = a.findIndex(o => o.id === x.id), j = i + d; if (j < 0 || j >= a.length) return toast('더 옮길 수 없어요.'); [a[i], a[j]] = [a[j], a[i]]; }
+      xCommit(L, d < 0 ? '위로 옮겼어요.' : '아래로 옮겼어요.');
+    },
+    del: isNew ? null : () => { const L = xLists(); L.tweets = L.tweets.filter(o => o.id !== x.id); L.following = (L.following || []).filter(z => z !== x.id); L.forYou = (L.forYou || []).filter(z => z !== x.id); xCommit(L, '삭제했어요.'); },
+  });
+}
+/* 계정 편집 (id: 'me' · 계정 id · 없으면 새 계정) */
+function xUserEdit(id) {
+  const T = STORY.tw, isMe = id === 'me', isNew = !id;
+  const u = isNew ? { name: '새 계정', handle: 'new_' + Date.now().toString(36).slice(-4), av: { em: '🙂', colors: ['#cfd9de', '#8b98a5'] }, banner: { colors: ['#cfd9de', '#8b98a5'] }, joined: 'X월 20XX', following: 0, followers: 0 } : clone(isMe ? T.me : T.users[id]);
+  if (!u) return toast('이 계정은 찾을 수 없어요.');
+  const uid = isNew ? 'x_' + Date.now().toString(36) : id;
+  u.av = u.av || {}; u.banner = u.banner || {};
+  let iF = isNew ? true : (T.followingList || []).includes(uid);
+  const own = xAll().filter(t => t.by === uid && !t.local);
+  return xEd(isMe ? '내 프로필' : isNew ? '새 계정' : '계정 수정', {
+    body: () => `<div class="ye-sec">이름</div><div class="ye-2">${yF('이름 (비워도 돼요)', 'name', u.name)}${yF('아이디 (@ 빼고)', 'handle', u.handle)}</div>
+      <div class="ye-2">${yF('이름 옆 이모지', 'badge', u.badge || '')}${ySel('인증 체크', 'vf', [['', '없음'], ['blue', '파란 체크'], ['gold', '금색 체크']], u.verified || '')}</div>
+      ${yC('자물쇠 (비공개 계정)', 'lock', u.lock)}${isMe ? '' : yC('팬 계정 표시 (가면 아이콘)', 'fan', u.fan)}
+      ${isMe ? '' : `${yC('"나를 팔로우합니다" 표시', 'fm', u.followsMe)}${yC('내가 팔로우함 (팔로잉 목록에 넣기)', 'iF', iF)}${ySel('"○○ 님이 팔로우함" 줄', 'fb', [['', '없음'], ...xAccOpts().filter(([k]) => k !== 'me' && k !== uid)], u.followedBy || '')}`}
+      <div class="ye-sec">프로필 사진</div><div class="ye-prev xq-ep" style="display:flex;gap:12px;align-items:center">${xAvHTML(u.av, 64, u.name || u.handle)}</div>
+      <div class="ye-2">${yF('그림 (이모지)', 'aem', u.av.em || '')}${yC('태강 로고 쓰기', 'tg', u.av.img === 'tg')}</div><div class="ye-2">${yCol('색 1', 'ac0', (u.av.colors || [])[0] || '#cfd9de')}${yCol('색 2', 'ac1', (u.av.colors || [])[1] || '#8b98a5')}</div>${yPick('av', u.av.src, '진짜 사진 넣기')}
+      <div class="ye-sec">위 배너</div><div class="ye-prev" style="height:90px;border-radius:10px;background:${grad(u.banner.colors || ['#cfd9de', '#8b98a5'], u.banner.src)}"></div>
+      ${yA('배너 위 글씨 (줄바꿈 가능)', 'btx', u.banner.text || '', '', 3)}<div class="ye-2">${yF('배너 그림 (이모지)', 'bem', u.banner.em || '')}${yCol('색 1', 'bc0', (u.banner.colors || [])[0] || '#cfd9de')}</div>${yCol('색 2', 'bc1', (u.banner.colors || [])[1] || '#8b98a5')}${yPick('bn', u.banner.src, '배너 사진 넣기')}
+      <div class="ye-sec">소개</div>${yA('소개', 'bio', u.bio || '', '', 3)}<div class="ye-2">${yF('생일 (비우면 안 보임)', 'birth', u.birth || '')}${yF('가입 (예: X월 20XX)', 'joined', u.joined || '')}</div>
+      <div class="ye-2">${yF('팔로우 중 숫자', 'fing', u.following ?? '')}${yF('팔로워 숫자', 'fers', u.followers ?? '')}</div>
+      ${ySel('메인에 올린 글', 'pinned', [['', '없음'], ...own.map(t => [t.id, `${t.time} · ${String(t.text || '(글 없음)').slice(0, 24)}`])], u.pinned || '')}
+      ${isMe || isNew ? '' : '<div class="ye-help">계정을 삭제하면 이 계정이 쓴 글도 같이 지워져요.</div>'}`,
+    read: v => {
+      Object.assign(u, { name: v('name'), handle: v('handle').replace(/^@/, '').trim() || u.handle, bio: v('bio'), joined: v('joined'), following: v('fing'), followers: v('fers') });
+      const b = v('badge').trim(); if (b) u.badge = b; else delete u.badge;
+      const vf = v('vf'); if (vf) u.verified = vf; else delete u.verified;
+      if (v('lock')) u.lock = true; else delete u.lock;
+      if (!isMe) { if (v('fan')) u.fan = true; else delete u.fan; if (v('fm')) u.followsMe = true; else delete u.followsMe; iF = v('iF'); const fb = v('fb'); if (fb) u.followedBy = fb; else delete u.followedBy; }
+      const bi = v('birth').trim(); if (bi) u.birth = bi; else delete u.birth;
+      u.av.em = v('aem'); u.av.colors = [v('ac0'), v('ac1')]; if (v('tg')) u.av.img = 'tg'; else delete u.av.img;
+      u.banner.text = v('btx'); u.banner.em = v('bem'); u.banner.colors = [v('bc0'), v('bc1')]; if (!u.banner.text) delete u.banner.text; if (!u.banner.em) delete u.banner.em;
+      const pn = v('pinned'); if (pn) u.pinned = pn; else delete u.pinned;
+    },
+    setImg: (k, url) => { const o = k === 'av' ? u.av : u.banner; if (url) o.src = url; else delete o.src; },
+    max: 900,
+    ok: () => {
+      const L = xLists(), y = clone(u);
+      if (isMe) L.me = y; else { L.users[uid] = y; const f = L.followingList = L.followingList || [], has = f.includes(uid); if (iF && !has) f.push(uid); if (!iF && has) L.followingList = f.filter(z => z !== uid); }
+      xCommit(L, X_OK);
+    },
+    del: isMe || isNew ? null : () => {
+      const L = xLists(); delete L.users[id];
+      const gone = new Set(L.tweets.filter(t => t.by === id).map(t => t.id));
+      L.tweets = L.tweets.filter(t => !gone.has(t.id)); L.tweets.forEach(t => { if (t.rt === id) delete t.rt; });
+      ['following', 'forYou'].forEach(k => { L[k] = (L[k] || []).filter(z => !gone.has(z)); });
+      ['followingList', 'newPill'].forEach(k => { L[k] = (L[k] || []).filter(z => z !== id); });
+      if (L.recent) L.recent.accounts = (L.recent.accounts || []).filter(z => z !== id);
+      xCommit(L, '계정을 삭제했어요.');
+    },
+  });
+}
+/* 계정 모아 보기 */
+function xUsersPage() {
+  const p = page('ig yedit igedit xq-ul');
+  const draw = () => { p.innerHTML = navHTML({ back: '', title: '계정 관리' }) + `<div class="scroll ye"><div class="ye-tip">계정을 누르면 고칠 수 있어요. 글쓴이·답글·팔로잉 목록에서 이 계정들을 골라 써요.</div><button class="ye-b xq-uadd" data-xun>＋ 새 계정 만들기</button>
+    ${[['me', xU('me')], ...Object.keys(STORY.tw.users).map(k => [k, xU(k)])].map(([k, u]) => `<button class="xq-urow" data-xue="${esc(k)}">${xAvHTML(u.av, 40, u.name || u.handle)}<span>${xNm(u)}<small>@${esc(u.handle)}${k === 'me' ? ' · 나' : ''}</small></span><i>›</i></button>`).join('')}<div style="height:140px"></div></div>`; };
+  p.refresh = draw; draw();
+  p.addEventListener('click', e => { if (e.target.closest('[data-xun]')) return xUserEdit(null); const r = e.target.closest('[data-xue]'); if (r) xUserEdit(r.dataset.xue); });
+  p.onleave = () => setTimeout(xDirtyBar, 0);
+  return push(p);
+}
+/* 탐색 배너 */
+function xPromoEdit() {
+  const P = clone(STORY.tw.promo || {});
+  return xEd('탐색 위 큰 배너', {
+    body: () => `<div class="ye-prev" style="height:120px;border-radius:10px;background:${grad(P.colors || ['#444', '#111'], P.src)}"></div>${yF('제목 (비우면 배너가 안 보여요)', 'title', P.title || '')}${yF('작은 글씨', 'sub', P.sub || '')}${yF('"○○ 님이 프로모션 중" 이름', 'by', P.by || '')}
+      <div class="ye-2">${yF('그림 (이모지)', 'em', P.em || '')}${yCol('색 1', 'c0', (P.colors || [])[0] || '#444444')}</div>${yCol('색 2', 'c1', (P.colors || [])[1] || '#111111')}${yPick('pr', P.src, '배너 사진 넣기')}`,
+    read: v => { Object.assign(P, { title: v('title'), sub: v('sub'), by: v('by'), em: v('em'), colors: [v('c0'), v('c1')] }); },
+    setImg: (k, url) => { if (url) P.src = url; else delete P.src; }, max: 900,
+    ok: () => { const L = xLists(); L.promo = P; xCommit(L, X_OK); },
+  });
+}
+/* 트렌드 (칸별) */
+function xTrendEdit(tab) {
+  const name = (X_TTABS.find(([k]) => k === tab) || [, ''])[1];
+  let text = (((STORY.tw.trends || {})[tab]) || []).map(r => r.filter((c, i) => i < 2 || c).join(' | ')).join('\n');
+  return xEd(`트렌드 · ${name}`, {
+    body: () => `<div class="ye-help">한 줄에 하나: <b>분류 | 제목 | 게시물 수</b> (게시물 수는 빼도 돼요)<br>예: 대한민국에서 트렌드 중 | 물현 | 게시물 1,102개<br>트렌드를 누르면 그 제목이 들어간 글을 찾아 보여줘요.</div>${yA('내용', 'txt', text, '', 14)}`,
+    read: v => { text = v('txt'); },
+    ok: () => { const L = xLists(); L.trends = L.trends || {}; L.trends[tab] = igLines(text).map(([c, t, n]) => [c || '', t || '', n || '']); xCommit(L, X_OK); },
+  });
+}
+/* 최근 검색 */
+function xRecentEdit() {
+  const R = STORY.tw.recent || {}; let acc = xHandles(R.accounts), terms = (R.terms || []).join('\n');
+  return xEd('검색창 · 최근', {
+    body: () => `${yF('위 동그라미 계정들 (아이디, 쉼표로)', 'acc', acc)}${yA('최근 검색어 (한 줄에 하나, 위가 최근)', 'terms', terms, '', 10)}<div class="ye-help">보는 사람이 ⓧ로 지우거나 새로 검색한 건 그 사람 기기에만 남아요.</div>`,
+    read: v => { acc = v('acc'); terms = v('terms'); },
+    ok: () => { const L = xLists(); L.recent = { accounts: xIdsOf(acc), terms: terms.split('\n').map(s => s.trim()).filter(Boolean) }; xCommit(L, X_OK); },
+  });
+}
+/* 알림 */
+function xNotifEdit(id) {
+  const T = STORY.tw, isNew = !id, src = id && (T.notifs || []).find(n => n.id === id);
+  const x = isNew ? { id: 'n' + Date.now().toString(36), kind: 'reply', by: Object.keys(T.users)[0], time: '방금', to: [T.me.handle], text: '', n: {} } : clone(src);
+  x.n = x.n || {};
+  const myTw = xAll().filter(t => t.by === 'me' && !t.local);
+  return xEd(isNew ? '새 알림' : '알림 수정', {
+    body: () => `${ySel('종류', 'kind', [['reply', '답글 (글처럼 보임)'], ['like', '마음에 들어요 (하트 · 사진 여러 개)'], ['follow', '팔로우']], x.kind)}${yF('시간', 'time', x.time || '')}
+      <div class="ye-sec">답글 · 팔로우</div>${ySel('보낸 계정', 'by', xAccOpts().filter(([k]) => k !== 'me'), x.by || '')}${yF('답글 대상 아이디 (쉼표로)', 'to', (x.to || []).join(', '))}${yA('답글 내용', 'text', x.text || '', '', 4)}
+      <div class="ye-2">${yF('답글 수', 'rp', x.n.rp || '')}${yF('마음에 들어요', 'lk', x.n.lk || '')}</div>${yF('조회수', 'vw', x.n.vw || '')}
+      <div class="ye-sec">마음에 들어요</div>${yF('누른 계정들 (아이디, 쉼표로 · 맨 앞 사람 이름이 글에 나와요)', 'likers', xHandles(x.likers))}${yF('"외 N명" 숫자', 'others', x.others ?? '')}
+      <div class="ye-sec">눌렀을 때 열릴 내 글</div>${ySel('내 글', 'post', [['', '없음'], ...myTw.map(t => [t.id, `${t.time} · ${String(t.text || '(글 없음)').slice(0, 24)}`])], x.post || '')}<div class="ye-help">마음에 들어요 알림은 이 글의 내용과 사진이 같이 보여요.</div>`,
+    read: v => {
+      Object.assign(x, { kind: v('kind'), time: v('time'), by: v('by'), text: v('text'), n: { rp: v('rp'), lk: v('lk'), vw: v('vw') } });
+      x.to = v('to').split(',').map(s => s.trim().replace(/^@/, '')).filter(Boolean); x.likers = xIdsOf(v('likers')); x.others = v('others');
+      const ps = v('post'); if (ps) x.post = ps; else delete x.post;
+    },
+    ok: () => { const L = xLists(), a = L.notifs = L.notifs || [], i = a.findIndex(o => o.id === x.id); if (i >= 0) a[i] = clone(x); else a.unshift(clone(x)); xCommit(L, X_OK); },
+    move: isNew ? null : d => { const L = xLists(), a = L.notifs, i = a.findIndex(o => o.id === x.id), j = i + d; if (j < 0 || j >= a.length) return toast('더 옮길 수 없어요.'); [a[i], a[j]] = [a[j], a[i]]; xCommit(L, d < 0 ? '위로 옮겼어요.' : '아래로 옮겼어요.'); },
+    del: isNew ? null : () => { const L = xLists(); L.notifs = L.notifs.filter(o => o.id !== x.id); xCommit(L, '삭제했어요.'); },
+  });
+}
+/* 팔로잉 목록 순서 */
+function xFollowListEdit() {
+  let text = (STORY.tw.followingList || []).map(id => (xU(id) || {}).handle).filter(Boolean).join('\n');
+  return xEd('팔로잉 목록', {
+    body: () => `<div class="ye-help">한 줄에 아이디 하나 (@ 빼고), 위에서부터 보여요.<br>없는 아이디는 빠져요 — 새 사람은 [계정 관리]에서 먼저 만들어 주세요.<br>위의 '팔로우 중' 숫자는 [내 프로필]에서 따로 고쳐요.</div>${yA('목록', 'txt', text, '', 16)}`,
+    read: v => { text = v('txt'); },
+    ok: () => { const L = xLists(); L.followingList = [...new Set(xIdsOf(text).filter(id => id !== 'me'))]; Object.entries(L.users).forEach(([k, u]) => { if (L.followingList.includes(k)) u.iFollow = true; else delete u.iFollow; }); xCommit(L, X_OK); },
+  });
+}
+/* 서랍 · 배지 · 새 글 동그라미 */
+function xMiscEdit() {
+  const T = STORY.tw; let dr = (T.drawer || []).map(r => r.join(' | ')).join('\n'), m = { dm: T.dmBadge || '', dot: T.homeDot, pill: xHandles(T.newPill) };
+  return xEd('서랍 · 배지 · 새 글 알림', {
+    body: () => `<div class="ye-sec">서랍 위 다른 계정 동그라미</div>${yA('한 줄에 하나: 이모지 | 색 | 숫자', 'dr', dr, '', 3)}
+      <div class="ye-sec">아래 쪽지 아이콘</div>${yF('파란 숫자 (비우면 안 보임)', 'dm', m.dm)}
+      <div class="ye-sec">왼쪽 위 내 사진</div>${yC('파란 점 보이기', 'dot', m.dot)}
+      <div class="ye-sec">추천 칸 위 '새 게시물' 동그라미</div>${yF('계정 아이디 (쉼표로, 비우면 안 보임)', 'pill', m.pill)}`,
+    read: v => { dr = v('dr'); m = { dm: v('dm'), dot: v('dot'), pill: v('pill') }; },
+    ok: () => { const L = xLists(); L.drawer = igLines(dr).map(([e, c, n]) => [e || '', c || '#8b98a5', n || '']); L.dmBadge = String(m.dm || '').trim(); L.homeDot = !!m.dot; L.newPill = xIdsOf(m.pill); xCommit(L, X_OK); },
+  });
+}
+/* 노란 편집 바 */
+function xEdBar(where, o = {}) {
+  if (!EDITOR || !xEditOn) return '';
+  const B = { home: [['tw+', '＋ 글'], ['users', '계정 관리'], ['misc', '서랍·배지·새 글']], search: [['promo', '탐색 배너'], ['trends', '트렌드(이 칸)'], ['recent', '최근 검색']], notif: [['notif+', '＋ 알림']],
+    me: [['me', '내 프로필'], ['mytw+', '＋ 내 글'], ['flist', '팔로잉 목록']], user: [['user', '이 계정'], ['utw+', '＋ 이 계정 글'], ['users', '계정 관리']], follow: [['flist', '팔로잉 목록'], ['users', '계정 관리']], post: [['tw', '이 글 고치기']], input: [['recent', '최근 검색']] }[where] || [];
+  const ex = k => k === 'tw+' ? ` data-feed="${o.pane === 0 ? 'forYou' : 'following'}"` : k === 'trends' ? ` data-tab="${esc(o.ttab || 'explore')}"` : (k === 'user' || k === 'utw+') ? ` data-uid="${esc(o.id)}"` : k === 'tw' ? ` data-tid2="${esc(o.id)}"` : '';
+  return `<div class="xq-ebar"><span>편집 중 · 누르면 수정돼요</span>${B.map(([k, l]) => `<button data-xe="${k}"${ex(k)}>${l}</button>`).join('')}</div>`;
+}
+function xEditClick(e, where, info = {}) {
+  const t = e.target;
+  if (t.closest('[data-xed]')) { xEditOn = !xEditOn; toast(xEditOn ? '편집을 켰어요. 글·계정·트렌드·알림 등을 누르면 수정돼요.' : '편집을 껐어요.'); xRefresh(); return true; }
+  const b = t.closest('[data-xe]');
+  if (b) {
+    const k = b.dataset.xe;
+    if (k === 'tw+') xTweetEdit(null, { feed: b.dataset.feed, by: 'me' }); else if (k === 'users') xUsersPage(); else if (k === 'misc') xMiscEdit();
+    else if (k === 'promo') xPromoEdit(); else if (k === 'trends') xTrendEdit(b.dataset.tab); else if (k === 'recent') xRecentEdit();
+    else if (k === 'notif+') xNotifEdit(null); else if (k === 'me') xUserEdit('me'); else if (k === 'mytw+') xTweetEdit(null, { by: 'me' });
+    else if (k === 'flist') xFollowListEdit(); else if (k === 'user') xUserEdit(b.dataset.uid); else if (k === 'utw+') xTweetEdit(null, { by: b.dataset.uid }); else if (k === 'tw') xTweetEdit(b.dataset.tid2);
+    return true;
+  }
+  if (!EDITOR || !xEditOn) return false;
+  if (t.closest('.xq-nav,.xq-htabs,.xq-ttabs,.xq-ntabs,.xq-ptabs,.xq-stabs,[data-back],[data-xdrawer],.xq-fab,.xq-rbox,.xq-sbar,[data-xfl],[data-xfol],[data-xpe],[data-xf2],.xq-pbar')) return false;
+  const ni = t.closest('[data-nid]'); if (ni) { xNotifEdit(ni.dataset.nid); return true; }
+  const art = t.closest('[data-tid]'); if (art) { const c = art.closest('[data-ctx]'); xTweetEdit(art.dataset.tid, { feed: c && c.dataset.ctx }); return true; }
+  if (t.closest('.xq-newp')) { xMiscEdit(); return true; }
+  if (t.closest('.xq-hero')) { xPromoEdit(); return true; }
+  if (where === 'search' && t.closest('[data-xq]')) { xTrendEdit(info.ttab || 'explore'); return true; }
+  if (where === 'input' && t.closest('.xq-rec')) { xRecentEdit(); return true; }
+  const fr = t.closest('.xq-fr[data-xu]'); if (fr && where === 'follow') { xUserEdit(fr.dataset.xu); return true; }
+  if ((where === 'me' || where === 'user') && t.closest('.xq-ban,.xq-pi')) { xUserEdit(info.id); return true; }
+  return false;
+}
+xApply();
+/* X:JS:END */
 
 /* ----- 피드 (사진 SNS) — 실제 앱 구성: 홈 · 릴스 · DM · 검색 · 프로필 ----- */
 const IGIMG = {};
@@ -9297,7 +10202,7 @@ try { const r = JSON.parse(sessionStorage.getItem(KEY + ':reopen') || 'null'); i
 $('.hw.pw').onclick = () => LOCKED ? null : lockNow();
 
 /* 옆으로 밀리는 줄을 마우스로 끌어서 밀기 (손가락은 브라우저가 알아서 밀어줘요) */
-const HSCROLL_SEL = '.hourly,.ch-tabs,.yt-chips,.ig-stories,.bn-games,.yt-acts,.gp-cs,.gp-rec,.gp-cons,.eh-cats,.eh-marts,.eh-cps,.eh-track,.eh-re,.rt-tw,.rt-others,.rt-pcs,.rt-chips,.yv-chips,.yv-shelf,.yv-subrow,.yv-rel,.yv-rec,.ix-car,.ix-notes,.ix-hl,.ix-stories,.kf-mycafes';
+const HSCROLL_SEL = '.hourly,.ch-tabs,.yt-chips,.ig-stories,.bn-games,.yt-acts,.gp-cs,.gp-rec,.gp-cons,.eh-cats,.eh-marts,.eh-cps,.eh-track,.eh-re,.rt-tw,.rt-others,.rt-pcs,.rt-chips,.yv-chips,.yv-shelf,.yv-subrow,.yv-rel,.yv-rec,.ix-car,.ix-notes,.ix-hl,.ix-stories,.kf-mycafes,.xq-ttabs,.xq-ftabs,.xq-racc';
 (function mouseHScroll() {
   const SEL = HSCROLL_SEL;
   let s = null, suppressUntil = 0;
