@@ -774,6 +774,251 @@ button.row:active{background:#e5e5ea}
 .bp-cw small{color:#777}
 .bp-cw button{height:36px;padding:0 20px!important;border-radius:4px!important;background:#1f55b8!important;color:#fff!important;font-weight:600}
 /* WB:CSS:END */
+/* TK:CSS:BEGIN */
+/* ---------- 톡 (카카오톡 모양) ---------- */
+.kt{background:#fff!important;font-family:var(--sys);color:#191919}
+.kt button,.kt-room button,.kt-sub button,.kt-prof button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:pointer;text-align:left}
+.kt .grow,.kt-sub .grow{flex:1;min-width:0}
+.kt::before{content:"";position:absolute;top:0;left:0;right:0;height:var(--sb);background:#fff;z-index:4;pointer-events:none}
+.kt-view{flex:1;min-height:0;position:relative;display:flex;flex-direction:column}
+.kt-sc{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding-top:var(--sb);scrollbar-width:none}
+.kt-sc::-webkit-scrollbar{display:none}
+.kt-top{display:flex;align-items:center;gap:8px;height:56px;padding:0 10px 0 16px}
+.kt-top h1{flex:1;margin:0;font-size:23px;font-weight:700;letter-spacing:-.4px}
+.kt-mebtn{flex:1;min-width:0;display:flex;align-items:center;gap:10px}
+.kt-mebtn b{font-size:22px;font-weight:700;letter-spacing:-.4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kt-ics{display:flex;align-items:center;gap:4px}
+.kt-ib{width:38px;height:38px;display:grid!important;place-items:center;color:#191919}
+.kt-ib svg{width:25px;height:25px}
+.kt-edb{color:#b07800!important;border-radius:50%!important}
+.kt-edb.on{background:#ffe066!important;color:#5c4400!important}
+.kt-edbar{margin:2px 14px 8px;padding:9px 11px;border-radius:12px;background:#fff4c2;border:1px solid #f0d77a;font-size:12.5px;color:#6b5200}
+.kt-edbar div{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
+.kt-edbar button{height:28px;padding:0 11px!important;border-radius:14px!important;background:#fff!important;border:1px solid #e6c65a!important;color:#5c4400!important;font-size:12.5px!important;font-weight:700}
+.kt-chips{display:flex;gap:8px;padding:6px 16px 14px;overflow-x:auto;scrollbar-width:none}
+.kt-chips::-webkit-scrollbar{display:none}
+.kt-chips button{flex:none;height:38px;padding:0 17px!important;border-radius:19px!important;border:1px solid #e3e3e3!important;background:#fff!important;font-size:15.5px!important;font-weight:600;display:flex!important;align-items:center;gap:6px;white-space:nowrap}
+.kt-chips button.on{background:#191919!important;border-color:#191919!important;color:#fff!important}
+.kt-n{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#ff5a28;color:#fff;font-size:10.5px;font-weight:700;font-style:normal}
+.kt-dots{width:22px;height:22px;display:grid}
+.kt-dots svg{width:22px;height:22px}
+.kt-cntb{background:#ff5a28;color:#fff;border-radius:10px;padding:1px 7px;font-size:12.5px;font-weight:700}
+.kt-unchip.on .kt-cntb{background:#fff;color:#191919}
+.kt-chips .kt-plus{width:38px;padding:0!important;justify-content:center;position:relative}
+.kt-plus svg{width:20px;height:20px}
+.kt-rd{position:absolute;top:6px;right:7px;width:6px;height:6px;border-radius:50%;background:#ff5a28}
+.kt-ban{display:flex!important;align-items:center;gap:10px;width:calc(100% - 32px);margin:0 16px 18px;height:84px;border-radius:16px!important;background:#f3f3f3!important;padding:0 14px 0 26px!important;overflow:hidden;box-sizing:border-box}
+.kt-ban.img-l{padding:0 12px 0 0!important;gap:14px}
+.kt-bt{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.kt-bt b{font-size:15.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kt-bt small{font-size:13.5px;color:#7a7a7a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kt-bimg{width:110px;height:72px;flex:none;display:block;border-radius:10px;overflow:hidden}
+.kt-ban.img-l .kt-bimg{width:140px;height:84px;border-radius:0}
+.kt-bimg svg{width:100%;height:100%;display:block}
+.kt-bch{width:18px;height:18px;color:#b8b8b8;display:grid}
+.kt-sec{font-size:13.5px;color:#7d7d7d;padding:10px 16px 8px}
+.kt-hr{border:0;border-top:1px solid #f0f0f0;margin:12px 16px}
+/* 사진 칸 (카카오 모양 둥근 네모) */
+.kt-av{--s:44px;width:var(--s);height:var(--s);flex:none;border-radius:38%;display:grid;place-items:center;overflow:hidden;position:relative;background:#e6e6e6}
+.kt-av svg{width:100%;height:100%;display:block}
+.kt-av img{width:100%;height:100%;object-fit:cover;display:block}
+.kt-av.def{background:#9fcfe0}
+.kt-av.def svg{width:76%;height:76%;margin-top:10%}
+.kt-av.em i{font-style:normal;font-size:calc(var(--s) * .5);line-height:1}
+.kt-av.tx i{font-size:calc(var(--s) * .34);font-weight:800;color:#fff;letter-spacing:-.3px}
+.kt-av.moa{background:linear-gradient(135deg,#ff3fa4,#ff7a3d 55%,#ffc53d)}
+.kt-av.moa i{width:52%;height:52%;border-radius:50%;border:calc(var(--s) * .1) solid #fff;box-sizing:border-box}
+.kt-gav{--s:48px;width:var(--s);height:var(--s);flex:none;position:relative}
+.kt-gav>.kt-av{position:absolute;border:1.5px solid #fff;box-sizing:border-box}
+.kt-gav.g2>:nth-child(1){left:0;top:0}.kt-gav.g2>:nth-child(2){right:0;bottom:0}
+.kt-gav.g3>:nth-child(1){left:25%;top:0}.kt-gav.g3>:nth-child(2){left:0;bottom:0}.kt-gav.g3>:nth-child(3){right:0;bottom:0}
+.kt-gav.g4>:nth-child(1){left:0;top:0}.kt-gav.g4>:nth-child(2){right:0;top:0}.kt-gav.g4>:nth-child(3){left:0;bottom:0}.kt-gav.g4>:nth-child(4){right:0;bottom:0}
+/* 업데이트 프로필 */
+.kt-ups{display:flex;gap:14px;overflow-x:auto;padding:4px 16px 6px;scrollbar-width:none}
+.kt-ups::-webkit-scrollbar{display:none}
+.kt-up{flex:none;width:62px;display:flex!important;flex-direction:column;align-items:center;gap:7px;position:relative;text-align:center!important}
+.kt-up>span:last-child{font-size:12.5px;width:72px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
+.kt-dot{position:absolute;top:-1px;left:-2px;width:7px;height:7px;border-radius:50%;background:#ff5a28}
+.kt-pen{position:absolute;top:36px;right:-2px;width:22px;height:22px;border-radius:50%;background:#191919;color:#fff;display:grid;place-items:center;border:2px solid #fff}
+.kt-pen svg{width:12px;height:12px}
+.kt-adav{background:#ffd9d6!important;flex-direction:column}
+.kt-adav i{font-style:normal;font-size:13px;font-weight:800;color:#e8473f;letter-spacing:-.5px}
+.kt-adtag{position:absolute;top:-6px;right:-8px;font-style:normal;font-size:10px;font-weight:700;color:#555;background:#fff;border:1px solid #ddd;border-radius:9px;padding:1px 5px}
+/* 줄 */
+.kt-row{display:flex!important;align-items:center;gap:13px;width:100%;min-height:62px;padding:8px 16px!important;box-sizing:border-box;cursor:pointer}
+.kt-row:active{background:#f6f6f6!important}
+.kt-row b{display:block;font-size:16px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kt-row b.kt-big{font-size:16.5px}
+.kt-row small{display:block;font-size:13px;color:#8a8a8a;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kt-cnt{font-size:14px;color:#8a8a8a}
+.kt-chev{width:18px;height:18px;display:grid;color:#9a9a9a;font-style:normal}
+.kt-chev svg{width:18px;height:18px}
+.kt-pill{flex:none;height:34px;padding:0 15px!important;border-radius:17px!important;border:1px solid #dcdcdc!important;font-size:14px!important;display:inline-grid!important;place-items:center;background:#fff!important}
+.kt-fh{display:flex;justify-content:space-between;align-items:center;padding-top:6px}
+.kt-sort{display:flex;align-items:center;gap:5px;color:#9a9a9a}
+.kt-sort button{font-size:13.5px!important;color:#9a9a9a!important}
+.kt-sort button.on{color:#191919!important;font-weight:700}
+.kt-sort i{font-style:normal;font-size:10px}
+.kt-idx{position:absolute;right:4px;top:calc(var(--sb) + 8px);bottom:12px;width:20px;border-radius:10px;background:rgba(245,245,245,.92);display:flex;flex-direction:column;justify-content:space-around;align-items:center;padding:6px 0;z-index:3}
+.kt-idx button{font-size:10.5px!important;color:#8a8a8a!important;line-height:1;text-align:center!important;width:20px}
+.kt-idx button:last-child{color:#a4b3ff!important}
+.kt-empty{padding:60px 20px;text-align:center;color:#9a9a9a;font-size:15px}
+/* 소식 */
+.kt-news{padding:0 16px 20px;display:flex;flex-direction:column;gap:16px}
+.kt-nc{border:1px solid #efefef;border-radius:16px;overflow:hidden;cursor:pointer}
+.kt-nh{display:flex;align-items:center;gap:10px;padding:12px}
+.kt-nh b{display:block;font-size:15px}.kt-nh small{display:block;font-size:12px;color:#999;margin-top:2px}
+.kt-nimg{height:230px;display:grid;place-items:center}
+.kt-nimg i{font-style:normal;font-size:90px}
+.kt-nc p{margin:0;padding:12px 14px;font-size:14.5px}
+/* 채팅 목록 */
+.kt-cr{display:flex!important;align-items:center;gap:13px;width:100%;padding:9px 16px!important;box-sizing:border-box;min-height:72px}
+.kt-cr:active{background:#f6f6f6!important}
+.kt-cm{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.kt-cn1{display:flex;align-items:center;gap:5px;min-width:0}
+.kt-cn1 b{font-size:16.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kt-cn1 em{font-style:normal;font-size:15px;color:#a0a0a0;flex:none}
+.kt-mute{width:15px;height:15px;display:grid;color:#a0a0a0;flex:none}
+.kt-mute svg{width:15px;height:15px}
+.kt-cp{font-size:14px;color:#8a8a8a;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:break-all}
+.kt-crr{flex:none;align-self:flex-start;padding-top:4px;display:flex;flex-direction:column;align-items:flex-end;gap:7px}
+.kt-crr time{font-size:12px;color:#a0a0a0}
+.kt-badge{min-width:22px;height:22px;border-radius:11px;padding:0 6px;box-sizing:border-box;background:#ff5a28;color:#fff;font-size:12.5px;font-weight:700;font-style:normal;display:grid;place-items:center}
+/* 아래 탭 */
+.kt-tabs{flex:none;display:grid;grid-template-columns:repeat(5,1fr);padding:8px 0 var(--hb);background:#fafafa;border-top:1px solid #eee}
+.kt-tab{position:relative;height:40px;display:grid!important;place-items:center!important;color:#c4c4c4!important}
+.kt-tab.on{color:#191919!important}
+.kt-tab svg{width:30px;height:30px}
+.kt-tbg{position:absolute;top:-4px;left:50%;margin-left:4px;min-width:22px;height:21px;padding:0 6px;box-sizing:border-box;border-radius:11px;background:#ff5a28;color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center;border:1.5px solid #fafafa}
+/* 오픈채팅 · 쇼핑 · 더보기 (모양만) */
+.kt-dead *{cursor:default!important}
+.kt-oc{display:flex;align-items:center;gap:13px;padding:9px 16px}
+.kt-oc b{display:block;font-size:15.5px;font-weight:600}
+.kt-oc small{display:block;font-size:13px;color:#777;margin-top:2px}
+.kt-oc em{display:block;font-style:normal;font-size:12px;color:#a0a0a0;margin-top:3px}
+.kt-tags{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px}
+.kt-tags span{padding:7px 13px;border-radius:16px;background:#f3f3f3;font-size:14px}
+.kt-shban{margin:0 16px 10px;padding:18px;border-radius:16px;background:linear-gradient(120deg,#ffe8de,#ffd3e2)}
+.kt-shban.b2{background:linear-gradient(120deg,#e4ecff,#efe2ff);margin-top:14px}
+.kt-shban b{display:block;font-size:17px;line-height:1.35}
+.kt-shban small{display:block;font-size:13px;color:#666;margin-top:6px}
+.kt-shg{display:grid;grid-template-columns:1fr 1fr;gap:16px 12px;padding:0 16px}
+.kt-shi span{display:grid;place-items:center;aspect-ratio:1;border-radius:12px}
+.kt-shi span i{font-style:normal;font-size:56px}
+.kt-shi small{display:block;font-size:12px;color:#888;margin-top:7px}
+.kt-shi b{display:block;font-size:14px;font-weight:500;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kt-shi em{display:block;font-style:normal;font-size:15px;font-weight:700;margin-top:3px}
+.kt-mo-me{display:flex;align-items:center;gap:12px;padding:6px 16px 14px}
+.kt-mo-me b{display:block;font-size:17px}.kt-mo-me small{display:block;font-size:13px;color:#888}
+.kt-mo-g{display:grid;grid-template-columns:repeat(4,1fr);gap:16px 0;padding:8px 10px}
+.kt-mo-g div{display:flex;flex-direction:column;align-items:center;gap:6px}
+.kt-mo-g span{width:48px;height:48px;border-radius:16px;background:#f4f4f4;display:grid;place-items:center;font-size:24px}
+.kt-mo-g small{font-size:12.5px;color:#333}
+.kt-mo-l{display:flex;flex-direction:column}
+.kt-mo-l span{padding:13px 16px;font-size:15px;border-bottom:1px solid #f3f3f3}
+/* 프로필 */
+.kt-prof{color:#fff;display:flex;flex-direction:column}
+.kt-prof .kt-ib{color:#fff}
+.kt-pt{display:flex;align-items:center;padding:calc(var(--sb) + 2px) 8px 0;gap:2px}
+.kt-pt .grow{flex:1}
+.kt-pm{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:8px;padding-bottom:26px;text-align:center}
+.kt-pm .kt-av{margin-bottom:6px}
+.kt-pm b{font-size:21px;font-weight:600;padding:0 24px}
+.kt-pm small{font-size:14.5px;opacity:.85;padding:0 30px;line-height:1.4}
+.kt-pa{display:flex;justify-content:center;gap:42px;padding:20px 0 calc(var(--hb) + 22px);border-top:1px solid rgba(255,255,255,.22)}
+.kt-pa button{display:flex!important;flex-direction:column;align-items:center;gap:8px;font-size:12.5px!important;color:#fff!important;text-align:center!important}
+.kt-pa svg{width:27px;height:27px}
+/* 대화방 */
+.kt-room{background:#abc1d1!important;font-family:var(--sys);color:#191919}
+.kt-rh{flex:none;display:flex;align-items:center;gap:2px;padding:var(--sb) 4px 4px 4px;background:#abc1d1;height:48px}
+.kt-rt{flex:1;min-width:0;display:flex;align-items:center;gap:6px;padding-left:6px}
+.kt-rt b{font-size:18px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kt-rt span{font-size:16px;color:#4f5f6e;flex:none}
+.kt-rt em{font-style:normal;font-size:11px;font-weight:700;background:#556677;color:#fff;border-radius:50%;width:18px;height:18px;display:grid;place-items:center}
+.kt-rt .kt-mute{color:#4f5f6e}
+.kt-sbar{flex:none;display:flex;align-items:center;gap:6px;padding:6px 10px;background:#fff;border-bottom:1px solid #dde4ea}
+.kt-sbar[hidden]{display:none}
+.kt-sbar input{flex:1;min-width:0;height:34px;border:0;outline:0;border-radius:10px;background:#f1f3f5;padding:0 10px;font:inherit;font-size:15px}
+.kt-sbar span{font-size:12.5px;color:#777;flex:none}
+.kt-sbar button{flex:none;height:32px;padding:0 8px!important;font-size:13px!important;color:#335!important}
+.kt-notice{flex:none;margin:2px 10px 4px;display:flex;align-items:center;gap:8px;background:#fff;border-radius:12px;padding:10px 12px;font-size:13.5px;box-shadow:0 1px 4px rgba(0,0,0,.08);z-index:1}
+.kt-notice span{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kt-notice i{font-style:normal}
+.kt-msgs{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:6px 12px 14px;display:flex;flex-direction:column}
+.kt-date{display:flex;justify-content:center;margin:18px 0 10px}
+.kt-date span{display:flex;align-items:center;gap:3px;font-size:13px;color:#3c4a57;background:rgba(80,105,130,.22);border-radius:16px;padding:6px 10px 6px 14px}
+.kt-date svg{width:14px;height:14px}
+.kt-sys{display:flex;justify-content:center;margin:6px 0 10px}
+.kt-sys span{font-size:12.5px;color:#fff;background:rgba(60,80,100,.32);border-radius:14px;padding:5px 12px;text-align:center;max-width:85%}
+.kt-m{display:flex;margin-top:4px}
+.kt-m.first{margin-top:11px}
+.kt-m.me{justify-content:flex-end;align-items:flex-end;gap:5px}
+.kt-mav{flex:none;width:40px;height:40px;margin-right:8px}
+.kt-mb{min-width:0;max-width:72%}
+.kt-mn{font-size:13px;color:#3d4a56;margin:1px 0 5px 2px}
+.kt-ml{display:flex;align-items:flex-end;gap:5px}
+.kt-b{position:relative;padding:9px 13px;border-radius:18px;font-size:15.5px;line-height:1.42;white-space:pre-wrap;word-break:break-word;background:#fff;max-width:250px;-webkit-user-select:text;user-select:text}
+.kt-m.me .kt-b{background:#fee500}
+.kt-m.me>.kt-b,.kt-m.me>.kt-pics,.kt-m.me>.kt-emo{max-width:72%}
+.kt-b.tail::before{content:"";position:absolute;top:0;width:0;height:0}
+.kt-m.them .kt-b.tail{border-top-left-radius:4px}
+.kt-m.me .kt-b.tail{border-top-right-radius:4px}
+.kt-m.them .kt-b.tail::before{left:-7px;border-top:11px solid #fff;border-left:10px solid transparent}
+.kt-m.me .kt-b.tail::before{right:-7px;border-top:11px solid #fee500;border-right:10px solid transparent}
+.kt-b u{color:#2f5fb3}
+.kt-meta{flex:none;display:flex;flex-direction:column;align-items:flex-end;font-size:10.5px;color:#4b5a68;line-height:1.3}
+.kt-m.them .kt-meta{align-items:flex-start}
+.kt-meta b{color:#e8b400;font-size:11px;font-weight:700}
+.kt-emo{font-size:84px;line-height:1.05}
+.kt-pics{display:grid;gap:3px;border-radius:14px;overflow:hidden;width:210px}
+.kt-pics.n1{width:200px}
+.kt-pics.n2{grid-template-columns:1fr 1fr}
+.kt-pics.n3,.kt-pics.n4{grid-template-columns:1fr 1fr}
+.kt-pics img{width:100%;display:block;max-height:280px;object-fit:cover}
+.kt-pic{aspect-ratio:1;display:grid;place-items:center;background:#cfd8e3}
+.kt-pics.n1 .kt-pic{aspect-ratio:4/5}
+.kt-pic i{font-style:normal;font-size:44px;letter-spacing:-6px}
+.kt-m.hit .kt-b{box-shadow:0 0 0 2px #ffcf3a}
+.kt-m.cur .kt-b{box-shadow:0 0 0 3px #ff8a00}
+.kt-typ{display:flex;gap:4px;padding:12px 14px}
+.kt-typ i{width:7px;height:7px;border-radius:50%;background:#9aa4ae;animation:tdot 1.2s infinite}
+.kt-typ i:nth-child(2){animation-delay:.2s}.kt-typ i:nth-child(3){animation-delay:.4s}
+.kt-comp{flex:none;display:flex;align-items:center;gap:8px;padding:8px 10px calc(var(--hb) - 6px);background:#fff}
+.kt-cplus{width:38px;height:38px;flex:none;border-radius:50%!important;background:#f1f1f1!important;display:grid!important;place-items:center;color:#333!important}
+.kt-cplus svg{width:20px;height:20px}
+.kt-field{flex:1;min-width:0;display:flex;align-items:center;height:40px;border-radius:20px;background:#f3f3f3;padding:0 4px 0 14px;margin:0}
+.kt-field input{flex:1;min-width:0;border:0;outline:0;background:none;font:inherit;font-size:15.5px;color:#191919}
+.kt-field input::placeholder{color:#a8a8a8}
+.kt-emob{width:32px;height:32px;flex:none;border-radius:50%!important;background:#e3e3e3!important;display:grid!important;place-items:center;color:#333!important}
+.kt-emob svg{width:20px;height:20px}
+.kt-hash{width:38px;height:38px;flex:none;border-radius:50%!important;background:#f1f1f1!important;display:grid!important;place-items:center;color:#191919!important;transition:background .15s}
+.kt-hash svg{width:20px;height:20px}
+.kt-hash.go{background:#fee500!important}
+.kt-emop{flex:none;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:10px 10px calc(var(--hb) + 4px);background:#fff;border-top:1px solid #eee}
+.kt-emop[hidden]{display:none}
+.kt-emop button{height:64px;font-size:40px!important;display:grid!important;place-items:center;border-radius:12px!important}
+.kt-emop button:active{background:#f3f3f3!important}
+.kt-drbg{position:absolute;inset:0;z-index:20;background:rgba(0,0,0,.35);display:flex;justify-content:flex-end;animation:sfade .2s}
+.kt-dr{width:78%;height:100%;background:#fff;overflow-y:auto;padding:calc(var(--sb) + 6px) 0 30px;box-sizing:border-box;animation:ktdr .28s cubic-bezier(.2,.85,.25,1)}
+@keyframes ktdr{from{transform:translateX(100%)}}
+.kt-dr h3{margin:0;padding:8px 18px 14px;font-size:19px}
+.kt-drt{display:flex!important;align-items:center;justify-content:space-between;width:100%;padding:10px 18px!important;font-size:15.5px!important;box-sizing:border-box;border-top:1px solid #f0f0f0!important;border-bottom:1px solid #f0f0f0!important}
+.kt-drs{font-size:13px;color:#888;padding:16px 18px 6px}
+.kt-drr{display:flex!important;align-items:center;gap:12px;width:100%;padding:7px 18px!important;box-sizing:border-box;font-size:15.5px!important}
+.kt-drr em{font-style:normal;font-size:11px;background:#556677;color:#fff;border-radius:50%;width:17px;height:17px;display:inline-grid;place-items:center;margin-left:3px}
+.kt-drx{font-size:13.5px;color:#888;padding:8px 18px}
+/* 하위 화면 (검색 · 생일 · 채널 등) */
+.kt-sub{background:#fff!important;font-family:var(--sys);color:#191919}
+.kt-subh{flex:none;display:flex;align-items:center;gap:6px;padding:var(--sb) 10px 6px 4px;height:50px;border-bottom:1px solid #f2f2f2}
+.kt-subh b{font-size:18px;font-weight:700}
+.kt-sin:focus-visible{outline:0}
+.kt-sin{flex:1;min-width:0;height:38px;border:0;outline:0;border-radius:12px;background:#f3f3f3;padding:0 12px;font:inherit;font-size:16px;color:#191919}
+.kt-subb{flex:1;min-height:0;overflow-y:auto;padding-bottom:30px}
+.kt-edimgs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.kt-edimgs span{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12px}
+.kt-edimgs img{width:74px;height:74px;object-fit:cover;border-radius:10px}
+.kt-edimgs small{color:#888;font-size:12.5px}
+/* TK:CSS:END */
 
 /* ---------- 캘린더 ---------- */
 .cal .back{color:var(--ios-red)}
@@ -3614,23 +3859,202 @@ const STORY = {
       { date: 'XX. X. XX. 오후 xx:xx' }, { text: '[Web발신]\n[울프스샵] 주문하신 상품(어센틱 유니폼 #27 외 1건)이 출고되었습니다.', time: 'XX. X. XX.' } ] },
   ],
 
-  /* ---------- 톡 ---------- (with: 방에 있는 사람들. 1명이면 1:1 채팅) */
-  talk: { chats: [
-    /* 프로야구봇 (응원팀 알림 채널) — noNotif: 안 읽은 메시지를 알림으로 따로 만들지 않아요 (아래 pushes 에 있어서) */
-    { id: 'kbobot', name: '프로야구봇', with: ['kbobot'], unread: 1, noNotif: true,
-      history: [
-        { date: '20XX년 X월 XX일' },
-        { from: 'kbobot', time: '오후 xx:xx', text: '안녕하세요! 프로야구봇입니다 ⚾\n응원팀 [태강 울프스]의 경기 시작·종료·기록 알림을 보내드릴게요.\n\n‘기록’ 또는 ‘순위’를 입력해 보세요.' },
-        { date: '오늘' },
-        { from: 'kbobot', time: '오후 xx:xx', text: '🔔오늘 경기 기록을 확인하세요!\n\n[XX. XX (월) 태강 울프스 경기 결과]\n백산 8 : 3 태강 (패)\n📍 태강 홈\n\n승리투수  류지환 (백산)\n패전투수  강영현 (태강)\n결승타  문태성 (1회 2타점 2루타)\n홈런  노경민 3점 (2회) · 켄드릭 2점 (4회)\n\n▶ 루타에서 자세히 보기' },
-      ],
-      rules: [
-        { keywords: ['기록', '결과', '스코어', '점수'], reply: [ { from: 'kbobot', text: '[오늘 태강 울프스 경기]\n백산 8 : 3 태강 (패)\n\n이닝별 점수\n백산 2 3 1 0 0 0 2 0 0 │ 8\n태강 0 0 0 2 0 1 0 0 0 │ 3\n\n승 류지환 · 패 강영현' } ] },
-        { keywords: ['순위'], reply: [ { from: 'kbobot', text: '[KBO 리그 순위]\n1. 금성 31승 16패 1무\n2. SR 29승 20패\n3. HB 27승 21패 2무\n4. 태강 26승 22패 1무 ⭐\n5. 백산 25승 23패\n6. 청우 24승 26패 1무\n7. 신성 22승 25패 1무\n8. 대운 22승 28패\n9. 유성 20승 28패 1무\n10. 선진 17승 34패 1무' } ] },
-      ],
-      fallback: [ { from: 'kbobot', text: '원하시는 메뉴를 입력해 주세요.\n· 기록\n· 순위' } ] },
-  ] },
-
+/* TK:DATA:BEGIN */
+  /* ---------- 톡 (카카오톡 모양 메신저) ----------
+     me: 내 프로필 (이름은 owner.name) — status 상태메시지, av 사진 칸 { em: 이모지, c: 색 } 또는 { src: 사진 }, bg 배경색
+     friends: 친구 목록 — id 가 연락처(people) id 면 이름은 연락처 이름. 'k_' 로 시작하면 톡에만 있는 친구.
+              name 이름, status 상태메시지, av 사진 칸, fav 즐겨찾기, hidden 친구 목록에서 숨김(단톡방에만 나옴)
+     channels: 채널(공식 계정) — icon: talk · pay · gift · eats · shop · bot · wolves · card · moa
+     updates: 업데이트 프로필 줄 (친구 id, 광고는 { ad: '이름', logo: '로고 글씨' })
+     birthdays: 생일인 친구 [{ id, when }], soon: 다가오는 생일 [{ id, when }]
+     chats: 채팅방 — 위가 최신. with 대화상대(1명이면 1:1), name 방 이름, time 목록 시간, unread 안 읽은 수,
+            muted 알림 끔, count 인원수 표시, notice 공지, imgs 올린 사진 { 키: 사진 }
+            history: { date } 날짜 줄 · { sys } 가운데 안내 · { from, text } · { from:'me', text, read:false(1 표시) / n: 안 읽은 사람 수 }
+                     { from, emo: '🐺' } 이모티콘 · { from, photo: 3 } 사진 n장(그림) · { from, img: '키' } 올린 사진 */
+  talk: {
+    me: { status: '오늘도 무사히', av: null, bg: '#3d4a6b' },
+    ai: { name: '모아', desc: '필요한 걸 먼저 챙겨주는 AI 친구' },
+    banner: { t: '경기 끝난 근육엔 이게 진짜', s: '하루핏 마사지건 런칭 특가', art: 'gun', src: null },
+    chatBanner: { t: 'VELO 스포츠 고글', s: '다양한 렌즈 컬러 만나보기', art: 'goggle', src: null },
+    newsBadge: true,
+    openBadge: 0,
+    updates: ['jinhun', 'kendrick', { ad: '별빛화재 보장분석', logo: '별빛화재' }, 'k_minkyu', 'p_jungwoo', 'seonjae'],
+    birthdays: [ { id: 'p_seungho', when: '오늘' }, { id: 'k_minkyu', when: '오늘' }, { id: 'p_cousin', when: '어제' } ],
+    soon: [ { id: 'k_dohyun', when: 'XX월 XX일' }, { id: 'jeongseok', when: 'XX월 XX일' }, { id: 'p_trainer', when: 'XX월 XX일' }, { id: 'k_gunwoo', when: 'XX월 XX일' }, { id: 'p_taemin', when: 'XX월 XX일' }, { id: 'youngchan', when: 'XX월 XX일' }, { id: 'dad', when: 'XX월 XX일' } ],
+    recommend: [ { name: '김태호', sub: '나를 친구로 추가한 사람' }, { name: '유소년야구 김코치', sub: '나를 친구로 추가한 사람' }, { name: '한빛고 후배 민재', sub: '나를 친구로 추가한 사람' }, { name: '박세훈', sub: '알 수도 있는 친구' }, { name: '이지안', sub: '알 수도 있는 친구' } ],
+    friends: [
+      { id: 'mom', status: '건강하자 우리 가족💕', av: { em: '🌷', c: '#f4b6c2' } },
+      { id: 'dad', av: { em: '⛰️', c: '#8fbf8a' } },
+      { id: 'sungjin' },
+      { id: 'wonjun', status: '53' },
+      { id: 'jeongseok', status: '💪💪', av: { em: '🐻', c: '#c9a27a' } },
+      { id: 'jinhun', status: '⚾ 7', av: { em: '⚾', c: '#2f3f6e' } },
+      { id: 'jaecheol', status: 'One pitch at a time' },
+      { id: 'minseo', av: { em: '🏖️', c: '#7cc6e8' } },
+      { id: 'seonjae', status: '18', av: { em: '🎧', c: '#3b3b48' } },
+      { id: 'kendrick', status: 'God is good 🙏', av: { em: '🇺🇸', c: '#c7d6ec' } },
+      { id: 'seunghyuk' },
+      { id: 'junmin', status: '백업의 품격' },
+      { id: 'coach' },
+      { id: 'jaejun', av: { em: '🐶', c: '#e8d3b0' } },
+      { id: 'youngchan', status: '25', av: { em: '🏀', c: '#f0a35e' } },
+      { id: 'duyoung', status: '재활중🔥', av: { em: '💪', c: '#d66b5c' } },
+      { id: 'k_taeyun', name: '태윤이형', status: '45' },
+      { id: 'k_woojin', name: '우진이형', av: { em: '🎣', c: '#5f9fb8' } },
+      { id: 'k_minkyu', name: '민규', status: '28', av: { em: '🐱', c: '#f2d2a9' } },
+      { id: 'k_gray', name: 'Gray', status: 'Texas → Taegang', av: { em: '🤠', c: '#d9b48a' } },
+      { id: 'k_evans', name: 'Evans', av: { em: '🌴', c: '#8fd0b8' } },
+      { id: 'p_dw' }, { id: 'p_gs' }, { id: 'p_sj' }, { id: 'p_cw' }, { id: 'p_sr' }, { id: 'p_ss' }, { id: 'p_hb' }, { id: 'p_ys' }, { id: 'p_bs' },
+      { id: 'p_jinseok' }, { id: 'p_pcoach' }, { id: 'p_trainer', status: '부상 없는 시즌!' }, { id: 'p_manager' }, { id: 'p_futures' },
+      { id: 'p_jungwoo', status: '퇴사각', av: { em: '🍺', c: '#f1c75b' } },
+      { id: 'p_taemin', status: '🏋️', av: { em: '🏋️', c: '#9ab0d6' } },
+      { id: 'p_seungho', av: { em: '🎂', c: '#f6c9d0' } },
+      { id: 'p_cousin' }, { id: 'p_aunt', av: { em: '🌻', c: '#f7dc7a' } }, { id: 'p_pt', status: '오늘도 득근' },
+      { id: 'k_dohyun', name: '도현', status: '한빛고 ⚾' },
+      { id: 'k_gunwoo', name: '박건우', status: '퓨처스에서 기다린다' },
+      { id: 'k_hbcoach', name: '한빛고 감독님' },
+      { id: 'k_lesson', name: '야구레슨 최코치님', status: '유소년 야구교실 문의 환영' },
+      { id: 'k_realty', name: '부동산 이실장님' },
+      { id: 'k_hair', name: '미용실 원장님', av: { em: '✂️', c: '#e4d8f0' } },
+      { id: 'k_minhyuk', name: '김민혁' },
+      { id: 'k_dongha', name: '서동하', av: { em: '🌙', c: '#2d3350' } },
+    ],
+    channels: [
+      { id: 'ch_talk', name: '톡', icon: 'talk' }, { id: 'ch_pay', name: '톡페이', icon: 'pay' }, { id: 'ch_gift', name: '톡 선물하기', icon: 'gift' },
+      { id: 'ch_wolves', name: '태강 울프스', icon: 'wolves' }, { id: 'kbobot', name: '프로야구봇', icon: 'bot' }, { id: 'ch_eats', name: '하루이츠', icon: 'eats' },
+      { id: 'ch_shop', name: '울프스샵', icon: 'shop' }, { id: 'ch_card', name: '별빛카드', icon: 'card' }, { id: 'k_moa', name: '모아', icon: 'moa' },
+    ],
+    chats: [
+      { id: 'tk_pitch', name: '투수조 🐺', with: ['jaecheol', 'duyoung', 'jeongseok', 'k_taeyun', 'k_woojin', 'k_minkyu', 'k_gray', 'k_evans'], time: 'xx:xx', unread: 9, noNotif: true,
+        history: [
+          { date: '20XX년 XX월 XX일 X요일' },
+          { sys: '조재철선배님이 강영현님을 초대했습니다.' },
+          { from: 'jaecheol', text: '영현이 1군 온 기념 초대' },
+          { from: 'k_minkyu', text: '형 환영합니다!!' },
+          { from: 'k_taeyun', text: 'ㅎㅇ' },
+          { from: 'me', text: '선배님들 잘 부탁드립니다!!' },
+          { date: '20XX년 XX월 XX일 X요일' },
+          { from: 'jaecheol', text: '다들 수고했다' },
+          { from: 'jeongseok', text: '수고하셨습니다!!' },
+          { from: 'k_minkyu', text: '수고하셨습니다' },
+          { from: 'k_woojin', text: '내일 미팅 몇 시였죠' },
+          { from: 'jaecheol', text: '1시 반 클럽하우스' },
+          { from: 'jaecheol', text: '늦으면 벌금 만원' },
+          { from: 'k_minkyu', text: 'ㅋㅋㅋㅋㅋ' },
+          { from: 'duyoung', text: '난 재활조라 오전에 구장 감' },
+          { from: 'duyoung', text: '영현이 오늘 고생했다' },
+          { from: 'k_gray', text: 'Good job guys 👍' },
+          { from: 'jaecheol', text: '영현이는 오늘 영상 돌려보지 말고 그냥 자라' },
+          { from: 'jaecheol', text: '내일 미팅 때 얘기하자' },
+        ] },
+      { id: 'tk_kendrick', with: ['kendrick'], time: 'xx:xx', unread: 3, noNotif: true,
+        history: [
+          { date: '20XX년 XX월 XX일 X요일' },
+          { text: 'Young!! first win 🎉' }, { from: 'me', text: 'Thank you 켄드릭 ㅎㅎ' }, { emo: '👍' },
+          { date: '20XX년 XX월 XX일 X요일' },
+          { text: 'Young' }, { text: 'Today not your day. Tomorrow new day 💪' }, { text: '내일은 새로운 날 입니다' },
+        ] },
+      { id: 'tk_mom', with: ['mom'], time: 'xx:xx', unread: 4, noNotif: true,
+        history: [
+          { date: '20XX년 XX월 XX일 X요일' },
+          { text: '아들 반찬 택배로 보냈어' }, { text: '오면 냉장고에 바로 넣어!!' }, { from: 'me', text: '감사해요 엄마' }, { from: 'me', text: '잘 먹을게요' },
+          { date: '20XX년 XX월 XX일 X요일' },
+          { photo: 1, pics: [{ em: '👶⚾', c: ['#f6e7c8', '#d9b98a'] }] }, { text: '아빠가 이거 보내주래' }, { text: '우리 아들 어릴 때ㅎㅎ' }, { text: '밥은 먹었어?' },
+        ] },
+      { id: 'tk_family', name: '우리 가족 🏠', with: ['mom', 'dad'], time: 'xx:xx', unread: 4, noNotif: true,
+        history: [
+          { date: '20XX년 XX월 XX일 X요일' },
+          { from: 'mom', text: '여보 아들 오늘 6시 반 경기래요' }, { from: 'dad', text: '알어' }, { from: 'dad', text: '티비 틀어놨다' },
+          { from: 'me', text: '열심히 할게요ㅎㅎ' },
+          { date: '20XX년 XX월 XX일 X요일' },
+          { from: 'dad', text: '영현아' }, { from: 'dad', text: '한 경기다. 고개 숙이지 마라' },
+          { from: 'mom', text: '여보 애 피곤해' }, { from: 'mom', text: '아들 답장 안 해도 돼 푹 자' },
+        ] },
+      { id: 'tk_jinhun', with: ['jinhun'], time: 'xx:xx', unread: 3, noNotif: true,
+        history: [
+          { date: '20XX년 XX월 XX일 X요일' },
+          { from: 'me', text: '형 내일 몇 시 출근하세요?' }, { text: '1시? 태워줄까' }, { from: 'me', text: '넵 감사합니다!!' },
+          { date: '20XX년 XX월 XX일 X요일' },
+          { text: '야' }, { text: '내일 출근 전에 사우나 ㄱ?' }, { text: '머리 좀 비우자' },
+        ] },
+      { id: 'tk_hs', name: '한빛고 동기들 ⚾', with: ['p_jungwoo', 'p_seungho', 'p_taemin', 'k_dohyun'], time: 'xx:xx', unread: 23, muted: true, noNotif: true,
+        history: [
+          { date: '20XX년 XX월 XX일 X요일' },
+          { from: 'p_taemin', text: '영현이 1군 선발이래' }, { from: 'p_seungho', text: '미쳤다' }, { from: 'p_jungwoo', text: '다 같이 직관 ㄱ?' }, { from: 'k_dohyun', text: '난 출장..' },
+          { from: 'me', text: 'ㅋㅋㅋ 표 구해줄게' },
+          { date: '20XX년 XX월 XX일 X요일' },
+          { from: 'p_jungwoo', text: '승호 생일 축하한다 🎂' }, { from: 'p_taemin', text: '생축!!' }, { from: 'k_dohyun', text: 'ㅊㅋㅊㅋ' }, { from: 'p_taemin', emo: '🎉' },
+          { from: 'p_seungho', text: '고맙다 ㅋㅋ' }, { from: 'p_seungho', text: '근데 영현이는?' },
+          { from: 'p_jungwoo', text: '오늘은 냅둬라' },
+          { from: 'p_seungho', text: '아 경기..' }, { from: 'k_dohyun', text: '봤다..' },
+          { from: 'p_jungwoo', text: '야 이 방에서 야구 얘기 금지' },
+          { from: 'p_taemin', text: 'ㅋㅋㅋㅋㅋㅋㅋ 영현이 오늘 경기 얘기 금지 먹이고 담주에 술 사주면 됨' },
+        ] },
+      { id: 'tk_sungjin', with: ['sungjin'], time: 'xx:xx', unread: 0, noNotif: true,
+        history: [
+          { date: '20XX년 XX월 XX일 X요일' },
+          { text: '내일 몇 시까지 와' }, { from: 'me', text: '1시까지 갈게요' }, { text: '사인 미리 맞춰보자 일찍 와' }, { from: 'me', text: '네 형' },
+          { date: '20XX년 XX월 XX일 X요일' },
+          { text: '수고했다' }, { text: '오늘 잘 던졌어' }, { from: 'me', text: '형이 잘 잡아주셔서요' }, { from: 'me', text: '감사합니다' }, { text: '자라' },
+          { date: '20XX년 XX월 XX일 X요일' },
+          { from: 'me', text: '형' }, { from: 'me', text: '오늘 죄송했어요', read: false },
+        ] },
+      { id: 'kbobot', name: '프로야구봇', with: ['kbobot'], unread: 1, noNotif: true, time: 'xx:xx',
+        history: [
+          { date: '20XX년 X월 XX일' },
+          { from: 'kbobot', time: '오후 xx:xx', text: '안녕하세요! 프로야구봇입니다 ⚾\n응원팀 [태강 울프스]의 경기 시작·종료·기록 알림을 보내드릴게요.\n\n‘기록’ 또는 ‘순위’를 입력해 보세요.' },
+          { date: '오늘' },
+          { from: 'kbobot', time: '오후 xx:xx', text: '🔔오늘 경기 기록을 확인하세요!\n\n[XX. XX (월) 태강 울프스 경기 결과]\n백산 8 : 3 태강 (패)\n📍 태강 홈\n\n승리투수  류지환 (백산)\n패전투수  강영현 (태강)\n결승타  문태성 (1회 2타점 2루타)\n홈런  노경민 3점 (2회) · 켄드릭 2점 (4회)\n\n▶ 루타에서 자세히 보기' },
+        ],
+        rules: [
+          { keywords: ['기록', '결과', '스코어', '점수'], reply: [ { from: 'kbobot', text: '[오늘 태강 울프스 경기]\n백산 8 : 3 태강 (패)\n\n이닝별 점수\n백산 2 3 1 0 0 0 2 0 0 │ 8\n태강 0 0 0 2 0 1 0 0 0 │ 3\n\n승 류지환 · 패 강영현' } ] },
+          { keywords: ['순위'], reply: [ { from: 'kbobot', text: '[KBO 리그 순위]\n1. 금성 31승 16패 1무\n2. SR 29승 20패\n3. HB 27승 21패 2무\n4. 태강 26승 22패 1무 ⭐\n5. 백산 25승 23패\n6. 청우 24승 26패 1무\n7. 신성 22승 25패 1무\n8. 대운 22승 28패\n9. 유성 20승 28패 1무\n10. 선진 17승 34패 1무' } ] },
+        ],
+        fallback: [ { from: 'kbobot', text: '원하시는 메뉴를 입력해 주세요.\n· 기록\n· 순위' } ] },
+      { id: 'tk_team', name: '태강 울프스 선수단', with: ['p_manager', 'coach', 'p_pcoach', 'p_trainer', 'sungjin', 'jinhun', 'wonjun', 'jaecheol'], count: 41, time: 'xx:xx', unread: 1, muted: true, noNotif: true,
+        notice: '[공지] 홈 6연전 기간 선수단 집합 오후 2시 · 출입증 꼭 지참',
+        history: [
+          { date: '20XX년 XX월 XX일 X요일' },
+          { sys: '김실장님 (구단 매니저)님이 강영현님을 초대했습니다.' },
+          { from: 'p_manager', text: '강영현 선수 1군 등록되어 초대합니다. 공지 꼭 확인 부탁드립니다.' },
+          { from: 'me', text: '네 감사합니다!' },
+          { date: '20XX년 XX월 XX일 X요일' },
+          { from: 'p_manager', text: '[공지]\n내일(XX일) 홈경기 선수단 집합 오후 2시입니다.\n투수조는 1시 30분 클럽하우스 미팅 후 합류해 주세요.\n출입증 꼭 지참 바랍니다.' },
+        ] },
+      { id: 'tk_wolves', with: ['ch_wolves'], time: 'xx:xx', unread: 1, noNotif: true,
+        history: [ { date: '20XX년 XX월 XX일 X요일' }, { text: '🐺 [울프스 TV] 오늘 경기 하이라이트가 올라왔어요!\n백산 가디언스 vs 태강 울프스\n\n▶ 영상 보러가기' } ] },
+      { id: 'tk_eats', with: ['ch_eats'], time: 'xx:xx', unread: 1, noNotif: true,
+        history: [ { date: '20XX년 XX월 XX일 X요일' }, { text: '(광고) 경기 끝나고 출출할 땐? 🍜\n야식 3,000원 쿠폰이 도착했어요.\n\n▶ 쿠폰 받으러 가기\n\n수신거부 : 채널 차단' } ] },
+      { id: 'tk_talk', with: ['ch_talk'], time: 'xx:xx', unread: 2, noNotif: true,
+        history: [
+          { date: '20XX년 XX월 XX일 X요일' }, { text: '[기기 로그인 알림]\n강영현님의 톡 계정이 새로운 기기에서 로그인되었어요.\n\n기기 : iPad\n일시 : 20XX.XX.XX xx:xx\n\n본인이 아니라면 비밀번호를 바꿔 주세요.' },
+          { date: '20XX년 XX월 XX일 X요일' }, { text: '[기기 로그인 알림]\n강영현님의 톡 계정이 PC에서 로그인되었어요.\n\n기기 : Windows PC\n일시 : 20XX.XX.XX xx:xx\n\n본인이 아니라면 비밀번호를 바꿔 주세요.' },
+        ] },
+      { id: 'tk_duyoung', with: ['duyoung'], time: '어제', unread: 0, noNotif: true,
+        history: [
+          { date: '20XX년 XX월 XX일 X요일' },
+          { from: 'me', text: '형 어깨는 좀 어떠세요' }, { text: '괜찮아짐 걱정 마라' }, { text: '너 내일 백산전이지?' }, { text: '1번 차승우 초구 잘 친다 조심해라' }, { from: 'me', text: '넵 형 감사합니다' },
+        ] },
+      { id: 'tk_pay', with: ['ch_pay'], time: '어제', unread: 3, noNotif: true,
+        history: [
+          { date: '20XX년 XX월 XX일 X요일' }, { text: '결제가 완료되었어요.\n\n하루이츠\n12,500원\n\n결제수단 : 별빛체크(2731)' },
+          { date: '20XX년 XX월 XX일 X요일' }, { text: '결제가 완료되었어요.\n\n누리플러스 멤버십\n4,900원' },
+          { date: '20XX년 XX월 XX일 X요일' }, { text: '결제가 완료되었어요.\n\n하루25 태강파크점\n7,600원' },
+        ] },
+      { id: 'tk_gift', with: ['ch_gift'], time: '어제', unread: 5, noNotif: true,
+        history: [ { date: '20XX년 XX월 XX일 X요일' }, { text: '(광고) 회복엔 단백질! 💪\n프로틴바 12입 선물세트 단 하루 특가\n\n▶ 선물하러 가기' } ] },
+      { id: 'tk_wonjun', with: ['wonjun'], time: 'XX월 XX일', unread: 0, noNotif: true,
+        history: [ { date: '20XX년 XX월 XX일 X요일' }, { text: '영현아 1군 온 거 축하한다' }, { from: 'me', text: '감사합니다 선배님!!' }, { text: '밥 한번 먹자' }, { from: 'me', text: '넵 ㅎㅎ' } ] },
+      { id: 'tk_shop', with: ['ch_shop'], time: 'XX월 XX일', unread: 0, noNotif: true,
+        history: [ { date: '20XX년 XX월 XX일 X요일' }, { text: '[주문 완료]\n어센틱 유니폼 #27 외 1건\n주문해 주셔서 감사합니다 🐺' }, { date: '20XX년 XX월 XX일 X요일' }, { text: '[배송 완료]\n주문하신 상품이 배송 완료되었어요.' } ] },
+      { id: 'tk_pt', with: ['p_pt'], time: 'XX월 XX일', unread: 0, noNotif: true,
+        history: [ { date: '20XX년 XX월 XX일 X요일' }, { text: '영현씨 시즌 중이라 PT는 비시즌에 다시 잡을까요?' }, { from: 'me', text: '네 쌤 그렇게 해요!' }, { text: '부상 조심하세요 💪' } ] },
+      { id: 'k_moa', name: '모아', with: ['k_moa'], time: 'XX월 XX일', unread: 0, noNotif: true,
+        history: [ { date: '20XX년 XX월 XX일 X요일' }, { text: '안녕하세요, 모아예요 ✨\n일정 정리, 메시지 요약, 궁금한 것까지 먼저 챙겨드릴게요.\n무엇이든 편하게 물어보세요!' } ],
+        fallback: [ { text: '좋아요! 조금만 더 자세히 알려주시면 정리해 드릴게요 ✨' }, { text: '오늘 하루도 고생 많으셨어요. 푹 쉬는 것도 중요해요 🌙' }, { text: '내일 일정: 1시 30분 투수조 미팅, 2시 선수단 집합이 있어요.' } ] },
+    ],
+  },
+/* TK:DATA:END */
   /* ---------- 푸시 알림 (잠금화면 · 상단바 내려서 보는 알림 센터) ----------
      위가 최근. group 이 같으면 한 묶음으로 겹쳐 보이고, 누르면 펼쳐져요. 밀어서 지울 수 있어요.
      icon: 'bot'(프로야구봇) / 'nuri'(누리 스포츠) — 없으면 app 아이콘 / badge: 아이콘 모서리 작은 앱 / thumb: 오른쪽 팀 로고
@@ -5372,8 +5796,9 @@ function appIcon(id, mini) {
 
 /* ---------- 꾸미기 데이터 (아이콘 사진, 앱 이름, 배경화면) — 페이지 안에 저장돼요 ---------- */
 let CUSTOM = { icons: {}, names: {}, wall: {} };
-try { const j = JSON.parse(document.getElementById('custom').textContent || '{}'); CUSTOM = { icons: j.icons || {}, names: j.names || {}, wall: j.wall || {}, layout: j.layout || null, cal: j.cal || null, gall: j.gall || null, bn: j.bn || null, ai: j.ai || null, yt: j.yt || null, ig: j.ig || null, cafe: j.cafe || null, tw: j.tw || null, notes: j.notes || null, messages: j.messages || null, photos: j.photos || null, bp: j.bp || null }; } catch (e) { }
+try { const j = JSON.parse(document.getElementById('custom').textContent || '{}'); CUSTOM = { icons: j.icons || {}, names: j.names || {}, wall: j.wall || {}, layout: j.layout || null, cal: j.cal || null, gall: j.gall || null, bn: j.bn || null, ai: j.ai || null, yt: j.yt || null, ig: j.ig || null, cafe: j.cafe || null, tw: j.tw || null, notes: j.notes || null, messages: j.messages || null, photos: j.photos || null, bp: j.bp || null, talk: j.talk || null }; } catch (e) { }
 const SMS_BASE = clone(STORY.messages); if (CUSTOM.messages) STORY.messages = clone(CUSTOM.messages);   // 주인이 고친 문자
+const TALK_BASE = clone(STORY.talk); if (CUSTOM.talk) STORY.talk = clone(CUSTOM.talk); tkReg();   // 주인이 고친 톡
 let EDITOR = false, ART = null, EDITING = false, DIRTY = false, ignoreClickUntil = 0;
 const appName = id => CUSTOM.names[id] || APPDEF[id].name;
 function wallHTML(which) {
@@ -5417,6 +5842,7 @@ function smsSync() {   // 문자방을 원본(주인이 고친 것 포함)에 �
   ST.smsIds = [...ids];
 }
 smsSync();
+talkSync();
 if (ST.recSeed !== 2) { ST.recents = [...(ST.recents || []).filter(r => r.mine), ...clone(STORY.phone.recents)]; ST.recSeed = 2; }   // 최근 기록을 새 목록으로 (내가 직접 건 전화는 유지)
 function save() { try { localStorage.setItem(KEY, JSON.stringify(ST)); } catch (e) { } }
 
@@ -6101,42 +6527,658 @@ function smsThread(id) {
   return p;
 }
 
-/* ----- 톡 ----- */
+/* TK:JS:BEGIN */
+/* ----- 톡 (카카오톡 모양) — 친구 · 채팅 · 대화방 · 프로필 / 오픈채팅·쇼핑·더보기는 모양만 -----
+   보는 사람 상태: ST.talk (대화) · XS('tkm') 알림 끔 · XS('tkf') 즐겨찾기 · XS('tkx') 소식 읽음 등 */
+function TK() { return STORY.talk; }
+function tkF(id) { return (TK().friends || []).find(f => f.id === id); }
+function tkCh(id) { return (TK().channels || []).find(c => c.id === id); }
+function tkReg() {   // 톡에만 있는 친구 · 채널 이름을 다른 화면(알림 등)에서도 알아보게 등록
+  (TK().friends || []).forEach(f => { if (!STORY.people.some(p => p.id === f.id)) XP[f.id] = { id: f.id, name: f.name || f.id, color: (f.av && f.av.c) || colorOf(f.id), emoji: f.av && f.av.em }; });
+  (TK().channels || []).forEach(c => { XP[c.id] = { ...(XP[c.id] || {}), id: c.id, name: c.name }; });
+}
+function tkHash(c) { const x = JSON.stringify([c.history, c.unread || 0]); let h = 0; for (let i = 0; i < x.length; i++) h = (h * 31 + x.charCodeAt(i)) | 0; return h; }
+function talkSync() {   // 톡방을 원본(주인이 고친 것 포함)에 맞춰요 — 내용이 바뀐 방만 새로, 지워진 방은 빼요
+  ST.talk = ST.talk || {};
+  const ids = new Set(TK().chats.map(c => c.id));
+  (ST.talkIds || []).forEach(id => { if (!ids.has(id)) delete ST.talk[id]; });
+  TK().chats.forEach((c, i) => { const h = tkHash(c), o = ST.talk[c.id];
+    if (!o || o.h !== h) ST.talk[c.id] = { msgs: normMsgs('talk', c.id, c.history), unread: c.unread || 0, ts: o && o.ts > 1e6 ? o.ts : 1000 - i, h };
+    else if (!(o.ts > 1e6)) o.ts = 1000 - i; });
+  ST.talkIds = [...ids];
+}
+
+const TKS = (d, w = 2) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const TKI = {
+  search: TKS('<circle cx="10.5" cy="10.5" r="6.8"/><path d="m15.6 15.6 5 5"/>', 2.2),
+  addf: TKS('<circle cx="10" cy="8" r="4"/><path d="M3 20.5c.6-4 3.4-6.3 7-6.3 1.6 0 3 .4 4.1 1.2M18.5 12.5v7M15 16h7"/>'),
+  gift: `<svg viewBox="0 0 24 24"><rect x="4" y="10.5" width="16" height="10" rx="2.2" fill="#ffd84d" stroke="#1d1d1f" stroke-width="1.6"/><path d="M4 14h16M12 10.5v10" stroke="#1d1d1f" stroke-width="1.6"/><path d="M12 10c-1.4-3.2-6-4.4-6-1.6 0 1.6 2.6 1.9 6 1.6zm0 0c1.4-3.2 6-4.4 6-1.6 0 1.6-2.6 1.9-6 1.6z" fill="#ff4d4d" stroke="#1d1d1f" stroke-width="1.4" stroke-linejoin="round"/></svg>`,
+  gear: TKS('<circle cx="12" cy="12" r="3.2"/><path d="M12 2.8l1.7 2.2 2.7-.7.5 2.8 2.5 1.3-1.2 2.6 1.2 2.6-2.5 1.3-.5 2.8-2.7-.7L12 21.2l-1.7-2.2-2.7.7-.5-2.8-2.5-1.3L5.8 13 4.6 10.4l2.5-1.3.5-2.8 2.7.7z"/>', 1.9),
+  newchat: TKS('<path d="M11.5 4.5c-4.7 0-8.5 3-8.5 6.8 0 2.2 1.2 4.1 3.2 5.4L5.5 20l3.6-2c.8.2 1.6.3 2.4.3 4.7 0 8.5-3 8.5-6.8"/><path d="M18.5 2.8v6.4M15.3 6h6.4"/>'),
+  back: TKS('<path d="M19.5 12h-15M10.5 5.5 4 12l6.5 6.5"/>', 2.1),
+  menu: TKS('<path d="M4 6.5h16M4 12h16M4 17.5h16"/>', 2.1),
+  smile: TKS('<circle cx="12" cy="12" r="8.6"/><path d="M8.4 14.2c.9 1.4 2.1 2.1 3.6 2.1s2.7-.7 3.6-2.1"/><path d="M9 9.8v.6M15 9.8v.6" stroke-width="2.4"/>', 1.8),
+  hash: TKS('<path d="M10 4 8.4 20M16.2 4l-1.6 16M4.8 9h15M4.2 15h15"/>', 2.2),
+  plus: TKS('<path d="M12 5v14M5 12h14"/>', 2.2),
+  send: TKS('<path d="M12 18.5V6M6.5 11.5 12 6l5.5 5.5"/>', 2.6),
+  chev: TKS('<path d="m9 5 7 7-7 7"/>', 2),
+  chevS: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9.5 6 6 6-6 6"/></svg>',
+  bellOff: TKS('<path d="M6 16.5V11a6 6 0 0 1 9.4-4.9M18 11v5.5l1.5 1.5H8.5M10 20.5a2 2 0 0 0 4 0M4.5 4.5l15 15"/>', 1.9),
+  pen: TKS('<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/>', 1.9),
+  x: TKS('<path d="M6 6l12 12M18 6 6 18"/>', 2.2),
+  star: on => `<svg viewBox="0 0 24 24"><path d="m12 3.5 2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z" fill="${on ? '#ffd43b' : 'none'}" stroke="${on ? '#ffd43b' : 'currentColor'}" stroke-width="1.9" stroke-linejoin="round"/></svg>`,
+  bub: TKS('<path d="M12 4c4.7 0 8.5 3 8.5 6.8s-3.8 6.8-8.5 6.8c-.9 0-1.7-.1-2.5-.3L5.5 19.8l1-3.4C4.6 15.1 3.5 13.1 3.5 10.8 3.5 7 7.3 4 12 4z"/>', 1.8),
+  phone: TKS('<path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.12.37 2.33.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/>', 1.7),
+  video: TKS('<rect x="3" y="6.5" width="12.5" height="11" rx="2.5"/><path d="m15.5 10.5 5-3v9l-5-3"/>', 1.8),
+  spark: TKS('<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/>', 1.8),
+  dots: `<svg viewBox="0 0 24 24"><path d="M12 3.5c-5 0-9 3.2-9 7.2 0 2.5 1.6 4.7 4 6l-.9 3.6 4-2.5c.6.1 1.2.1 1.9.1 5 0 9-3.2 9-7.2S17 3.5 12 3.5z" fill="#3b82f6"/><circle cx="8" cy="10.8" r="1.25" fill="#fff"/><circle cx="12" cy="10.8" r="1.25" fill="#fff"/><circle cx="16" cy="10.8" r="1.25" fill="#fff"/></svg>`,
+  tFriends: '<svg viewBox="0 0 24 24"><circle cx="12" cy="7.6" r="4.4" fill="currentColor"/><path d="M3.4 21.2c.4-4.8 4-7.8 8.6-7.8s8.2 3 8.6 7.8z" fill="currentColor"/></svg>',
+  tChats: '<svg viewBox="0 0 24 24"><path d="M12 3c-5.2 0-9.4 3.4-9.4 7.6 0 2.7 1.7 5 4.3 6.4l-1 3.9 4.3-2.7c.6.1 1.2.1 1.8.1 5.2 0 9.4-3.4 9.4-7.7S17.2 3 12 3z" fill="currentColor"/></svg>',
+  tOpen: '<svg viewBox="0 0 24 24"><path d="M15.5 8.2c3.5.3 6.1 2.7 6.1 5.6 0 1.8-1 3.4-2.6 4.4l.6 2.6-2.9-1.7c-.5.1-1 .1-1.5.1-2 0-3.8-.7-5-1.8" fill="currentColor" opacity=".55"/><path d="M10 3.2c-4.4 0-8 2.9-8 6.5 0 2.2 1.4 4.2 3.5 5.4l-.8 3.3 3.6-2.2c.6.1 1.1.1 1.7.1 4.4 0 8-2.9 8-6.6S14.4 3.2 10 3.2z" fill="currentColor"/><path d="M8.3 7v5.6l4.6-2.8z" fill="#fff"/></svg>',
+  tShop: '<svg viewBox="0 0 24 24"><path d="M5.2 8.2h13.6l-1 12.3H6.2z" fill="currentColor"/><path d="M8.8 9.5V7a3.2 3.2 0 0 1 6.4 0v2.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>',
+  tMore: '<svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="2.1" fill="currentColor"/><circle cx="12" cy="12" r="2.1" fill="currentColor"/><circle cx="19" cy="12" r="2.1" fill="currentColor"/></svg>',
+};
+const TK_DEF = '<svg viewBox="0 0 40 40"><circle cx="20" cy="15.6" r="6.2" fill="#fff"/><path d="M9 31c1-5.7 5.4-8.6 11-8.6S30 25.3 31 31z" fill="#fff"/></svg>';
+const TK_EMO = ['🐺', '😭', '👍', '🙏', '⚾', '🔥', '😴', '🥹', '🤣', '💪', '❤️', '🎉'];
+const TK_CHI = { talk: ['#ff7a5c', '💬'], pay: ['#2b2b33', 'pay'], gift: ['#ff6f61', '🎁'], wolves: ['#1c2c5b', '🐺'], bot: ['#1d3a7a', '⚾'], eats: ['#1fb26b', '🛵'], shop: ['#24345e', '👕'], card: ['#6a4fd1', '💳'], tele: ['#e04b8a', '📶'] };
+let TKED = false;
+
+function tkName(id) {
+  if (id === 'me') return STORY.owner.name;
+  const f = tkF(id); if (f && f.name) return f.name;
+  const p = STORY.people.find(x => x.id === id); if (p) return p.name;
+  const c = tkCh(id); if (c) return c.name;
+  return nameOf(id);
+}
+const tkStatus = id => id === 'me' ? (TK().me.status || '') : ((tkF(id) || {}).status || '');
+function tkAvSpec(id) {
+  if (id === 'me') return TK().me.av;
+  const f = tkF(id); if (f && f.av) return f.av;
+  const p = person(id); if (p && p.src) return { src: p.src };
+  return null;
+}
+function tkChAv(icon, size, src) {
+  const st = `--s:${size}px`;
+  if (src) return `<span class="kt-av" style="${st};background:#eee url('${src}') center/cover"></span>`;
+  if (icon === 'talk') return `<span class="kt-av" style="${st}">${CUSTOM.icons.talk ? `<img src="${CUSTOM.icons.talk}" alt="">` : ICO.talk}</span>`;
+  if (icon === 'moa') return `<span class="kt-av moa" style="${st}"><i></i></span>`;
+  if (icon === 'wolves' && STORY.ball && STORY.ball.teams && STORY.ball.teams.tg && STORY.ball.teams.tg.logo) return `<span class="kt-av" style="${st};background:#fff url('${STORY.ball.teams.tg.logo}') center/80% no-repeat;box-shadow:inset 0 0 0 1px #eee"></span>`;
+  const [bg, t] = TK_CHI[icon] || ['#9aa4b2', '•'];
+  return `<span class="kt-av em${/^[a-z]+$/i.test(t) ? ' tx' : ''}" style="${st};background:${bg}"><i>${t}</i></span>`;
+}
+function tkAv(id, size = 46) {
+  const ch = tkCh(id); if (ch) return tkChAv(ch.icon, size, ch.src);
+  const a = tkAvSpec(id), st = `--s:${size}px`;
+  if (a && a.src) return `<span class="kt-av" style="${st};background:#ddd url('${a.src}') center/cover"></span>`;
+  if (a && a.em) return `<span class="kt-av em" style="${st};background:${esc(a.c || '#dde3ea')}"><i>${esc(a.em)}</i></span>`;
+  return `<span class="kt-av def" style="${st}">${TK_DEF}</span>`;
+}
+function tkGrpAv(ids, size) {
+  const ms = ids.slice(0, 4), n = ms.length;
+  if (n <= 1) return tkAv(ms[0], size);
+  const s = Math.round(size * (n === 2 ? .64 : .5));
+  return `<span class="kt-gav g${n}" style="--s:${size}px">${ms.map(m => tkAv(m, s)).join('')}</span>`;
+}
+function tkRoomAv(id, size) {
+  const c = cfgOf('talk', id), w = tkWith(c);
+  if (c.av && c.av.src) return `<span class="kt-av" style="--s:${size}px;background:#ddd url('${c.av.src}') center/cover"></span>`;
+  if (c.av && c.av.em) return `<span class="kt-av em" style="--s:${size}px;background:${esc(c.av.c || '#dde3ea')}"><i>${esc(c.av.em)}</i></span>`;
+  return w.length > 1 ? tkGrpAv(w, size) : tkAv(w[0], size);
+}
+const tkWith = c => c.with || [c.id];
+function tkTitle(id) { if (id === 'me') return STORY.owner.name; const c = cfgOf('talk', id); return c.name || tkWith(c).map(tkName).join(', '); }
+function tkCount(c) { const w = tkWith(c); return c.count || (w.length > 1 ? w.length + 1 : 0); }
+function tkMuted(id) { const m = XS('tkm', () => ({})); return id in m ? m[id] : !!cfgOf('talk', id).muted; }
+function tkFav(id) { const m = XS('tkf', () => ({})); return id in m ? m[id] : !!(tkF(id) || {}).fav; }
+function tkPrev(m) {
+  if (!m) return '';
+  if (m.emo) return '이모티콘을 보냈습니다.';
+  if (m.photo || m.img) { const n = m.photo || 1; return n > 1 ? `사진 ${n}장을 보냈습니다.` : '사진을 보냈습니다.'; }
+  return m.text || '';
+}
+function tkTimeOf(id) { const th = ST.talk[id], m = th && lastMsg(th), c = cfgOf('talk', id); if (m && /\d/.test(m.time || '')) return m.time; return c.time || (m && m.time) || ''; }
+function tkUnreadAll() { return Object.values(ST.talk || {}).reduce((a, t) => a + (t.unread || 0), 0); }
+function tkRank(n) { const c = String(n).charCodeAt(0); return c >= 0xAC00 && c <= 0xD7A3 ? 0 : /[a-z]/i.test(String(n)[0]) ? 1 : 2; }
+function tkFriendList(byUpdate) {
+  const ups = (TK().updates || []).filter(u => typeof u === 'string');
+  return (TK().friends || []).filter(f => !f.hidden).sort((a, b) => {
+    if (byUpdate) { const ia = ups.indexOf(a.id), ib = ups.indexOf(b.id); if ((ia >= 0) !== (ib >= 0)) return ia >= 0 ? -1 : 1; if (ia >= 0) return ia - ib; }
+    const na = tkName(a.id), nb = tkName(b.id), ra = tkRank(na), rb = tkRank(nb);
+    return ra - rb || na.localeCompare(nb, 'ko');
+  });
+}
+const TK_IDX = ['ㄱ', 'ㄴ', 'ㄷ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅅ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ', 'A', 'F', 'O', 'Z', '#'];
+const tkIdxOrd = k => { const i = 'ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎ'.indexOf(k); return i >= 0 ? i : /[A-Z]/.test(k) ? 20 + k.charCodeAt(0) - 65 : 99; };
+function tkBannerHTML(b, key) {
+  if (!b || !b.t) return '';
+  const art = b.src ? `<span class="kt-bimg" style="background:url('${b.src}') center/cover"></span>` : `<span class="kt-bimg">${TK_ART[b.art] || TK_ART.gun}</span>`;
+  return `<button class="kt-ban${key === 'chatBanner' ? ' img-l' : ''}" data-tk="banner">${key === 'chatBanner' ? art : ''}<span class="kt-bt"><b>${esc(b.t)}</b><small>${esc(b.s || '')}</small></span>${key === 'chatBanner' ? `<i class="kt-bch">${TKI.chev}</i>` : art}</button>`;
+}
+const TK_ART = {
+  gun: '<svg viewBox="0 0 120 80"><rect x="62" y="10" width="40" height="24" rx="11" fill="#3a3f4b"/><rect x="66" y="14" width="8" height="16" rx="3" fill="#ff7a59"/><rect x="76" y="32" width="14" height="40" rx="6" fill="#4a505e"/><rect x="100" y="16" width="12" height="12" rx="6" fill="#c9ced8"/><rect x="18" y="38" width="30" height="34" rx="5" fill="#f2efe9" stroke="#d9d3c7"/><text x="33" y="53" font-size="7" text-anchor="middle" fill="#ff7a59" font-weight="700">HARU</text><text x="33" y="62" font-size="6" text-anchor="middle" fill="#777">FIT</text></svg>',
+  goggle: '<svg viewBox="0 0 140 80"><rect width="140" height="80" fill="#e9edf2"/><path d="M14 34c8-12 46-14 56-2 10-12 48-10 56 2 4 7 0 22-14 24-14 2-26-4-32-14-4-2-16-2-20 0-6 10-18 16-32 14-14-2-18-17-14-24z" fill="#16181d"/><path d="M22 36c6-6 36-8 42 0 2 6-4 15-17 15S20 43 22 36zM76 36c6-8 36-6 42 0 2 7-5 15-25 15-13 0-19-9-17-15z" fill="url(#ktg)"/><defs><linearGradient id="ktg" x1="0" x2="1"><stop offset="0" stop-color="#ff7a59"/><stop offset=".5" stop-color="#a45cff"/><stop offset="1" stop-color="#3fa9ff"/></linearGradient></defs><text x="70" y="74" font-size="9" text-anchor="middle" fill="#16181d" font-weight="800" letter-spacing="3">VELO</text></svg>',
+};
+
+/* ===== 앱 ===== */
 APPS.talk = () => {
-  const p = page('talk-root'); p.style.background = '#fff';
-  p.innerHTML = `<div class="tabview" style="flex:1;min-height:0;display:flex;flex-direction:column"></div><div class="tabbar" style="--n:5;background:#fff">
-    <button class="tab" data-tab="friends">${I.person}<span>친구</span></button><button class="tab" data-tab="chats">${I.bubble}<span>채팅</span></button><button class="tab" data-tab="open">${I.bubbleO}<span>오픈채팅</span></button><button class="tab" data-tab="shop">${I.bag}<span>쇼핑</span></button><button class="tab" data-tab="more">${I.more}<span>더보기</span></button></div>`;
-  const view = $('.tabview', p); let cur;
-  const show = t => {
-    cur = t; $$('.tab', p).forEach(b => b.classList.toggle('on', b.dataset.tab === t));
-    if (t === 'friends') {
-      const fs = STORY.people.filter(x => x.friend).sort((a, b) => a.name.localeCompare(b.name, 'ko'));
-      view.innerHTML = `<div class="tk-head"><h2>친구</h2>${I.search}${I.addp}</div><div class="scroll tk-list">
-        <button class="fr me" data-prof="me">${avatar('me', { size: 58, sq: true, color: true })}<div class="grow"><b>${esc(STORY.owner.name)}</b><small>${esc(STORY.owner.status || '')}</small></div></button>
-        ${(() => { const bd = fs.map(x => [x, bdayIn(x.birthday)]).filter(([, d]) => d !== null && d <= 7); return bd.length ? `<div class="tk-sec">생일인 친구 ${bd.length}</div>${bd.map(([x, d]) => `<button class="fr" data-prof="${x.id}">${avatar(x.id, { size: 44, sq: true, color: true })}<div class="grow"><b>${esc(x.name)}</b><small class="bd">${d === 0 ? '오늘 생일' : `${+x.birthday.slice(0, 2)}월 ${+x.birthday.slice(3)}일 · D-${d}`}</small></div></button>`).join('')}` : ''; })()}
-        <div class="tk-sec">친구 ${fs.length}</div>${fs.map(x => `<button class="fr" data-prof="${x.id}">${avatar(x.id, { size: 44, sq: true, color: true })}<div class="grow"><b>${esc(x.name)}</b><small>${esc(x.status || '')}</small></div></button>`).join('')}</div>`;
-    } else if (t === 'chats') {
-      const ids = Object.keys(ST.talk).filter(id => lastMsg(ST.talk[id])).sort((a, b) => ST.talk[b].ts - ST.talk[a].ts);
-      view.innerHTML = `<div class="tk-head"><h2>채팅</h2>${I.search}${I.compose}</div><div class="scroll tk-list">${ids.map(id => {
-        const th = ST.talk[id], m = lastMsg(th), w = cfgOf('talk', id).with || [id];
-        const av = w.length > 1 ? groupAv(w, 50) : avatar(w[0], { size: 50, sq: true, color: true });
-        return `<button class="cr" data-chat="${esc(id)}">${av}<div style="min-width:0"><div class="nm">${esc(talkTitle(id))}${w.length > 1 ? `<span>${w.length + 1}</span>` : ''}</div><div class="ls">${esc(m.text)}</div></div><div class="rt">${esc(m.time || '')}${th.unread ? `<span class="tbadge">${th.unread}</span>` : '<span style="height:20px"></span>'}</div></button>`;
-      }).join('')}</div>`;
-    } else if (t === 'open' || t === 'shop') {
-      view.innerHTML = `<div class="tk-head"><h2>${t === 'open' ? '오픈채팅' : '쇼핑'}</h2>${I.search}</div><div class="tk-soon">준비 중이에요</div>`;
-    } else {
-      view.innerHTML = `<div class="tk-head"><h2>더보기</h2></div><div class="scroll tk-list"><button class="fr me" data-prof="me">${avatar('me', { size: 58, sq: true, color: true })}<div class="grow"><b>${esc(STORY.owner.name)}</b><small>${esc(maskNum(STORY.owner.number))}</small></div></button><div class="tk-sec">준비 중인 메뉴예요.</div></div>`;
-    }
+  const p = page('kt'); p.style.background = '#fff';
+  const tabs = [['friends', TKI.tFriends, '친구'], ['chats', TKI.tChats, '채팅'], ['open', TKI.tOpen, '오픈채팅'], ['shop', TKI.tShop, '쇼핑'], ['more', TKI.tMore, '더보기']];
+  p.innerHTML = `<div class="kt-view"></div><nav class="kt-tabs">${tabs.map(([k, ic, l]) => `<button class="kt-tab" data-tab="${k}" aria-label="${l}">${ic}<b class="kt-tbg" hidden></b></button>`).join('')}</nav>`;
+  const view = $('.kt-view', p);
+  let cur = 'chats', fv = 'friends', cf = 'all', sortU = false;
+  const S = () => XS('tkx', () => ({}));
+  const badges = () => {
+    const n = tkUnreadAll(), o = +TK().openBadge || 0;
+    $$('.kt-tab', p).forEach(b => { const g = $('.kt-tbg', b), v = b.dataset.tab === 'chats' ? n : b.dataset.tab === 'open' ? o : 0; g.hidden = !v; g.textContent = v > 999 ? '999+' : v; });
   };
-  $('.tabbar', p).onclick = e => { const b = e.target.closest('.tab'); if (b) show(b.dataset.tab); };
+  const edBar = () => TKED ? `<div class="kt-edbar"><span>편집 모드 · 친구·채팅방·광고를 누르면 고칠 수 있어요</span><div><button data-tke="friend">＋ 친구</button><button data-tke="chat">＋ 채팅방</button><button data-tke="info">기본 정보</button><button data-tke="off">편집 끄기</button></div></div>` : '';
+  const edBtn = () => EDITOR ? `<button class="kt-ib kt-edb${TKED ? ' on' : ''}" data-tk="ed" aria-label="편집">${TKI.pen}</button>` : '';
+  const fRow = (f, fav) => { const nm = tkName(f.id), stt = tkStatus(f.id); return `<button class="kt-row kt-fr${fav ? ' fav' : ''}" data-prof="${esc(f.id)}"${fav ? '' : ` data-ix="${esc(chosung(nm))}"`}>${tkAv(f.id, 44)}<span class="grow"><b>${esc(nm)}</b>${stt ? `<small>${esc(stt)}</small>` : ''}</span></button>`; };
+  const friendsHTML = () => {
+    const T = TK(), fl = tkFriendList(sortU), favs = fl.filter(f => tkFav(f.id)), ups = T.updates || [], bd = T.birthdays || [];
+    const up = u => {
+      if (typeof u === 'object') return `<button class="kt-up" data-tk="ad"><span class="kt-av kt-adav" style="--s:54px"><i>${esc(u.logo || u.ad)}</i></span><em class="kt-adtag">AD</em><i class="kt-dot"></i><span>${esc(u.ad)}</span></button>`;
+      return `<button class="kt-up" data-prof="${esc(u)}">${tkAv(u, 54)}<i class="kt-dot"></i><span>${esc(tkName(u))}</span></button>`;
+    };
+    const newsN = !S().news;
+    return `<div class="kt-sc">
+      <div class="kt-top"><button class="kt-mebtn" data-prof="me">${tkAv('me', 36)}<b>${esc(STORY.owner.name)}</b></button><div class="kt-ics">${edBtn()}<button class="kt-ib" data-tk="search" aria-label="검색">${TKI.search}</button><button class="kt-ib" data-tk="addf" aria-label="친구 추가">${TKI.addf}</button><button class="kt-ib" data-tk="gift" aria-label="선물하기">${TKI.gift}</button><button class="kt-ib" data-tk="gear" aria-label="설정">${TKI.gear}</button></div></div>
+      ${edBar()}
+      <div class="kt-chips"><button class="${fv === 'friends' ? 'on' : ''}" data-fv="friends">친구</button><button class="${fv === 'news' ? 'on' : ''}" data-fv="news">소식${newsN && T.newsBadge !== false ? '<i class="kt-n">N</i>' : ''}</button></div>
+      ${fv === 'news' ? newsHTML() : `${tkBannerHTML(T.banner, 'banner')}
+      <div class="kt-sec">업데이트 프로필 ${ups.length + 1}</div>
+      <div class="kt-ups"><button class="kt-up me" data-prof="me">${tkAv('me', 54)}<i class="kt-pen">${TKI.pen}</i><span>내 프로필</span></button>${ups.map(up).join('')}</div>
+      <hr class="kt-hr">
+      ${bd.length ? `<div class="kt-sec">생일인 친구 ${bd.length}</div>${bd.map(b => `<div class="kt-row kt-bd" data-prof="${esc(b.id)}" role="button">${tkAv(b.id, 44)}<span class="grow"><b>${esc(tkName(b.id))}${b.when === '오늘' ? ' 🎂' : ''}</b><small>${esc(b.when || '')}</small></span><button class="kt-pill" data-tk="giftb">선물하기</button></div>`).join('')}
+        <button class="kt-row" data-tk="bdays"><span class="kt-av em" style="--s:44px;background:#ffe3ec"><i>🥳</i></span><span class="grow"><b class="kt-big">친구의 생일을 확인해 보세요.</b></span><span class="kt-cnt">${(T.soon || []).length}</span><i class="kt-chev">${TKI.chev}</i></button><hr class="kt-hr">` : ''}
+      <div class="kt-sec">AI 1</div><button class="kt-row" data-chat="k_moa">${tkChAv('moa', 44)}<span class="grow"><b>${esc((T.ai || {}).name || 'AI')}</b><small>${esc((T.ai || {}).desc || '')}</small></span></button><hr class="kt-hr">
+      ${favs.length ? `<div class="kt-sec">즐겨찾기 ${favs.length}</div>${favs.map(f => fRow(f, true)).join('')}<hr class="kt-hr">` : ''}
+      <div class="kt-sec kt-fh"><span>친구 ${fl.length}</span><span class="kt-sort"><button class="${sortU ? '' : 'on'}" data-sort="0">가나다순</button><i>·</i><button class="${sortU ? 'on' : ''}" data-sort="1">업데이트순</button></span></div>
+      <button class="kt-row" data-tk="rec"><span class="kt-av em" style="--s:44px;background:#fff1cc"><i>😚</i></span><b class="grow kt-big">추천친구</b><span class="kt-cnt">${(T.recommend || []).length}</span><i class="kt-chev">${TKI.chev}</i></button>
+      <button class="kt-row" data-tk="chan"><span class="kt-av em tx" style="--s:44px;background:#ffe2d6"><i style="color:#ff6f61">Ch</i></span><b class="grow kt-big">채널</b><span class="kt-cnt">${(T.channels || []).length}</span><i class="kt-chev">${TKI.chev}</i></button>
+      ${fl.map(f => fRow(f)).join('')}<div style="height:24px"></div>`}
+    </div>${fv === 'news' ? '' : `<div class="kt-idx" hidden>${TK_IDX.map(l => `<button data-ixl="${l}">${l}</button>`).join('')}</div>`}`;
+  };
+  const newsHTML = () => {
+    const ups = (TK().updates || []).filter(u => typeof u === 'string');
+    if (!ups.length) return '<div class="kt-empty">새로운 소식이 없어요.</div>';
+    return `<div class="kt-news">${ups.map(id => { const a = tkAvSpec(id) || {}; return `<div class="kt-nc" data-prof="${esc(id)}" role="button"><div class="kt-nh">${tkAv(id, 38)}<span><b>${esc(tkName(id))}</b><small>프로필 사진을 바꿨어요 · xx:xx</small></span></div><div class="kt-nimg" style="${a.src ? `background:#ddd url('${a.src}') center/cover` : `background:${esc(a.c || '#9fcfe0')}`}">${a.src ? '' : `<i>${esc(a.em || '🙂')}</i>`}</div>${tkStatus(id) ? `<p>${esc(tkStatus(id))}</p>` : ''}</div>`; }).join('')}</div>`;
+  };
+  const chatsHTML = () => {
+    const T = TK(), tot = tkUnreadAll();
+    let ids = Object.keys(ST.talk).filter(id => lastMsg(ST.talk[id])).sort((a, b) => ST.talk[b].ts - ST.talk[a].ts);
+    if (cf === 'un') ids = ids.filter(id => ST.talk[id].unread);
+    const row = id => {
+      const th = ST.talk[id], c = cfgOf('talk', id), cnt = tkCount(c), un = th.unread;
+      return `<button class="kt-cr" data-chat="${esc(id)}">${tkRoomAv(id, 48)}<span class="kt-cm"><span class="kt-cn1"><b>${esc(tkTitle(id))}</b>${cnt ? `<em>${cnt}</em>` : ''}${tkMuted(id) ? `<i class="kt-mute">${TKI.bellOff}</i>` : ''}</span><span class="kt-cp">${esc(tkPrev(lastMsg(th)))}</span></span><span class="kt-crr"><time>${esc(tkTimeOf(id))}</time>${un ? `<i class="kt-badge${tkMuted(id) ? ' m' : ''}">${un > 999 ? '999+' : un}</i>` : ''}</span></button>`;
+    };
+    return `<div class="kt-sc">
+      <div class="kt-top"><h1>채팅</h1><div class="kt-ics">${edBtn()}<button class="kt-ib" data-tk="search" aria-label="검색">${TKI.search}</button><button class="kt-ib" data-tk="newchat" aria-label="새 채팅">${TKI.newchat}</button><button class="kt-ib" data-tk="gear" aria-label="설정">${TKI.gear}</button></div></div>
+      ${edBar()}
+      <div class="kt-chips"><button class="${cf === 'all' ? 'on' : ''}" data-cf="all">전체</button><button class="kt-unchip${cf === 'un' ? ' on' : ''}" data-cf="un"><i class="kt-dots">${TKI.dots}</i>${tot ? `<b class="kt-cntb">${tot > 999 ? '999+' : tot}</b>` : ''}</button><button data-chat="k_moa">${esc((T.ai || {}).name || 'AI')}${!S().moa ? '<i class="kt-n">N</i>' : ''}</button><button class="kt-plus" data-tk="folder" aria-label="폴더 추가">${TKI.plus}<i class="kt-rd"></i></button></div>
+      ${tkBannerHTML(T.chatBanner, 'chatBanner')}
+      ${ids.length ? ids.map(row).join('') : `<div class="kt-empty">${cf === 'un' ? '안 읽은 채팅이 없어요.' : '채팅이 없어요.'}</div>`}<div style="height:16px"></div></div>`;
+  };
+  const show = (t, keep) => {
+    const sc0 = $('.kt-sc', view), y = keep && sc0 ? sc0.scrollTop : 0;
+    cur = t; $$('.kt-tab', p).forEach(b => b.classList.toggle('on', b.dataset.tab === t));
+    view.innerHTML = t === 'friends' ? friendsHTML() : t === 'chats' ? chatsHTML() : t === 'open' ? tkOpenHTML() : t === 'shop' ? tkShopHTML() : tkMoreHTML();
+    const sc = $('.kt-sc', view); if (sc && y) sc.scrollTop = y;
+    const ix = $('.kt-idx', view), fh = $('.kt-fh', view);
+    if (sc && ix && fh) { const chk = () => { ix.hidden = sc.scrollTop + 120 < fh.offsetTop; }; sc.addEventListener('scroll', chk, { passive: true }); chk(); }
+    badges(); if (typeof tkDirtyBar === 'function') tkDirtyBar();
+  };
+  p.showTab = (t, v) => { if (v) fv = v; show(t); };
+  $('.kt-tabs', p).onclick = e => { const b = e.target.closest('.kt-tab'); if (b) show(b.dataset.tab); };
   view.onclick = e => {
-    const c = e.target.closest('[data-chat]'); if (c) return push(talkRoom(c.dataset.chat));
-    const f = e.target.closest('[data-prof]'); if (f) return push(profilePage(f.dataset.prof));
+    if (cur === 'open' || cur === 'shop' || cur === 'more') return;   // 모양만 (누르면 아무 일 없음)
+    const il = e.target.closest('[data-ixl]');
+    if (il) { const o = tkIdxOrd(il.dataset.ixl), rows = $$('.kt-fr[data-ix]', view), r = rows.find(x => tkIdxOrd(x.dataset.ix) >= o) || rows[rows.length - 1]; if (r) $('.kt-sc', view).scrollTop = r.offsetTop - 70; return; }
+    const t = e.target.closest('[data-tke],[data-tk],[data-fv],[data-cf],[data-sort],[data-prof],[data-chat]'); if (!t) return;
+    const d = t.dataset, rr = () => show(cur, true);
+    if (d.tke) { if (d.tke === 'off') { TKED = false; return rr(); } return tkEdAct(d.tke); }
+    if (d.tk === 'ed') { TKED = !TKED; return rr(); }
+    if (TKED) {
+      if (d.prof) return d.prof === 'me' ? tkMeEdit() : tkFriendEdit(d.prof);
+      if (d.chat) return d.chat === 'k_moa' && cur === 'friends' ? tkInfoEdit() : tkChatEdit(d.chat);
+      if (['ad', 'banner', 'bdays', 'rec', 'chan', 'giftb'].includes(d.tk)) return tkInfoEdit();
+    }
+    if (d.fv) { fv = d.fv; if (fv === 'news') S().news = 1, save(); return show('friends'); }
+    if (d.cf) { cf = cf === d.cf && d.cf === 'un' ? 'all' : d.cf; return rr(); }
+    if (d.sort) { sortU = d.sort === '1'; return rr(); }
+    if (d.prof) return push(profilePage(d.prof));
+    if (d.chat) { if (d.chat === 'k_moa') { S().moa = 1; save(); } return push(talkRoom(d.chat)); }
+    const tk = d.tk;
+    if (tk === 'search') return push(tkSearch());
+    if (tk === 'newchat') return push(tkPickFriend());
+    if (tk === 'bdays') return push(tkBdayPage());
+    if (tk === 'rec' || tk === 'chan') return push(tkListPage(tk));
+    if (tk === 'giftb') return toast('선물하기는 준비 중이에요.');
+    if (tk === 'addf') return toast('친구 추가는 준비 중이에요.');
+    if (tk === 'gift') return toast('선물하기는 준비 중이에요.');
+    if (tk === 'gear') return toast('설정은 준비 중이에요.');
+    if (tk === 'folder') return toast('채팅 폴더 추가는 준비 중이에요.');
   };
-  p.refresh = () => show(cur);
+  p.refresh = () => show(cur, true);
   show('chats');
   return p;
 };
+
+/* ===== 오픈채팅 · 쇼핑 · 더보기 (모양만) ===== */
+function tkOpenHTML() {
+  const rooms = [['⚾', '#1c2c5b', '태강 울프스 팬 수다방', '직관 후기 · 경기 실시간 수다', '#야구 #태강', 1284], ['🎯', '#3f6fd8', '투수 피칭 연구소', '그립 · 메커니즘 · 영상 피드백', '#피칭 #사회인야구', 412], ['🎮', '#7a4fd8', '오버 프론트 듀오 구해요', '다이아 이상 · 저녁 9시 이후', '#게임 #듀오', 87], ['🏋️', '#2fb67c', '헬스 오운완 인증방', '하루 한 번 인증 · 식단 공유', '#운동 #인증', 956], ['🍜', '#f08a3c', '태강구 맛집 탐방', '국밥 · 고기 · 야식 지도', '#맛집 #동네', 233]];
+  return `<div class="kt-sc kt-dead"><div class="kt-top"><h1>오픈채팅</h1><div class="kt-ics"><button class="kt-ib">${TKI.search}</button><button class="kt-ib">${TKI.newchat}</button><button class="kt-ib">${TKI.gear}</button></div></div>
+    <div class="kt-chips"><button class="on">탐색</button><button>내 오픈채팅</button><button>커뮤니티</button></div>
+    <div class="kt-sec">지금 뜨는 오픈채팅 🔥</div>
+    ${rooms.map(([em, c, t, s, tag, n]) => `<div class="kt-oc"><span class="kt-av em" style="--s:56px;background:${c}"><i>${em}</i></span><span class="grow"><b>${t}</b><small>${s}</small><em>${tag} · 참여 ${n.toLocaleString()}</em></span></div>`).join('')}
+    <div class="kt-sec">관심사로 찾아보기</div><div class="kt-tags">${['야구', '운동', '게임', '맛집', '자취', '반려동물', '재테크', '음악'].map(x => `<span>#${x}</span>`).join('')}</div><div style="height:20px"></div></div>`;
+}
+function tkShopHTML() {
+  const items = [['🧴', '#f4efe6', '하루핏', '근육 회복 쿨링 젤 200ml', '12,900'], ['🍫', '#efe3d6', '프로틴랩', '단백질바 12입 선물세트', '19,800'], ['🧢', '#e3e8f2', '울프스샵', '태강 울프스 어센틱 캡', '39,000'], ['☕', '#efe8df', '하루커피', '아메리카노 2잔 + 조각케이크', '15,500'], ['🎧', '#e6e6ec', '사운드업', '무선 이어폰 스포츠 에디션', '89,000'], ['🧦', '#f2e6ea', '데일리풋', '스포츠 양말 5켤레 세트', '14,900']];
+  return `<div class="kt-sc kt-dead"><div class="kt-top"><h1>쇼핑</h1><div class="kt-ics"><button class="kt-ib">${TKI.search}</button><button class="kt-ib">${TKI.gift}</button></div></div>
+    <div class="kt-chips"><button class="on">선물하기</button><button>쇼핑</button><button>톡딜</button><button>장보기</button></div>
+    <div class="kt-shban"><b>생일인 친구에게<br>마음을 전해 보세요 🎁</b><small>오늘 생일 친구 ${(TK().birthdays || []).filter(b => b.when === '오늘').length}명</small></div>
+    <div class="kt-sec">지금 많이 선물하는</div>
+    <div class="kt-shg">${items.map(([em, c, br, n, pr]) => `<div class="kt-shi"><span style="background:${c}"><i>${em}</i></span><small>${br}</small><b>${n}</b><em>${pr}원</em></div>`).join('')}</div><div style="height:20px"></div></div>`;
+}
+function tkMoreHTML() {
+  const sv = [['✉️', '메일'], ['📒', '캘린더'], ['🗂️', '서랍'], ['👛', '지갑'], ['🎁', '선물하기'], ['😊', '이모티콘'], ['🛍️', '쇼핑'], ['💳', '페이'], ['🎵', '뮤직'], ['📰', '뉴스'], ['🎮', '게임'], ['⋯', '전체']];
+  return `<div class="kt-sc kt-dead"><div class="kt-top"><h1>더보기</h1><div class="kt-ics"><button class="kt-ib">${TKI.search}</button><button class="kt-ib">${TKI.gear}</button></div></div>
+    <div class="kt-mo-me">${tkAv('me', 46)}<span class="grow"><b>${esc(STORY.owner.name)}</b><small>${esc(maskNum(STORY.owner.number))}</small></span><span class="kt-pill">지갑</span></div>
+    <div class="kt-mo-g">${sv.map(([e, l]) => `<div><span>${e}</span><small>${l}</small></div>`).join('')}</div>
+    <div class="kt-shban b2"><b>톡 이모티콘 플러스</b><small>첫 달 무료로 이모티콘 무제한</small></div>
+    <div class="kt-sec">공지사항</div><div class="kt-mo-l"><span>톡 서비스 이용약관 개정 안내</span><span>새로운 채팅방 폴더 기능을 소개해요</span><span>계정 보호를 위한 2단계 인증 안내</span></div><div style="height:20px"></div></div>`;
+}
+
+/* ===== 프로필 ===== */
+function profilePage(id) {
+  const me = id === 'me', ch = tkCh(id), T = TK(), f = tkF(id), pp = person(id), a = tkAvSpec(id) || {};
+  const p = page('kt-prof'); p.dataset.bar = 'light';
+  const bgSrc = me ? T.me.bgSrc : f && f.bgSrc, bg = (me ? T.me.bg : f && f.bg) || (ch ? '#3b4252' : a.c ? a.c : '#58636f');
+  p.style.background = bgSrc ? `#222 url('${bgSrc}') center/cover` : `linear-gradient(180deg,${bg} 0%,color-mix(in srgb,${bg} 55%,#111) 100%)`;
+  const act = (k, ic, l) => `<button data-pa="${k}">${ic}<span>${l}</span></button>`;
+  const acts = me ? act('self', TKI.bub, '나와의 채팅') + act('edit', TKI.pen, '프로필 편집') + act('news', TKI.spark, '소식')
+    : ch ? act('chat', TKI.bub, '채팅')
+    : act('chat', TKI.bub, '1:1 채팅') + act('call', TKI.phone, '통화하기') + act('face', TKI.video, '페이스톡');
+  p.innerHTML = `<div class="kt-pt"><button class="kt-ib" data-back aria-label="닫기">${TKI.x}</button><span class="grow"></span>${!me && !ch ? `<button class="kt-ib" data-pa="gift" aria-label="선물">${TKI.gift}</button><button class="kt-ib" data-pa="fav" aria-label="즐겨찾기">${TKI.star(tkFav(id))}</button>` : ''}${EDITOR ? `<button class="kt-ib" data-pa="ed" aria-label="편집">${TKI.pen}</button>` : ''}</div>
+    <div class="kt-pm">${tkAv(id, 98)}<b>${esc(tkName(id))}</b>${tkStatus(id) ? `<small>${esc(tkStatus(id))}</small>` : ''}</div>
+    <div class="kt-pa">${acts}</div>`;
+  p.addEventListener('click', e => {
+    const b = e.target.closest('[data-pa]'); if (!b) return;
+    const k = b.dataset.pa;
+    if (k === 'chat' || k === 'self') { const rid = k === 'self' ? 'me' : talkChatFor(id); pop(); return setTimeout(() => push(talkRoom(rid)), 60); }
+    if (k === 'call') return pp && pp.number ? startCall(pp.number) : toast('톡 통화를 연결할 수 없어요.');
+    if (k === 'face') return toast('페이스톡은 준비 중이에요.');
+    if (k === 'gift') return toast('선물하기는 준비 중이에요.');
+    if (k === 'news') { pop(); return setTimeout(() => { const r = APP && APP.stack[0]; r && r.showTab && r.showTab('friends', 'news'); }, 60); }
+    if (k === 'edit' || k === 'ed') { if (!EDITOR) return toast('프로필은 주인만 바꿀 수 있어요.'); return me ? tkMeEdit() : ch ? toast('채널은 [기본 정보]에서 고쳐요.') : tkFriendEdit(id); }
+    if (k === 'fav') { XS('tkf', () => ({}))[id] = !tkFav(id); save(); b.innerHTML = TKI.star(tkFav(id)); toast(tkFav(id) ? '즐겨찾기에 추가했어요.' : '즐겨찾기에서 뺐어요.'); }
+  });
+  return p;
+}
+
+/* ===== 대화방 ===== */
+function tkBody(m, c, first) {
+  if (m.emo) return `<div class="kt-emo">${esc(m.emo)}</div>`;
+  if (m.img) { const src = c.imgs && c.imgs[m.img]; return `<div class="kt-pics n1">${src ? `<img src="${src}" alt="">` : '<span class="kt-pic"><i>🖼️</i></span>'}</div>`; }
+  if (m.photo) { const n = Math.max(1, +m.photo || 1), ps = m.pics || []; return `<div class="kt-pics n${Math.min(n, 4)}">${Array.from({ length: Math.min(n, 6) }, (_, i) => { const q = ps[i] || ps[0] || {}; const cc = q.c || ['#cfd8e3', '#9fb0c4']; return `<span class="kt-pic" style="background:linear-gradient(160deg,${cc[0]},${cc[1] || cc[0]})"><i>${esc(q.em || '📷')}</i></span>`; }).join('')}</div>`; }
+  return `<div class="kt-b${first ? ' tail' : ''}">${esc(m.text || '').replace(/(https?:\/\/[^\s<]+)/g, '<u>$1</u>')}</div>`;
+}
+function talkRoom(id) {
+  const c = cfgOf('talk', id), w = tkWith(c), group = w.length > 1, th = thread('talk', id), self = id === 'me';
+  th.unread = 0; save(); updateBadges();
+  const p = page('kt-room'); p.dataset.tkid = id;
+  const cnt = tkCount(c);
+  const head = () => `<button class="kt-ib" data-back aria-label="뒤로">${TKI.back}</button><div class="kt-rt"><b>${esc(tkTitle(id))}</b>${cnt ? `<span>${cnt}</span>` : ''}${self ? '<em>나</em>' : ''}${tkMuted(id) ? `<i class="kt-mute">${TKI.bellOff}</i>` : ''}</div>${EDITOR && !self ? `<button class="kt-ib kt-edb" data-rs="ed" aria-label="편집">${TKI.pen}</button>` : ''}<button class="kt-ib" data-rs="search" aria-label="검색">${TKI.search}</button><button class="kt-ib" data-rs="menu" aria-label="메뉴">${TKI.menu}</button>`;
+  p.innerHTML = `<div class="kt-rh">${head()}</div>
+    <div class="kt-sbar" hidden><input placeholder="대화 내용 검색" enterkeyhint="search"><span></span><button data-rs="up" aria-label="이전">▲</button><button data-rs="dn" aria-label="다음">▼</button><button data-rs="close">닫기</button></div>
+    ${c.notice ? `<div class="kt-notice"><i>📢</i><span>${esc(c.notice)}</span><i class="kt-chev">${TKI.chev}</i></div>` : ''}
+    <div class="kt-msgs"></div>
+    <div class="kt-comp"><button class="kt-cplus" data-rs="plus" aria-label="더하기">${TKI.plus}</button><form class="kt-field"><input placeholder="메시지 입력" autocomplete="off" enterkeyhint="send" id="in-talk-${esc(id)}"><button type="button" class="kt-emob" data-rs="emo" aria-label="이모티콘">${TKI.smile}</button></form><button class="kt-hash" data-rs="send" aria-label="보내기">${TKI.hash}</button></div>
+    <div class="kt-emop" hidden>${TK_EMO.map(e => `<button data-emo="${e}">${e}</button>`).join('')}</div>`;
+  const box = $('.kt-msgs', p), sbar = $('.kt-sbar', p), sin = $('input', sbar);
+  let q = '', hits = [], hi = -1;
+  const A = { kind: 'talk', id, p };
+  A.draw = () => {
+    const ms = th.msgs; let h = '';
+    const tm = m => m.time || 'xx:xx';
+    const same = (a, b) => a && b && !a.date && !a.sys && !b.date && !b.sys && a.from === b.from && tm(a) === tm(b);
+    const qq = q ? norm(q) : '';
+    ms.forEach((m, i) => {
+      if (m.date) { h += `<div class="kt-date"><span>${esc(m.date)}${TKI.chevS}</span></div>`; return; }
+      if (m.sys) { h += `<div class="kt-sys"><span>${esc(m.sys)}</span></div>`; return; }
+      const first = !same(ms[i - 1], m), last = !same(m, ms[i + 1]);
+      const un = !self && m.from === 'me' && m.read === false ? (m.n || (group ? w.length : 1)) : '';
+      const meta = (un || last) ? `<span class="kt-meta">${un ? `<b>${un}</b>` : ''}${last ? `<time>${esc(tm(m))}</time>` : ''}</span>` : '';
+      const hit = qq && m.text && norm(m.text).includes(qq) ? ' hit' : '';
+      const body = tkBody(m, c, first);
+      if (m.from === 'me') h += `<div class="kt-m me${first ? ' first' : ''}${hit}" data-i="${i}">${meta}${body}</div>`;
+      else h += `<div class="kt-m them${first ? ' first' : ''}${hit}" data-i="${i}">${first ? `<button class="kt-mav" data-prof="${esc(m.from)}">${tkAv(m.from, 38)}</button>` : '<span class="kt-mav"></span>'}<div class="kt-mb">${first ? `<div class="kt-mn">${esc(tkName(m.from))}</div>` : ''}<div class="kt-ml">${body}${meta}</div></div></div>`;
+    });
+    if (A.typing) h += `<div class="kt-m them first"><span class="kt-mav"></span><div class="kt-mb"><div class="kt-ml"><div class="kt-b kt-typ"><i></i><i></i><i></i></div></div></div></div>`;
+    box.innerHTML = h;
+    const cur = hi >= 0 && $(`[data-i="${hits[hi]}"]`, box);
+    if (cur) { cur.classList.add('cur'); box.scrollTop = cur.offsetTop - box.clientHeight / 2; } else box.scrollTop = box.scrollHeight;
+  };
+  const find = () => {
+    q = sin.value.trim(); const qq = norm(q);
+    hits = qq ? th.msgs.map((m, i) => m.text && norm(m.text).includes(qq) ? i : -1).filter(i => i >= 0) : [];
+    hi = hits.length - 1; $('span', sbar).textContent = q ? (hits.length ? `${hi + 1}/${hits.length}` : '결과 없음') : ''; A.draw();
+  };
+  sin.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); find(); } });
+  sin.addEventListener('input', () => { if (!sin.value.trim()) find(); });
+  const inp = $('.kt-field input', p), hb = $('.kt-hash', p), emop = $('.kt-emop', p);
+  let composing = false, pending = false;
+  const upd = () => { const on = !!inp.value.trim(); hb.classList.toggle('go', on); hb.innerHTML = on ? TKI.send : TKI.hash; };
+  const send = () => { const v = inp.value.trim(); if (!v) return; inp.value = ''; upd(); sendMine('talk', id, v); };
+  inp.addEventListener('input', upd);
+  inp.addEventListener('focus', () => { emop.hidden = true; });
+  inp.addEventListener('compositionstart', () => composing = true);
+  inp.addEventListener('compositionend', () => { composing = false; upd(); if (pending) { pending = false; setTimeout(send, 0); } });
+  $('.kt-field', p).addEventListener('submit', e => { e.preventDefault(); if (composing) { pending = true; return; } send(); });
+  const drawer = () => {
+    const extra = Math.max(0, cnt - w.length - 1);
+    const d = el(`<div class="kt-drbg"><div class="kt-dr"><h3>채팅방 서랍</h3>
+      <button class="kt-drt" data-dr="mute"><span>알림</span><i class="tog${tkMuted(id) ? '' : ' on'}"></i></button>
+      <div class="kt-drs">대화상대 ${cnt || (self ? 1 : 2)}</div>
+      ${['me', ...(self ? [] : w)].map(m => `<button class="kt-drr" data-prof="${esc(m)}">${tkAv(m, 36)}<span>${esc(tkName(m))}${m === 'me' ? ' <em>나</em>' : ''}</span></button>`).join('')}
+      ${extra ? `<div class="kt-drx">외 ${extra}명</div>` : ''}</div></div>`);
+    d.addEventListener('click', e => {
+      const t = e.target.closest('[data-dr],[data-prof]');
+      if (!t) { if (!e.target.closest('.kt-dr')) d.remove(); return; }
+      if (t.dataset.dr === 'mute') { XS('tkm', () => ({}))[id] = !tkMuted(id); save(); $('.tog', t).classList.toggle('on', !tkMuted(id)); $('.kt-rh', p).innerHTML = head(); return; }
+      d.remove(); push(profilePage(t.dataset.prof));
+    });
+    p.appendChild(d);
+  };
+  p.addEventListener('click', e => {
+    const em = e.target.closest('[data-emo]');
+    if (em) { th.msgs.push({ from: 'me', emo: em.dataset.emo, time: ampm(now()), ...(self ? {} : { read: false }) }); th.ts = Date.now(); save(); emop.hidden = true; A.draw(); respond('talk', id, ''); return; }
+    const pf = e.target.closest('.kt-msgs [data-prof]'); if (pf) return push(profilePage(pf.dataset.prof));
+    const b = e.target.closest('[data-rs]'); if (!b) return;
+    const k = b.dataset.rs;
+    if (k === 'send') { if (inp.value.trim()) send(); return; }
+    if (k === 'emo') { emop.hidden = !emop.hidden; if (!emop.hidden) inp.blur(); return; }
+    if (k === 'plus') return toast('사진·파일 보내기는 준비 중이에요.');
+    if (k === 'search') { sbar.hidden = false; setTimeout(() => sin.focus(), 50); return; }
+    if (k === 'close') { sbar.hidden = true; sin.value = ''; q = ''; hits = []; hi = -1; $('span', sbar).textContent = ''; return A.draw(); }
+    if (k === 'up' || k === 'dn') { if (!hits.length) return find(); hi = (hi + (k === 'up' ? -1 : 1) + hits.length) % hits.length; $('span', sbar).textContent = `${hi + 1}/${hits.length}`; return A.draw(); }
+    if (k === 'menu') return drawer();
+    if (k === 'ed') return tkChatEdit(id);
+  });
+  A.draw(); ACTIVE = A;
+  const toEnd = () => { if (hi < 0) box.scrollTop = box.scrollHeight; };
+  requestAnimationFrame(toEnd); setTimeout(toEnd, 60); setTimeout(toEnd, 450);
+  p.onleave = () => { if (ACTIVE === A) ACTIVE = null; };
+  p.refresh = () => { $('.kt-rh', p).innerHTML = head(); A.draw(); };
+  return p;
+}
+
+/* ===== 검색 · 새 채팅 · 생일 · 추천친구/채널 목록 ===== */
+function tkSubPage(title, body) {
+  const p = page('kt-sub');
+  p.innerHTML = `<div class="kt-subh"><button class="kt-ib" data-back aria-label="뒤로">${TKI.back}</button><b>${esc(title)}</b></div><div class="kt-subb">${body}</div>`;
+  p.addEventListener('click', e => {
+    const a = e.target.closest('[data-prof],[data-chat],[data-pick],[data-tk]'); if (!a) return;
+    if (a.dataset.tk) return toast('선물하기는 준비 중이에요.');
+    if (a.dataset.prof) return push(profilePage(a.dataset.prof));
+    if (a.dataset.chat) return push(talkRoom(a.dataset.chat));
+    if (a.dataset.pick) { const rid = talkChatFor(a.dataset.pick); pop(); setTimeout(() => push(talkRoom(rid)), 60); }
+  });
+  return p;
+}
+const tkRowHTML = (id, attr, sub) => `<button class="kt-row" ${attr}="${esc(id)}">${tkAv(id, 44)}<span class="grow"><b>${esc(tkName(id))}</b>${sub ? `<small>${esc(sub)}</small>` : ''}</span></button>`;
+function tkSearch() {
+  const p = tkSubPage('검색', '');
+  $('.kt-subh', p).innerHTML = `<button class="kt-ib" data-back aria-label="뒤로">${TKI.back}</button><input class="kt-sin" placeholder="친구, 채팅방, 대화 내용 검색" autocomplete="off">`;
+  const inp = $('input', p), res = $('.kt-subb', p);
+  const run = () => {
+    const q = norm(inp.value);
+    if (!q) { res.innerHTML = '<div class="kt-empty">이름이나 대화 내용으로 찾아보세요.</div>'; return; }
+    const fr = tkFriendList().filter(f => norm(tkName(f.id)).includes(q));
+    const ids = Object.keys(ST.talk).filter(id => lastMsg(ST.talk[id]));
+    const rooms = ids.filter(id => norm(tkTitle(id)).includes(q));
+    const ms = []; ids.forEach(id => ST.talk[id].msgs.forEach(m => { if (m.text && norm(m.text).includes(q)) ms.push([id, m]); }));
+    res.innerHTML = (fr.length ? `<div class="kt-sec">친구 ${fr.length}</div>${fr.map(f => tkRowHTML(f.id, 'data-prof', tkStatus(f.id))).join('')}` : '')
+      + (rooms.length ? `<div class="kt-sec">채팅방 ${rooms.length}</div>${rooms.map(id => `<button class="kt-row" data-chat="${esc(id)}">${tkRoomAv(id, 44)}<span class="grow"><b>${esc(tkTitle(id))}</b><small>${esc(tkPrev(lastMsg(ST.talk[id])))}</small></span></button>`).join('')}` : '')
+      + (ms.length ? `<div class="kt-sec">대화 내용 ${ms.length}</div>${ms.slice(0, 40).map(([id, m]) => `<button class="kt-row" data-chat="${esc(id)}">${tkRoomAv(id, 44)}<span class="grow"><b>${esc(tkTitle(id))}</b><small>${m.from === 'me' ? '나: ' : ''}${esc(m.text)}</small></span></button>`).join('')}` : '')
+      || '<div class="kt-empty">검색 결과가 없어요.</div>';
+  };
+  inp.addEventListener('input', run); setTimeout(() => inp.focus(), 380); run();
+  return p;
+}
+function tkPickFriend() {
+  return tkSubPage('대화상대 선택', `<div class="kt-sec">친구 ${tkFriendList().length}</div>${tkFriendList().map(f => tkRowHTML(f.id, 'data-pick', tkStatus(f.id))).join('')}`);
+}
+function tkBdayPage() {
+  const T = TK(), g = (t, list) => list.length ? `<div class="kt-sec">${t}</div>${list.map(b => `<div class="kt-row kt-bd" data-prof="${esc(b.id)}" role="button">${tkAv(b.id, 44)}<span class="grow"><b>${esc(tkName(b.id))}</b><small>${esc(b.when || '')}</small></span><button class="kt-pill" data-tk="g">선물하기</button></div>`).join('')}` : '';
+  const bd = T.birthdays || [];
+  return tkSubPage('생일', g('오늘', bd.filter(b => b.when === '오늘')) + g('지난 생일', bd.filter(b => b.when !== '오늘')) + g('다가오는 생일', T.soon || []) || '<div class="kt-empty">생일인 친구가 없어요.</div>');
+}
+function tkListPage(k) {
+  const T = TK();
+  if (k === 'chan') return tkSubPage('채널', `<div class="kt-sec">채널 ${(T.channels || []).length}</div>${(T.channels || []).map(c => `<button class="kt-row" data-chat="${esc(c.id === 'kbobot' || c.id === 'k_moa' ? c.id : (T.chats.find(x => tkWith(x).length === 1 && tkWith(x)[0] === c.id) || { id: c.id }).id)}">${tkChAv(c.icon, 44, c.src)}<span class="grow"><b>${esc(c.name)}</b><small>채널</small></span></button>`).join('')}`);
+  return tkSubPage('추천친구', `<div class="kt-sec">추천친구 ${(T.recommend || []).length}</div>${(T.recommend || []).map(r => `<div class="kt-row"><span class="kt-av def" style="--s:44px">${TK_DEF}</span><span class="grow"><b>${esc(r.name)}</b><small>${esc(r.sub || '')}</small></span><span class="kt-pill">추가</span></div>`).join('')}`);
+}
+/* ----- 주인 전용: 톡 편집 (CUSTOM.talk 에 통째로 저장, [저장]을 눌러야 모두에게 보여요) ----- */
+let TK_DIRTY = 0;
+function tkCommit(T, msg) {
+  CUSTOM.talk = clone(T); TK_DIRTY++; STORY.talk = clone(T); tkReg(); talkSync(); save(); updateBadges();
+  if (msg) toast(msg); tkDirtyBar(); if (APP && APP.id === 'talk') APP.stack.forEach(pg => pg.refresh && pg.refresh());
+}
+function tkDirtyBar() {
+  let b = $('#tksave');
+  const tp = APP && topPage();
+  if (!EDITOR || !TK_DIRTY || !(APP && APP.id === 'talk') || (tp && tp.classList.contains('igedit'))) { if (b) b.remove(); return; }
+  if (!b) {
+    b = el('<div id="tksave" class="gsave"><span></span><button data-tks="undo">되돌리기</button><button data-tks="save" class="pri">저장</button></div>'); scr.appendChild(b);
+    b.addEventListener('click', e => {
+      const a = e.target.closest('[data-tks]'); if (!a) return;
+      if (a.dataset.tks === 'save') return saveCustom({ app: 'talk' });
+      try { const j = JSON.parse(document.getElementById('custom').textContent || '{}'); CUSTOM.talk = j.talk || null; } catch (x) { CUSTOM.talk = null; }
+      TK_DIRTY = 0; STORY.talk = clone(CUSTOM.talk || TALK_BASE); tkReg(); talkSync(); save(); updateBadges();
+      if (APP && APP.id === 'talk') APP.stack.forEach(pg => pg.refresh && pg.refresh()); tkDirtyBar(); toast('저장 전 상태로 되돌렸어요.');
+    });
+  }
+  $('span', b).textContent = `톡 편집 중 · 저장 안 한 변경 ${TK_DIRTY}개`;
+}
+function tkEdAct(k) { if (k === 'friend') return tkFriendEdit(); if (k === 'chat') return tkChatEdit(); if (k === 'info') return tkInfoEdit(); }
+/* 이름 → id (친구 · 연락처 · 채널 순서로 찾아요) */
+function tkIdOf(n) {
+  n = String(n || '').trim(); if (!n) return '';
+  if (n === '나' || n === 'me' || n === STORY.owner.name) return 'me';
+  const T = TK();
+  const f = (T.friends || []).find(f => tkName(f.id) === n || f.id === n); if (f) return f.id;
+  const p = STORY.people.find(p => p.name === n || p.id === n); if (p) return p.id;
+  const c = (T.channels || []).find(c => c.name === n || c.id === n); if (c) return c.id;
+  return '';
+}
+const tkNewId = pre => pre + Date.now().toString(36) + Math.floor(Math.random() * 99);
+/* 사진 칸 편집 (이모지 · 색 · 사진) */
+const tkAvFields = (a, k = 'av') => `<div class="ye-2">${yF('사진 칸 그림 (이모지 — 비우면 기본 사람 모양)', k + 'em', (a && a.em) || '')}${yCol('사진 칸 색', k + 'c', (a && a.c) || '#9fcfe0')}</div>${yPick(k, a && a.src, '진짜 사진 올리기')}`;
+function tkReadAv(v, a, k = 'av') { const em = v(k + 'em').trim(), c = v(k + 'c'); const src = a && a.src; if (src) return { src }; if (em) return { em, c }; return null; }
+
+/* ----- 내 프로필 ----- */
+function tkMeEdit() {
+  const T = clone(TK()), me = T.me = T.me || {};
+  return push(igEdPage('내 프로필 (톡)', {
+    max: 480,
+    body: () => `<div class="ye-help">이름은 폰 주인 이름(${esc(STORY.owner.name)})이 그대로 쓰여요.</div>${yF('상태메시지', 'status', me.status || '')}
+      <div class="ye-sec">프로필 사진</div>${tkAvFields(me.av)}
+      <div class="ye-sec">프로필 배경</div>${yCol('배경색', 'bg', me.bg || '#3d4a6b')}${yPick('bgSrc', me.bgSrc, '배경 사진 올리기')}`,
+    read: v => { me.status = v('status'); me.av = tkReadAv(v, me.av); me.bg = v('bg'); },
+    setImg: (k, url) => { if (k === 'av') { if (url) me.av = { ...(me.av || {}), src: url }; else if (me.av) delete me.av.src; } else { if (url) me.bgSrc = url; else delete me.bgSrc; } },
+    ok: () => tkCommit(T, '적용했어요. 다 고친 뒤 [저장]을 눌러 주세요.'),
+    bar: tkDirtyBar,
+  }));
+}
+
+/* ----- 친구 ----- */
+function tkFriendEdit(id) {
+  const T = clone(TK()), isNew = !id || !(T.friends || []).some(f => f.id === id);
+  if (id === 'me') return tkMeEdit();
+  if (id && tkCh(id)) return tkInfoEdit();
+  const pp = id && STORY.people.find(p => p.id === id);
+  const x = isNew ? { id: id || '', ...(id && !pp ? { name: tkName(id) } : {}) } : clone(T.friends.find(f => f.id === id));
+  const used = new Set((T.friends || []).map(f => f.id));
+  return push(igEdPage(isNew ? '새 친구' : '친구 수정', {
+    max: 480,
+    body: () => `${isNew && !id ? `${ySel('연락처에서 고르기', 'pid', [['', '연락처 아님 — 아래 이름 사용'], ...STORY.people.filter(p => !used.has(p.id)).map(p => [p.id, p.name])], '')}` : `<div class="ye-help">${STORY.people.some(p => p.id === x.id) ? `연락처 '${esc((STORY.people.find(p => p.id === x.id) || {}).name)}' 와 연결된 친구예요. 이름을 비우면 연락처 이름이 보여요.` : '톡에만 있는 친구예요.'}</div>`}
+      ${yF('톡에 보일 이름', 'name', x.name || '', pp ? pp.name : '이름')}${yF('상태메시지', 'status', x.status || '')}
+      <div class="ye-sec">프로필 사진</div>${tkAvFields(x.av)}
+      <div class="ye-sec">프로필 배경</div>${yCol('배경색 (비우면 사진 칸 색)', 'bg', x.bg || '#58636f')}${yPick('bgSrc', x.bgSrc, '배경 사진 올리기')}
+      ${yC('즐겨찾기에 넣기', 'fav', x.fav)}${yC('친구 목록에서 숨기기 (단톡방에만 나와요)', 'hidden', x.hidden)}`,
+    read: v => {
+      if (isNew && !id) { const pid = v('pid'); if (pid) x.id = pid; }
+      const nm = v('name').trim(); if (nm) x.name = nm; else delete x.name;
+      const s = v('status').trim(); if (s) x.status = s; else delete x.status;
+      const a = tkReadAv(v, x.av); if (a) x.av = a; else delete x.av;
+      const bg = v('bg'); if (bg && bg !== '#58636f') x.bg = bg; else delete x.bg;
+      if (v('fav')) x.fav = true; else delete x.fav;
+      if (v('hidden')) x.hidden = true; else delete x.hidden;
+    },
+    setImg: (k, url) => { if (k === 'av') { if (url) x.av = { ...(x.av || {}), src: url }; else if (x.av) delete x.av.src; } else { if (url) x.bgSrc = url; else delete x.bgSrc; } },
+    ok: () => {
+      if (!x.id) { if (!x.name) return toast('연락처를 고르거나 이름을 넣어 주세요.'); x.id = tkNewId('k_'); }
+      T.friends = T.friends || []; const i = T.friends.findIndex(f => f.id === x.id);
+      if (i >= 0) T.friends[i] = x; else T.friends.push(x);
+      tkCommit(T, '적용했어요. 다 고친 뒤 [저장]을 눌러 주세요.');
+    },
+    del: isNew ? null : () => {
+      T.friends = T.friends.filter(f => f.id !== x.id);
+      T.updates = (T.updates || []).filter(u => u !== x.id); T.birthdays = (T.birthdays || []).filter(b => b.id !== x.id); T.soon = (T.soon || []).filter(b => b.id !== x.id);
+      tkCommit(T, '친구 목록에서 뺐어요. (대화방은 그대로예요)');
+    },
+    bar: tkDirtyBar,
+  }));
+}
+
+/* ----- 기본 정보 (광고 · 업데이트 프로필 · 생일 · AI · 추천친구 · 채널) ----- */
+function tkInfoEdit() {
+  const T = clone(TK());
+  T.banner = T.banner || {}; T.chatBanner = T.chatBanner || {}; T.ai = T.ai || {};
+  const nm = id => id === 'me' ? STORY.owner.name : tkName(id);
+  const ups = (T.updates || []).map(u => typeof u === 'object' ? `AD | ${u.ad} | ${u.logo || ''}` : nm(u)).join('\n');
+  const bds = list => (list || []).map(b => `${nm(b.id)} | ${b.when || ''}`).join('\n');
+  const artOpts = [['gun', '마사지건 그림'], ['goggle', '고글 그림']];
+  const miss = [];
+  const idOrMiss = n => { const id = tkIdOf(n); if (!id) miss.push(n); return id; };
+  return push(igEdPage('톡 기본 정보', {
+    max: 720,
+    body: () => `<div class="ye-sec">친구 탭 광고</div><div class="ye-2">${yF('제목', 'bt', T.banner.t || '')}${yF('설명', 'bs', T.banner.s || '')}</div>${ySel('그림', 'ba', artOpts, T.banner.art || 'gun')}${yPick('bsrc', T.banner.src, '광고 사진 올리기')}
+      <div class="ye-sec">채팅 탭 광고</div><div class="ye-2">${yF('제목', 'ct', T.chatBanner.t || '')}${yF('설명', 'cs', T.chatBanner.s || '')}</div>${ySel('그림', 'ca', artOpts, T.chatBanner.art || 'goggle')}${yPick('csrc', T.chatBanner.src, '광고 사진 올리기')}
+      <div class="ye-help">제목을 비우면 광고 칸이 사라져요.</div>
+      <div class="ye-sec">AI 친구</div><div class="ye-2">${yF('이름', 'ain', T.ai.name || '')}${yF('설명', 'aid', T.ai.desc || '')}</div>
+      ${yA('업데이트 프로필 — 한 줄에 친구 이름 하나 (광고는 AD | 이름 | 로고 글씨)', 'ups', ups, '진훈이형\nAD | 별빛화재 보장분석 | 별빛화재', 6)}
+      ${yA('생일인 친구 — 이름 | 오늘 / 어제', 'bd', bds(T.birthdays), '승호 (고교 동창) | 오늘', 4)}
+      ${yA('다가오는 생일 (생일 화면) — 이름 | 날짜', 'soon', bds(T.soon), '도현 | XX월 XX일', 5)}
+      ${yA('추천친구 — 이름 | 설명', 'rec', (T.recommend || []).map(r => `${r.name} | ${r.sub || ''}`).join('\n'), '김태호 | 나를 친구로 추가한 사람', 4)}
+      ${yA('채널 — 이름 | 아이콘 (talk · pay · gift · wolves · bot · eats · shop · card · moa)', 'ch', (T.channels || []).map(c => `${c.name} | ${c.icon || ''}`).join('\n'), '태강 울프스 | wolves', 6)}
+      <div class="ye-2">${yF('오픈채팅 탭 숫자 (0이면 없음)', 'ob', T.openBadge || 0)}</div>${yC("소식 칩에 'N' 표시", 'nb', T.newsBadge !== false)}
+      <div class="ye-help">· 이름은 친구 목록에 보이는 이름 그대로 써 주세요. 못 찾은 이름은 빠져요.</div>`,
+    read: v => {
+      miss.length = 0;
+      T.banner.t = v('bt').trim(); T.banner.s = v('bs').trim(); T.banner.art = v('ba');
+      T.chatBanner.t = v('ct').trim(); T.chatBanner.s = v('cs').trim(); T.chatBanner.art = v('ca');
+      T.ai.name = v('ain').trim() || 'AI'; T.ai.desc = v('aid').trim();
+      T.updates = igLines(v('ups')).map(a => /^ad$/i.test(a[0]) ? { ad: a[1] || '광고', logo: a[2] || a[1] || '' } : idOrMiss(a[0])).filter(Boolean);
+      T.birthdays = igLines(v('bd')).map(a => ({ id: idOrMiss(a[0]), when: a[1] || '오늘' })).filter(b => b.id);
+      T.soon = igLines(v('soon')).map(a => ({ id: idOrMiss(a[0]), when: a[1] || '' })).filter(b => b.id);
+      T.recommend = igLines(v('rec')).map(a => ({ name: a[0], sub: a[1] || '' })).filter(r => r.name);
+      const old = T.channels || [];
+      T.channels = igLines(v('ch')).filter(a => a[0]).map(a => { const o = old.find(c => c.name === a[0]); return { ...(o || { id: tkNewId('ch_') }), name: a[0], icon: a[1] || (o && o.icon) || 'talk' }; });
+      T.openBadge = +String(v('ob')).replace(/\D/g, '') || 0; T.newsBadge = !!v('nb');
+    },
+    setImg: (k, url) => { const b = k === 'bsrc' ? T.banner : T.chatBanner; if (url) b.src = url; else delete b.src; },
+    ok: () => { tkCommit(T, miss.length ? `적용했어요. 못 찾은 이름: ${miss.slice(0, 4).join(', ')}` : '적용했어요. 다 고친 뒤 [저장]을 눌러 주세요.'); },
+    bar: tkDirtyBar,
+  }));
+}
+
+/* ----- 채팅방 ----- */
+/* 대화 내용 ↔ 글 상자: 빈 줄로 메시지 하나씩, '#' 날짜 줄, '!' 가운데 안내, '>' 내가 보냄('>(1)' = 안 읽음 1),
+   '이름: 내용' 보낸 사람(1:1 이면 이름 없이 써도 상대), [이모티콘 🐺] · [사진 3] · [사진:p1] */
+function tkSer(h, w) {
+  const one = w.length === 1;
+  const body = m => m.emo ? `[이모티콘 ${m.emo}]` : m.img ? `[사진:${m.img}]` : m.photo ? `[사진 ${m.photo}${m.pics && m.pics[0] && m.pics[0].em ? ' ' + m.pics[0].em : ''}]` : (m.text || '');
+  return (h || []).map(m => m.date ? '# ' + m.date : m.sys ? '! ' + m.sys : m.from === 'me' ? `>${m.read === false ? `(${m.n || 1})` : ''} ${body(m)}` : (one && (!m.from || m.from === w[0] || m.from === 'them') ? '' : `${tkName(m.from)}: `) + body(m)).join('\n\n');
+}
+function tkParse(txt, w, mk) {
+  const out = []; let cur = null;
+  const names = {}; w.forEach(id => names[tkName(id)] = id);
+  const content = (s, o) => {
+    let r;
+    if ((r = s.match(/^\[이모티콘\s*(.+?)\]$/))) o.emo = r[1].trim();
+    else if ((r = s.match(/^\[사진:\s*(.+?)\]$/))) o.img = r[1].trim();
+    else if ((r = s.match(/^\[사진(?:\s+(\d+))?(?:\s+(.+?))?\]$/))) { o.photo = +(r[1] || 1); if (r[2]) o.pics = [{ em: r[2].trim(), c: ['#e9e2d4', '#c9b79a'] }]; }
+    else o.text = s;
+    return o;
+  };
+  const flush = () => { if (!cur) return; const t = cur.lines.join('\n').trim(); if (t) out.push(content(t, cur.o)); cur = null; };
+  String(txt || '').replace(/\r/g, '').split('\n').forEach(l => {
+    if (!cur && /^\s*#/.test(l)) { flush(); const d = l.replace(/^\s*#\s*/, '').trim(); if (d) out.push({ date: d }); return; }
+    if (!cur && /^\s*!/.test(l)) { flush(); const d = l.replace(/^\s*!\s*/, '').trim(); if (d) out.push({ sys: d }); return; }
+    if (!l.trim()) { flush(); return; }
+    if (cur) { cur.lines.push(l); return; }
+    let r;
+    if ((r = l.match(/^\s*>(?:\((\d+)\))?\s?(.*)$/))) { const o = { from: 'me' }; if (r[1]) { o.read = false; if (+r[1] > 1) o.n = +r[1]; } cur = { o, lines: [r[2]] }; return; }
+    if ((r = l.match(/^\s*([^:：]{1,24})\s*[:：]\s?(.*)$/))) { const n = r[1].trim(), id = names[n] || tkIdOf(n) || (w.length > 1 && mk ? mk(n) : ''); if (id && id !== 'me') { cur = { o: { from: id }, lines: [r[2]] }; return; } }
+    cur = { o: { from: w[0] }, lines: [l] };
+  });
+  flush(); return out;
+}
+function tkChatEdit(id) {
+  const T = clone(TK()), src = id && T.chats.find(c => c.id === id);
+  if (id === 'me') return toast('나와의 채팅은 고칠 수 없어요.');
+  if (id && !src) return toast('이 대화방은 보는 사람이 직접 만든 거라 고칠 수 없어요. (＋ 채팅방으로 새로 만들 수 있어요)');
+  const isNew = !id;
+  const x = isNew ? { id: tkNewId('tk_'), with: [((T.friends || [])[0] || {}).id || 'mom'], time: 'xx:xx', unread: 1, noNotif: true, history: [{ date: '20XX년 XX월 XX일 X요일' }, { text: '안녕' }] } : clone(src);
+  x.imgs = x.imgs || {};
+  const added = [];
+  const mk = n => { const nid = tkNewId('k_'); added.push({ id: nid, name: n, hidden: true }); return nid; };
+  let body = tkSer(x.history, x.with), mem = x.with.map(tkName).join(', ');
+  return push(igEdPage(isNew ? '새 채팅방' : '채팅방 수정', {
+    max: 900,
+    body: () => `${yF('대화상대 — 이름을 쉼표로 (1명이면 1:1 채팅)', 'with', mem, '성진이형 또는 진훈이형, 켄드릭')}
+      ${yF('방 이름 (비우면 대화상대 이름)', 'name', x.name || '')}
+      <div class="ye-2">${yF('목록 오른쪽 시간', 'time', x.time || '', 'xx:xx / 어제 / XX월 XX일')}${yF('안 읽은 수 (주황 숫자)', 'unread', x.unread || 0)}</div>
+      <div class="ye-2">${yF('인원수 표시 (비우면 자동)', 'count', x.count || '')}${yF('위쪽 공지 (비우면 없음)', 'notice', x.notice || '')}</div>
+      ${yC('알림 끔 (종 모양 · 회색 숫자)', 'muted', x.muted)}${yC('잠금화면 · 알림 센터에도 알림 띄우기', 'notif', !x.noNotif)}
+      <div class="ye-sec">방 사진 (단톡방 · 비우면 대화상대 사진)</div>${tkAvFields(x.av, 'rav')}
+      ${yA('대화 내용', 'body', body, '', 20)}
+      <div class="ye-help">· 메시지 하나마다 <b>빈 줄</b>로 나눠요. (빈 줄 없이 이어 쓰면 한 말풍선 안에서 줄바꿈)<br>· <b># 20XX년 XX월 XX일 X요일</b> = 가운데 날짜 줄, <b>! 안내 문구</b> = 가운데 회색 안내 (예: ○○님이 들어왔습니다.)<br>· 내가 보낸 말은 맨 앞에 <b>&gt;</b>, 상대가 아직 안 읽었으면 <b>&gt;(1)</b> (단톡은 <b>&gt;(3)</b> 처럼 안 읽은 사람 수)<br>· 단톡방은 <b>이름: 내용</b> 으로 보낸 사람을 써요. 1:1 은 그냥 쓰면 상대가 보낸 말이에요.<br>· <b>[이모티콘 🐺]</b> 큰 이모티콘, <b>[사진 3]</b> 사진 3장 자리, <b>[사진:p1]</b> 아래에서 올린 사진</div>
+      <div class="ye-sec">대화에 넣을 사진</div><div class="kt-edimgs">${Object.entries(x.imgs).map(([k, u]) => `<span><img src="${u}" alt=""><b>[사진:${esc(k)}]</b><button class="ye-b" data-noimg="i:${esc(k)}">빼기</button></span>`).join('') || '<small>아직 없어요.</small>'}</div>${yPick('newimg', false, '＋ 사진 올리기')}`,
+    read: v => {
+      mem = v('with'); body = v('body');
+      const ns = mem.split(/[,，]/).map(s => s.trim()).filter(Boolean);
+      const w = ns.map(n => tkIdOf(n) || (added.find(a => a.name === n) || {}).id || mk(n)).filter(i => i && i !== 'me');
+      if (w.length) x.with = w;
+      const nm = v('name').trim(); if (nm) x.name = nm; else delete x.name;
+      x.time = v('time').trim();
+      const u = parseInt(v('unread'), 10); if (u > 0) x.unread = u; else delete x.unread;
+      const cn = parseInt(v('count'), 10); if (cn > 0) x.count = cn; else delete x.count;
+      const no = v('notice').trim(); if (no) x.notice = no; else delete x.notice;
+      if (v('muted')) x.muted = true; else delete x.muted;
+      if (v('notif')) delete x.noNotif; else x.noNotif = true;
+      const a = tkReadAv(v, x.av, 'rav'); if (a) x.av = a; else delete x.av;
+      x.history = tkParse(body, x.with, mk);
+    },
+    setImg: (k, url) => {
+      if (k === 'rav') { if (url) x.av = { ...(x.av || {}), src: url }; else if (x.av) delete x.av.src; return; }
+      if (k.startsWith('i:')) { delete x.imgs[k.slice(2)]; return; }
+      if (k === 'newimg' && url) { let i = 1; while (x.imgs['p' + i]) i++; x.imgs['p' + i] = url; toast(`올렸어요. 대화 내용에 [사진:p${i}] 라고 쓰면 나와요.`); }
+    },
+    ok: () => {
+      if (!Object.keys(x.imgs).length) delete x.imgs;
+      T.friends = [...(T.friends || []), ...added.filter(a => x.with.includes(a.id) || (x.history || []).some(m => m.from === a.id))];
+      const i = T.chats.findIndex(c => c.id === x.id); if (i >= 0) T.chats[i] = x; else T.chats.unshift(x);
+      tkCommit(T, '적용했어요. 다 고친 뒤 [저장]을 눌러 주세요.');
+    },
+    move: isNew ? null : d => { const L = T.chats, i = L.findIndex(c => c.id === x.id), j = i + d; if (j < 0 || j >= L.length) return toast('더 옮길 수 없어요.'); [L[i], L[j]] = [L[j], L[i]]; tkCommit(T, d < 0 ? '위로 옮겼어요. (목록은 이 순서대로예요)' : '아래로 옮겼어요.'); },
+    del: isNew ? null : () => { T.chats = T.chats.filter(c => c.id !== x.id); tkCommit(T, '대화방을 삭제했어요.'); setTimeout(() => { const tp = topPage(); if (tp && tp.dataset.tkid === x.id) pop(); }, 450); },
+    bar: tkDirtyBar,
+  }));
+}
 function groupAv(w, size) {
   const ms = w.slice(0, 4), cls = ['', 'one', 'two', 'three', ''][ms.length];
   return `<span class="av-grp ${cls}" style="--s:${size}px">${ms.map(m => `<span class="av sq c" style="--c:${colorOf(m)}">${esc(ini(nameOf(m)))}</span>`).join('')}</span>`;
@@ -6148,47 +7190,7 @@ function bdayIn(b) {
   if (d < t) d.setFullYear(d.getFullYear() + 1);
   return Math.round((d - t) / 86400000);
 }
-function profilePage(id) {
-  const me = id === 'me', pp = me ? STORY.owner : person(id);
-  const p = page('profile'); p.dataset.bar = 'light'; p.style.setProperty('--c', colorOf(id));
-  p.innerHTML = `<button class="pf-x" data-back aria-label="닫기">${I.x}</button><div class="pf-main">${avatar(id, { size: 96, sq: true, color: true })}<b>${esc(pp.name)}</b><small>${esc(pp.status || ' ')}</small></div>
-    <div class="pf-acts">${me ? `<button>${I.compose}프로필 편집</button>` : `<button data-a="chat">${I.bubble}1:1 채팅</button><button data-a="call">${I.phone}통화하기</button>`}</div>`;
-  p.addEventListener('click', e => {
-    const a = e.target.closest('[data-a]'); if (!a) return;
-    if (a.dataset.a === 'chat') { pop(); setTimeout(() => push(talkRoom(talkChatFor(id))), 50); }
-    if (a.dataset.a === 'call') startCall(pp.number);
-  });
-  return p;
-}
-function talkRoom(id) {
-  const c = cfgOf('talk', id);
-  const th = thread('talk', id), w = c.with || [id], group = w.length > 1;
-  th.unread = 0; save(); updateBadges();
-  const p = page('talk-room');
-  p.innerHTML = `<div class="nav tk-nav"><div class="nav-row tk-navrow"><button class="back" data-back>${I.chev}</button><div class="tk-title"><b>${esc(c.name || talkTitle(id))}</b>${group ? `<span>${w.length + 1}</span>` : ''}</div><div class="nav-right">${I.search}${I.menu}</div></div></div>
-    <div class="msgs tk-msgs"></div>
-    <div class="composer tk-comp"><button class="plus" tabindex="-1">${I.plus}</button><form class="field"><input id="in-talk-${esc(id)}" placeholder="메시지 입력" autocomplete="off" enterkeyhint="send"><button class="send" hidden aria-label="전송">${I.up}</button></form></div>`;
-  const box = $('.msgs', p);
-  const A = { kind: 'talk', id, p };
-  A.draw = () => {
-    const ms = th.msgs; let h = '';
-    const same = (a, b) => a && b && !a.date && !b.date && a.from === b.from && a.time === b.time;
-    ms.forEach((m, i) => {
-      if (m.date) { h += `<div class="tk-date">${esc(m.date)}</div>`; return; }
-      const first = !same(ms[i - 1], m), last = !same(m, ms[i + 1]);
-      const meta = `<span class="tk-meta">${m.from === 'me' && m.read === false ? '<b class="one">1</b>' : ''}${last ? `<time>${esc(m.time || '')}</time>` : ''}</span>`;
-      if (m.from === 'me') h += `<div class="tk me${first ? ' first' : ''}"><div class="tk-line">${meta}<div class="tbub">${esc(m.text)}</div></div></div>`;
-      else h += `<div class="tk them${first ? ' first' : ''}">${first ? `<button data-prof="${esc(m.from)}" style="border:0;padding:0;background:none;height:40px">${avatar(m.from, { size: 40, sq: true, color: true })}</button>` : '<span class="av-sp"></span>'}<div class="tk-body">${first ? `<div class="tk-name">${esc(nameOf(m.from))}</div>` : ''}<div class="tk-line"><div class="tbub">${esc(m.text)}</div>${meta}</div></div></div>`;
-    });
-    box.innerHTML = h; box.scrollTop = box.scrollHeight;
-  };
-  box.onclick = e => { const f = e.target.closest('[data-prof]'); if (f && person(f.dataset.prof)) push(profilePage(f.dataset.prof)); };
-  A.draw(); ACTIVE = A;
-  p.onleave = () => { if (ACTIVE === A) ACTIVE = null; };
-  wireComposer(p, t => sendMine('talk', id, t));
-  return p;
-}
-
+/* TK:JS:END */
 /* ----- 인터넷 ----- */
 /* WB:WEBJS:BEGIN */
 /* ----- 인터넷 (사파리): 탭 여러 개 · 구글 첫 화면 · 검색 결과 · 사이트(BBPARK · 네이버 스포츠) -----
