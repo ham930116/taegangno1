@@ -12405,6 +12405,13 @@ const ytShortCard = (x, cls = '') => `<button class="yv-sc ${cls}" data-short="$
 /* 영상 보기 (롱폼) — 댓글 상자를 누르면 아래에서 댓글 창이 올라와요 */
 const ytCms = x => [...(x.comments || []), ...(ytS().cm[x.id] || [])];
 const ytNum = n => { const v = parseFloat(String(n || '0').replace(/,/g, '')) * (/만/.test(n) ? 10000 : /천/.test(n) ? 1000 : 1); return isNaN(v) ? 0 : v; };
+/* 영상 열기 — 편집기에서 '바깥 링크'를 넣은 영상은 앱 안 대신 새 창으로 열려요 */
+function ytOpen(x, before) {
+  if (!x) return;
+  const u = String(x.link || '').trim();
+  if (u) { try { window.open(/^https?:\/\//i.test(u) ? u : 'https://' + u, '_blank', 'noopener'); } catch (e) { } return; }
+  before && before(); push(ytWatch(x));
+}
 function ytWatch(x) {
   const s = ytS(), c = ytCh(x.ch); s.hist = [x.id, ...s.hist.filter(i => i !== x.id)].slice(0, 20); s.cl = s.cl || {}; save();
   const p = page('yt ywatch'); p.dataset.bar = 'light'; p.token = 'yt:' + x.id;
@@ -12471,7 +12478,7 @@ function ytWatch(x) {
     if (ht) { for (let k = 0; k < 5; k++) { const h = el(`<i class="lc-fly">${['❤️', '💖', '💗', '🧡', '💜'][k]}</i>`); h.style.setProperty('--dx', (Math.random() * 60 - 30) + 'px'); h.style.animationDelay = (k * 120) + 'ms'; ht.parentNode.appendChild(h); setTimeout(() => h.remove(), 1900); } return; }
     const so = e.target.closest('[data-sort]'); if (so) { sort = so.dataset.sort; return p.redraw(); }
     const cl = e.target.closest('[data-cl]'); if (cl) { s.cl[cl.dataset.cl] = !s.cl[cl.dataset.cl]; save(); return p.redraw(); }
-    const v = e.target.closest('.yw-recs [data-vid]'); if (v) { clearInterval(iv); return push(ytWatch(ytVid(v.dataset.vid))); }
+    const v = e.target.closest('.yw-recs [data-vid]'); if (v) return ytOpen(ytVid(v.dataset.vid), () => clearInterval(iv));
   });
   p.onleave = () => { clearInterval(iv); clearTimeout(ct); };
   p.redraw(); return p;
@@ -12512,7 +12519,7 @@ function ytSearch(onShort) {
   res.onclick = e => {
     if (e.target.closest('[data-fill],[data-q]')) return;   // 최근 검색어는 눌러도 아무 일 없음
     const sh = e.target.closest('[data-short]'); if (sh) { pop(); return onShort && onShort(sh.dataset.short); }
-    const v = e.target.closest('[data-vid]'); if (v) push(ytWatch(ytVid(v.dataset.vid)));
+    const v = e.target.closest('[data-vid]'); if (v) ytOpen(ytVid(v.dataset.vid));
   };
   showHist(); setTimeout(() => inp.focus(), 400);
   return p;
@@ -12569,6 +12576,7 @@ function ytEditPage(kind, id) {
       ${f('제목', 'title', x.title, 'area')}${chSel}<div class="ye-2">${f('조회수 (예: 41만)', 'views', x.views)}${f('올린 시간 (예: 9시간 전)', 'time', x.time)}</div>
       <div class="ye-2">${f('영상 길이', 'dur', x.dur)}${f('좋아요 수', 'likes', x.likes)}</div><div class="ye-2">${f('분류 (야구/뉴스/ASMR…)', 'cat', x.cat)}${f('라이브', 'live', x.live, 'check')}</div>
       ${f('홈 화면에 보이기', 'home', x.home !== false, 'check')}${f('설명 (더보기)', 'desc', x.desc, 'area')}
+      ${f('바깥 링크 (넣으면 이 영상을 눌렀을 때 앱 대신 새 창으로 이 주소가 열려요 — 비우면 앱 안에서 재생)', 'link', x.link, 'text', 'https://…')}
       <div class="ye-2">${f('댓글 수 (예: 1.2천 — 비우면 아래 댓글 개수)', 'cmN', x.cmN, 'text', '1.2천')}${f('댓글창 열기 허용', 'cmOpen', x.cmOpen, 'check')}</div>
       <div class="ye-tip" style="margin-top:-4px">댓글창 허용을 끄면 영상 아래에 <b>첫 번째 댓글 1개만</b> 미리보기로 보이고, 눌러도 댓글창이 안 열려요.</div>
       <div class="ye-cmt">댓글 ${(x.comments || []).length}개</div>${cmCards()}<button class="ye-b ye-add" data-cadd>＋ 댓글 추가</button>
@@ -12583,6 +12591,7 @@ function ytEditPage(kind, id) {
     if (kind === 'v') {
       Object.assign(x, { th: v('th'), em: v('em'), colors: [v('c0'), v('c1')], title: v('title').trim() || '제목 없음', ch: v('ch'), views: v('views'), time: v('time'), dur: v('dur'), likes: v('likes'), cat: v('cat'), live: v('live') || undefined, desc: v('desc') });
       if (v('home')) delete x.home; else x.home = false;
+      const lk = (v('link') || '').trim(); if (lk) x.link = lk; else delete x.link;
       const cn = (v('cmN') || '').trim(); if (cn) x.cmN = cn; else delete x.cmN; if (v('cmOpen')) x.cmOpen = true; else delete x.cmOpen;
       x.chat = v('chat').split('\n').map(l => l.split(/[|｜]/).map(t => t.trim())).filter(a => a[0] && a[1]).map(([a, t]) => [a, t]);
       x.comments = (x.comments || []).map((c, i) => { const a = (v('ca' + i) || '').trim().replace(/^@+/, ''), t = v('ct' + i) || '', w = (v('cw' + i) || '').trim(), l = (v('cl' + i) || '').trim(), r = (v('cr' + i) || '').trim(); return { author: a, text: t, time: w, ...(l ? { likes: l } : {}), ...(r ? { replies: r } : {}) }; });
@@ -12716,7 +12725,7 @@ APPS.tube = () => {
       save(); render(); $('.yv-shorts', view).scrollTop = y; return;
     }
     const sh = e.target.closest('[data-short]'); if (sh) { s.hist = [sh.dataset.short, ...s.hist.filter(i => i !== sh.dataset.short)].slice(0, 20); save(); return openShort(sh.dataset.short); }
-    const vd = e.target.closest('[data-vid]'); if (vd) push(ytWatch(ytVid(vd.dataset.vid)));
+    const vd = e.target.closest('[data-vid]'); if (vd) ytOpen(ytVid(vd.dataset.vid));
   });
   p.refresh = () => { if (tab === 'shorts') { const sc = $('.yv-shorts', view), y = sc ? sc.scrollTop : 0; render(); const sc2 = $('.yv-shorts', view); if (sc2) sc2.scrollTop = y; return; } const y = view.scrollTop; render(); view.scrollTop = y; };
   YT_REFRESH = () => { const t = topPage(); if (t === p) p.refresh(); };
