@@ -12130,14 +12130,38 @@ function openIgComments(id) { const x = igFind(id); if (!x) return openApp('feed
 const IGL = { list: {}, at: {}, err: {} };
 const igLiveOn = x => !!(x && x.live) && typeof ybRemote === 'function' && ybRemote();
 const igAgo = t => { const d = Math.max(0, (Date.now() - t) / 1000); return d < 60 ? '방금 전' : (d < 3600 ? Math.floor(d / 60) + '분' : d < 86400 ? Math.floor(d / 3600) + '시간' : d < 604800 ? Math.floor(d / 86400) + '일' : Math.floor(d / 604800) + '주') + ' 전'; };
-async function igLiveLoad(x) {
-  try { const j = await ybCall('ig_cm_list', { p_post: x.id }); IGL.list[x.id] = (j || []).map(c => ({ ...c, t: Date.parse(c.created_at) || Date.now() })); IGL.err[x.id] = 0; }
-  catch (e) { IGL.err[x.id] = 1; }
+/* 데이터 아끼기: 처음 한 번만 전체를 받고(기기에 저장), 그 뒤로는 새로 달린 댓글만 받아요 (ig_cm_since) */
+const IGL_KEY = id => 'igl:' + id;
+function igLiveCache(id) {
+  if (IGL.list[id]) return IGL.list[id];
+  try { const c = JSON.parse(localStorage.getItem(IGL_KEY(id)) || 'null'); if (Array.isArray(c)) IGL.list[id] = c; } catch (e) { }
+  return IGL.list[id];
+}
+function igLiveKeep(id) { try { localStorage.setItem(IGL_KEY(id), JSON.stringify(IGL.list[id] || [])); } catch (e) { } }
+const igLiveMap = c => ({ ...c, t: Date.parse(c.created_at) || Date.now() });
+async function igLiveFull(x) { const j = await ybCall('ig_cm_list', { p_post: x.id }); IGL.list[x.id] = (j || []).map(igLiveMap); igLiveKeep(x.id); }
+async function igLiveLoad(x, full) {
+  try {
+    const have = igLiveCache(x.id);
+    if (full || !have || IGL.noSince) await igLiveFull(x);
+    else {
+      let j;
+      try { j = await ybCall('ig_cm_since', { p_post: x.id, p_after: have.reduce((m, c) => Math.max(m, c.id), 0) }); }
+      catch (e) { IGL.noSince = 1; await igLiveFull(x); j = null; }   // 서버에 새 함수가 아직 없으면 예전 방식
+      if (j) {
+        const ids = new Set(have.map(c => c.id)), add = (j.items || []).filter(c => !ids.has(c.id)).map(igLiveMap);
+        const L = add.length ? [...have, ...add] : have;
+        if (L.length !== j.n) await igLiveFull(x);   // 지워진 댓글이 있으면 그때만 전체를 다시
+        else if (add.length) { IGL.list[x.id] = L; igLiveKeep(x.id); }
+      }
+    }
+    IGL.err[x.id] = 0;
+  } catch (e) { IGL.err[x.id] = 1; }
   IGL.at[x.id] = Date.now(); return IGL.list[x.id] || [];
 }
-const igLiveN = x => igLiveOn(x) ? (IGL.list[x.id] || []).length : 0;
+const igLiveN = x => igLiveOn(x) ? (igLiveCache(x.id) || []).length : 0;
 function igLivePeek(x) {   // 피드에서 댓글 수를 알려고 가끔 불러와요
-  if (!igLiveOn(x) || Date.now() - (IGL.at[x.id] || 0) < 60000) return;
+  if (!igLiveOn(x) || Date.now() - (IGL.at[x.id] || 0) < 120000) return;
   IGL.at[x.id] = Date.now(); igLiveLoad(x).then(() => igUpdate(x.id));
 }
 function igCommentsPage(x) {
@@ -12154,11 +12178,11 @@ function igCommentsPage(x) {
   const live = igLiveOn(x); let lrto = null, ldel = null;
   const lrow = (c, sub) => { const s = igS(), mine = (s.lmine || {})[c.id];
     return `<div class="icm${sub ? ' sub' : ''} live" data-lid="${c.id}"><span class="ix-av" style="--s:${sub ? 26 : 34}px"><span class="ix-ghost" style="--s:${sub ? 26 : 34}px">${RTI.person}</span></span><div class="icm-b"><div class="icm-h"><b>${esc(c.author)}</b><span>${esc(igAgo(c.t))}</span></div><div class="icm-t">${tagHTML(c.text, 'ix-tag')}</div>
-      <div class="icm-acts"><button class="icm-r" data-lrto="${c.id}">답글 달기</button>${mine || EDITOR ? `<button class="icm-r" data-ldel="${c.id}">삭제</button>` : ''}</div>
-      ${ldel === c.id ? `<form class="icm-del" data-ldelf="${c.id}"><input type="password" placeholder="${mine ? '비밀번호' : '비밀번호 (관리자 비밀번호도 돼요)'}" value="${esc(mine ? (s.lpw || '') : '')}" autocomplete="off"><button>삭제</button><button type="button" data-ldelx>취소</button></form>` : ''}</div></div>`; };
+      <div class="icm-acts"><button class="icm-r" data-lrto="${c.id}">답글 달기</button>${mine || EDITOR || igLiveAdm() ? `<button class="icm-r" data-ldel="${c.id}">삭제</button>` : ''}</div>
+      ${ldel === c.id ? `<form class="icm-del" data-ldelf="${c.id}"><input type="password" placeholder="${mine ? '비밀번호' : '비밀번호 (관리자 비밀번호도 돼요)'}" value="${esc(mine ? (s.lpw || '') : igLiveAdm() ? ybAdminPw() : '')}" autocomplete="off"><button>삭제</button><button type="button" data-ldelx>취소</button></form>` : ''}</div></div>`; };
   const liveHTML = () => {
     if (!live) return '';
-    const L = IGL.list[x.id];
+    const L = igLiveCache(x.id);
     if (!L) return '<div class="icm-lnote">댓글 불러오는 중…</div>';
     const byId = {}; L.forEach(c => byId[c.id] = c);
     const root = c => { let r = c, k = 0; while (r.parent_id && byId[r.parent_id] && k++ < 20) r = byId[r.parent_id]; return r; };
@@ -12199,7 +12223,7 @@ function igCommentsPage(x) {
   }
   if (live) {
     igLiveLoad(x).then(() => { drawLive(); const sc = $('.ig-cl', p); if (sc) sc.scrollTop = sc.scrollHeight; });
-    const tick = setInterval(() => { if (!p.isConnected) return clearInterval(tick); if (topPage() !== p || ldel != null) return; const sc = $('.ig-cl', p), y = sc && sc.scrollTop; igLiveLoad(x).then(() => { drawLive(); if (sc) sc.scrollTop = y; }); }, 20000);
+    const tick = setInterval(() => { if (!p.isConnected) return clearInterval(tick); if (topPage() !== p || ldel != null) return; const sc = $('.ig-cl', p), y = sc && sc.scrollTop; igLiveLoad(x).then(() => { drawLive(); if (sc) sc.scrollTop = y; }); }, 30000);
     p.addEventListener('input', e => { const s = igS(); if (e.target.matches('[data-lnick]')) { s.lnick = e.target.value; save(); } if (e.target.matches('[data-lpw]')) { s.lpw = e.target.value; save(); } });
     p.addEventListener('submit', async e => {
       const f = e.target.closest('[data-ldelf]'); if (!f) return; e.preventDefault();
@@ -12448,6 +12472,8 @@ function igKbd() {
     <div class="kb-r"><span class="kb-k g sh" data-c="⇧"><svg viewBox="0 0 24 24"><path d="M12 4 4 12h4.5v7h7v-7H20z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>${[...KB_ROWS[2]].map(k).join('')}<span class="kb-k g bs" data-c="⌫"><svg viewBox="0 0 24 24"><path d="M8.5 5H20a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H8.5L2.5 12z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m11 9 6 6m0-6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></div>
     <div class="kb-r"><span class="kb-k g w">123</span><span class="kb-k g e">😀</span><span class="kb-k sp" data-c=" ">스페이스</span><span class="kb-k g rt">return</span></div><div class="kb-ft"><span>🌐</span><span>🎙️</span></div></div>`);
 }
+/* 관리자(야구 통합 갤러리에서 관리자 로그인한 기기)는 모두의 댓글에 [삭제]가 보여요 */
+const igLiveAdm = () => typeof ybIsAdmin === 'function' && ybRemote() && ybIsAdmin();
 /* 수락 후 자동 대화 — d.script = [{from:'me'|'them', text}], 단계는 igS().scr[id] 에 */
 function igScriptRun(id, p, A) {
   const d = (STORY.ig.dms || []).find(o => o.id === id); if (!d || !(d.script || []).length) return;
