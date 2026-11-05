@@ -10419,7 +10419,16 @@ function ybSeed() {
 const YB_NOTICE = '야구 통합 갤러리입니다.\n(방명록 기능입니다)\n\n1. 닉네임과 비밀번호만 입력하면 누구나 글과 댓글 및 답글을 실제로 작성할 수 있습니다.\n2. 글 · 댓글 삭제는 작성할 때 입력한 비밀번호로만 가능합니다. 비밀번호를 잊으면 지울 수 없으니 꼭 기억해 두세요.\n3. 추천을 5개 이상 받은 글은 자동으로 개념글로 올라갑니다.\n4. 도배, 분탕, 개인정보 노출 등 삭제 이유가 타당하다면 제가 실제로 무통보 삭제합니다.';
 const ybL = () => { const s = XS('yb', ybSeed), n = s.posts.find(x => x.id === 1 && x.notice && x.author === '야통갤관리자'); if (n) n.body = YB_NOTICE; return s; };   // 공지 글은 항상 최신 문구로
 const ybLocalAdmin = pw => EDITOR && pw === 'local-admin';
+const YB_PAGE = 40;   // 한 번에 불러오는 글 수 (스크롤 내리면 다음 묶음)
+const ybPageOf = (all, before, minUp) => {   // 목록 전체에서 한 묶음 잘라내기 (첫 묶음엔 공지 포함)
+  const ns = before == null && !minUp ? all.filter(x => x.notice) : [];
+  const rest = all.filter(x => !x.notice && (before == null || x.id < before) && (!minUp || (x.up || 0) >= minUp)).slice(0, YB_PAGE);
+  return [...ns, ...rest];
+};
+const ybFind = (all, q, f) => { const n = norm(q); const hay = x => f === 't' ? x.title : f === 'a' ? x.author : x.title + ' ' + (x.body || x.snip || ''); return all.filter(x => norm(hay(x)).includes(n)); };
 const YBL = {
+  async page(before, minUp) { return ybPageOf(await YBL.list(), before, minUp); },
+  async search(q, f) { const s = ybL(); return ybFind(await YBL.list(), q, f).map(x => ({ ...x, body: (s.posts.find(y => y.id === x.id) || {}).body })); },
   async list() { const s = ybL(); return s.posts.map(x => ({ ...x, cc: s.comments.filter(c => c.post === x.id).length })).sort((a, b) => b.id - a.id); },
   async get(id) {
     const s = ybL(), x = s.posts.find(y => y.id === id); if (!x) throw ybErr('not_found');
@@ -10463,11 +10472,27 @@ async function ybCall(fn, args) {
   try { r = await fetch(url.replace(/\/+$/, '') + '/rest/v1/rpc/' + fn, { method: 'POST', headers: h, body: JSON.stringify(args || {}), signal: ac ? ac.signal : undefined }); }
   catch (e) { throw ybErr('net'); } finally { clearTimeout(to); }
   const txt = await r.text(); let j = null; try { j = txt ? JSON.parse(txt) : null; } catch (e) { }
-  if (!r.ok) { const m = (j && j.message) || ''; throw ybErr(Object.keys(YB_MSG).find(k => m.includes(k)) || 'net'); }
+  if (!r.ok) { if (j && j.code === 'PGRST202') throw ybErr('nofn');   // 서버에 아직 없는 함수
+    const m = (j && j.message) || ''; throw ybErr(Object.keys(YB_MSG).find(k => m.includes(k)) || 'net'); }
   return j;
 }
 const ybT = s => Date.parse(s) || Date.now();
 const YBR = {
+  async page(before, minUp) {   // 서버에 ybg_list_page 가 없으면 예전처럼 전부 받기
+    if (!YBR.noPage) {
+      try { return (await ybCall('ybg_list_page', { p_before: before, p_limit: YB_PAGE, p_min_up: minUp || 0 }) || []).map(x => ({ ...x, t: ybT(x.created_at) })); }
+      catch (e) { if (e.code === 'nofn') YBR.noPage = 1; else throw e; }
+    }
+    if (before != null) return [];
+    const all = await YBR.list(), r = all.filter(x => x.notice || !minUp || (!x.notice && (x.up || 0) >= minUp)); r.all = 1; return minUp ? r.filter(x => !x.notice) : r;
+  },
+  async search(q, f) {
+    if (!YBR.noSearch) {
+      try { return (await ybCall('ybg_search', { p_q: q, p_field: f }) || []).map(x => ({ ...x, t: ybT(x.created_at) })); }
+      catch (e) { if (e.code === 'nofn') YBR.noSearch = 1; else throw e; }
+    }
+    return ybFind(await YBR.list(), q, f);
+  },
   async list() { return (await ybCall('ybg_list') || []).map(x => ({ ...x, t: ybT(x.created_at) })); },
   async get(id) {
     const j = await ybCall('ybg_get', { p_id: id }); if (!j || !j.post) throw ybErr('not_found');
@@ -10505,32 +10530,49 @@ function ybRow(x, mode, q) {
 
 /* ---- 게시판 ---- */
 function ybBoard() {
-  let mode = 'home', posts = null, err = null;
+  let mode = 'home', posts = null, err = null, notices = [];
   const p = page('gall gboard ybb'); p.dataset.bar = 'light'; p.ybBoard = true;
-  const load = async () => { try { posts = await YB.list(); err = null; } catch (e) { err = e; } draw(); };
+  /* 처음엔 최신 글 YB_PAGE개만, 맨 아래 가까이 내리면 다음 묶음 (데이터 절약) */
+  const FEED = { home: { items: [], more: true, busy: 0, ok: 0 }, best: { items: [], more: true, busy: 0, ok: 0 } };
+  const fk = () => mode === 'best' ? 'best' : 'home';
+  const load = async (more, k = fk()) => {
+    const F = FEED[k]; if (F.busy) return; F.busy = 1;
+    if (!more) { F.items = []; F.more = true; }
+    try {
+      const before = F.items.length ? Math.min(...F.items.map(x => x.id)) : null;
+      const r = await YB.page(before, k === 'best' ? YB_BEST : 0);
+      if (k === 'home' && before == null) notices = r.filter(x => x.notice);
+      const got = r.filter(x => !x.notice), ids = new Set(F.items.map(x => x.id));
+      F.items.push(...got.filter(x => !ids.has(x.id))); F.more = !r.all && got.length >= YB_PAGE; F.ok = 1; err = null;
+    } catch (e) { err = e; F.more = false; }
+    F.busy = 0; posts = FEED.home.items; if (k === fk() || (k === 'home' && mode === 'notice')) { draw(); setTimeout(fill, 60); }
+  };
+  const fill = () => { if (!p.isConnected || mode === 'notice') return; const sc = $('.gb-list', p), F = FEED[fk()]; if (sc && F.ok && F.more && !F.busy && sc.scrollHeight - sc.scrollTop - sc.clientHeight < 700) load(true); };
+  p.addEventListener('scroll', fill, true);
   const draw = () => {
     const sc0 = $('.gb-list', p), y0 = sc0 ? sc0.scrollTop : 0;
-    const all = posts || [], notices = all.filter(x => x.notice);
-    const list = mode === 'notice' ? notices : mode === 'best' ? all.filter(x => !x.notice && x.up >= YB_BEST) : [...notices, ...all.filter(x => !x.notice)];
+    const F = FEED[fk()], ready = mode === 'notice' ? FEED.home.ok : F.ok;
+    const list = mode === 'notice' ? notices : mode === 'best' ? F.items : [...notices, ...F.items];
     const title = mode === 'notice' ? '공지' : mode === 'best' ? '개념글' : '야구 통합 갤러리';
     const remote = ybRemote(), admin = ybIsAdmin();
     p.innerHTML = `<div class="gb-head"><button class="gb-l" data-gl aria-label="${mode === 'home' ? '메뉴' : '뒤로'}">${mode === 'home' ? GI.menu : GI.back}</button><b class="gb-title">${esc(title)}</b><span class="gb-r"><button class="gb-kb" data-yref aria-label="새로고침">${GP.ref}</button><button class="gb-kb" data-kb aria-label="더보기">${GI.kebab}</button></span></div>
       <div class="gb-pop" hidden>${remote ? (admin ? '<button data-yadm="out">관리자 로그아웃</button>' : '<button data-yadm="in">관리자 로그인</button>') : '<button data-yreset>초기화하기</button>'}</div>
       ${!remote ? '<div class="yb-local">미리보기 · 여기서 쓴 글은 이 기기에만 저장돼요</div>' : admin ? '<div class="yb-local adm">관리자 모드 · 다른 사람 글도 비밀번호 없이 지울 수 있어요</div>' : ''}
       ${!remote && admin ? '<div class="yb-local adm">관리자(편집 권한) · 다른 사람 글도 비밀번호 없이 지울 수 있어요</div>' : ''}
-      <div class="scroll gb-list">${gAdHTML()}${err ? `<div class="b-empty">${esc(YB_MSG[err.code] || YB_MSG.net)}<br><button class="yb-retry" data-yref>다시 불러오기</button></div>` : posts === null ? '<div class="b-empty">불러오는 중…</div>' : list.map(x => ybRow(x, mode)).join('') || '<div class="b-empty">게시물이 없습니다.</div>'}<div style="height:90px"></div></div>
+      <div class="scroll gb-list">${gAdHTML()}${err && !list.length ? `<div class="b-empty">${esc(YB_MSG[err.code] || YB_MSG.net)}<br><button class="yb-retry" data-yref>다시 불러오기</button></div>` : !ready ? '<div class="b-empty">불러오는 중…</div>' : list.map(x => ybRow(x, mode)).join('') || '<div class="b-empty">게시물이 없습니다.</div>'}${ready && mode !== 'notice' && F.more ? '<div class="b-empty yb-more">불러오는 중…</div>' : ''}${err && list.length ? '<div class="b-empty"><button class="yb-retry" data-ymore>더 불러오기</button></div>' : ''}<div style="height:90px"></div></div>
       <button class="gb-fab" data-gt="write" aria-label="글쓰기">${GI.fab}</button>${gTabs(mode)}`;
     const sc = $('.gb-list', p); if (sc) sc.scrollTop = y0;
   };
-  const go = m => { mode = m; draw(); const sc = $('.gb-list', p); if (sc) sc.scrollTop = 0; };
+  const go = m => { mode = m; draw(); const sc = $('.gb-list', p); if (sc) sc.scrollTop = 0; if (m === 'best' && !FEED.best.ok) load(false, 'best'); else setTimeout(fill, 60); };
   p.addEventListener('click', async e => {
     const pp = $('.gb-pop', p);
     if (e.target.closest('[data-kb]')) { pp.hidden = !pp.hidden; return; }
-    if (e.target.closest('[data-yref]')) { posts = null; err = null; draw(); return load(); }
+    if (e.target.closest('[data-yref]')) { err = null; FEED.home.ok = FEED.best.ok = 0; draw(); return load(false); }
+    if (e.target.closest('[data-ymore]')) { err = null; FEED[fk()].more = true; draw(); return load(true); }
     if (e.target.closest('[data-yreset]')) {
       pp.hidden = true;
       if (!(await ybAsk(p, { title: '이 기기의 야구 통합 갤러리를 처음 상태로 되돌릴까요?', msg: '이 기기에서 쓴 글과 댓글, 추천, 읽은 글 표시가 지워져요.', ok: '초기화' }))) return;
-      ST.x = ST.x || {}; delete ST.x.yb; delete ST.x.yb_me; save(); toast('처음 상태로 되돌렸어요.'); return load();
+      ST.x = ST.x || {}; delete ST.x.yb; delete ST.x.yb_me; save(); toast('처음 상태로 되돌렸어요.'); FEED.best.ok = 0; FEED.best.items = []; return load(false, 'home');
     }
     const ad = e.target.closest('[data-yadm]');
     if (ad) {
@@ -10545,18 +10587,29 @@ function ybBoard() {
     const t = e.target.closest('[data-gt]');
     if (t) {
       const g = t.dataset.gt;
-      if (g === 'search') return push(ybSearch(posts || []));
-      if (g === 'write') return push(ybWrite(() => { mode = 'home'; posts = null; draw(); load(); }));
+      if (g === 'search') return push(ybSearch());
+      if (g === 'write') return push(ybWrite(() => { mode = 'home'; FEED.home.ok = 0; FEED.best.ok = 0; FEED.best.items = []; draw(); load(false, 'home'); }));
       return go(g);
     }
     const r = e.target.closest('[data-yid]'); if (r) push(ybPost(+r.dataset.yid));
   });
-  p.refresh = () => load();
-  draw(); load(); return p;
+  /* 글 보고 돌아왔을 때 — 불러 둔 글은 그대로 두고 맨 위 새 글·숫자만 갱신 */
+  const top = async () => {
+    const k = fk(), F = FEED[k]; if (!F.ok || F.busy) return load(false, k);
+    try {
+      const r = await YB.page(null, k === 'best' ? YB_BEST : 0), got = r.filter(x => !x.notice), by = {}; got.forEach(x => by[x.id] = x);
+      if (k === 'home') notices = r.filter(x => x.notice);
+      const mx = F.items.length ? Math.max(...F.items.map(x => x.id)) : 0, lo = got.length ? Math.min(...got.map(x => x.id)) : Infinity;
+      F.items = [...got.filter(x => x.id > mx), ...F.items.filter(x => x.id < lo || by[x.id]).map(x => by[x.id] || x)];   // 첫 묶음 범위에서 지워진 글은 빼요
+      draw();
+    } catch (e) { }
+  };
+  p.refresh = () => top();
+  draw(); load(false, 'home'); return p;
 }
 
 /* ---- 검색 (지금 불러온 글 안에서) ---- */
-function ybSearch(all) {
+function ybSearch() {
   const p = page('gall gsearch'); p.dataset.bar = 'light';
   p.innerHTML = `<div class="gb-head"><button class="gb-l" data-back aria-label="뒤로">${GI.back}</button><b class="gb-title">검색</b><span class="gb-r"></span></div>
     <div class="gs-form"><div class="gs-r"><label class="gs-box gs-sel"><select id="gs-f" aria-label="검색 범위"><option value="tc">제목+내용</option><option value="t">제목</option><option value="a">글쓴이</option></select>${GI.dd}</label></div>
@@ -10565,10 +10618,11 @@ function ybSearch(all) {
   const body = $('.gs-body', p), q = $('#gs-q', p);
   $('.gs-in', p).addEventListener('submit', e => {
     e.preventDefault(); const text = q.value.trim(); if (!text) return; q.blur();
-    const f = $('#gs-f', p).value, n = norm(text);
-    const hay = x => f === 't' ? x.title : f === 'a' ? x.author : x.title + ' ' + (x.snip || x.body || '');
-    const res = all.filter(x => norm(hay(x)).includes(n));
-    body.innerHTML = `<div class="gs-rh"><b>‘${esc(text)}’ 검색 결과 ${res.length}건</b></div>` + (res.map(x => ybRow(x, 'home', text)).join('') || '<div class="gs-none">검색 결과가 없습니다.</div>');
+    const f = $('#gs-f', p).value;
+    body.innerHTML = '<div class="gs-none">검색 중…</div>';
+    YB.search(text, f).then(res => {
+      body.innerHTML = `<div class="gs-rh"><b>‘${esc(text)}’ 검색 결과 ${res.length}건</b></div>` + (res.map(x => ybRow(x, 'home', text)).join('') || '<div class="gs-none">검색 결과가 없습니다.</div>');
+    }, er => { body.innerHTML = `<div class="gs-none">${esc(YB_MSG[er.code] || YB_MSG.net)}</div>`; });
   });
   p.addEventListener('click', e => { const r = e.target.closest('[data-yid]'); if (r) push(ybPost(+r.dataset.yid)); });
   setTimeout(() => { if (topPage() === p) q.focus(); }, 420);
@@ -12147,7 +12201,7 @@ async function igLiveLoad(x, full) {
     else {
       let j;
       try { j = await ybCall('ig_cm_since', { p_post: x.id, p_after: have.reduce((m, c) => Math.max(m, c.id), 0) }); }
-      catch (e) { IGL.noSince = 1; await igLiveFull(x); j = null; }   // 서버에 새 함수가 아직 없으면 예전 방식
+      catch (e) { if (e.code !== 'nofn') throw e; IGL.noSince = 1; await igLiveFull(x); j = null; }   // 서버에 새 함수가 아직 없으면 예전 방식
       if (j) {
         const ids = new Set(have.map(c => c.id)), add = (j.items || []).filter(c => !ids.has(c.id)).map(igLiveMap);
         const L = add.length ? [...have, ...add] : have;
